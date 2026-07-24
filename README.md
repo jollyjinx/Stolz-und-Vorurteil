@@ -12,6 +12,7 @@ Eine direkte Neuübersetzung von Jane Austens *Pride and Prejudice* in modernes 
 
 - `source-chapters/`: englische Referenzkapitel, aus der EPUB extrahiert
 - `modern-german-chapters/`: die 61 fertigen deutschen Kapitel
+- `illustrations/`: 97 Illustrationen von Hugh Thomson aus der George-Allen-Ausgabe von 1894 sowie das Manifest ihrer Kapitel- und Absatzpositionen
 - `frontmatter/`: Titel-, Quellen- und Widmungsseiten
 - `tools/`: Extraktion, Prüfung und Erstellung der Buchausgaben
 - `dist/`: erzeugte EPUB-, HTML- und PDF-Ausgaben beider Sprachfassungen
@@ -28,6 +29,12 @@ python3 tools/verify_translation.py
 ```
 
 Die Übersetzungsregeln stehen in [AGENTS.md](AGENTS.md). Die Eingabe-EPUB selbst bleibt unverändert in `/Users/jolly/Downloads/pg1342-images-3.epub`.
+
+Die deutsche Ausgabe übernimmt das Frontispiz, die Kapitelköpfe, Szenenbilder und Schlussvignetten der illustrierten Ausgabe. Englische Bildtexte im historischen Originalbild bleiben unverändert; zusätzlich erscheint jeweils eine deutsche Bildunterschrift. Um die Bilddateien und ihre Positionen erneut aus der Quell-EPUB zu importieren:
+
+```sh
+python3 tools/import_illustrations.py /Users/jolly/Downloads/pg1342-images-3.epub
+```
 
 ## GitHub-Veröffentlichungen
 

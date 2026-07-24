@@ -1,0 +1,778 @@
+[
+  {
+    "chapter": 0,
+    "after_paragraph": 0,
+    "kind": "frontispiece",
+    "image": "8000208475274601819_i_003.jpg",
+    "caption_en": "Reading Jane’s Letters. Chap 34.",
+    "caption_de": "Beim Lesen von Janes Briefen. Kapitel XXXIV."
+  },
+  {
+    "chapter": 1,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_030.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 1,
+    "after_paragraph": 8,
+    "kind": "inline",
+    "image": "8000208475274601819_i_031.jpg",
+    "caption_en": "He came down to see the place",
+    "caption_de": "»Er kam her, um sich das Anwesen anzusehen.«"
+  },
+  {
+    "chapter": 1,
+    "after_paragraph": 34,
+    "kind": "inline",
+    "image": "8000208475274601819_i_034.jpg",
+    "caption_en": "Mr. & Mrs. Bennet",
+    "caption_de": "Mr. und Mrs. Bennet"
+  },
+  {
+    "chapter": 2,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_035_a.jpg",
+    "caption_en": "I hope Mr. Bingley will like it.",
+    "caption_de": "»Ich hoffe, Mr. Bingley wird er gefallen.«"
+  },
+  {
+    "chapter": 2,
+    "after_paragraph": 27,
+    "kind": "inline",
+    "image": "8000208475274601819_i_038.jpg",
+    "caption_en": "I’m the tallest",
+    "caption_de": "»Ich bin die Größte.«"
+  },
+  {
+    "chapter": 3,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_039_a.jpg",
+    "caption_en": "He rode a black horse.",
+    "caption_de": "»Er ritt ein schwarzes Pferd.«"
+  },
+  {
+    "chapter": 3,
+    "after_paragraph": 4,
+    "kind": "inline",
+    "image": "8000208475274601819_i_041.jpg",
+    "caption_en": "When the Party entered",
+    "caption_de": "»Als die Gesellschaft eintrat«"
+  },
+  {
+    "chapter": 3,
+    "after_paragraph": 13,
+    "kind": "inline",
+    "image": "8000208475274601819_i_044.jpg",
+    "caption_en": "She is tolerable",
+    "caption_de": "»Sie ist passabel.«"
+  },
+  {
+    "chapter": 4,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_047_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 5,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_051_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 5,
+    "after_paragraph": 10,
+    "kind": "inline",
+    "image": "8000208475274601819_i_053.jpg",
+    "caption_en": "Without once opening his lips",
+    "caption_de": "»Ohne auch nur einmal den Mund zu öffnen«"
+  },
+  {
+    "chapter": 5,
+    "after_paragraph": 23,
+    "kind": "inline",
+    "image": "8000208475274601819_i_055.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 6,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_056_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 6,
+    "after_paragraph": 16,
+    "kind": "inline",
+    "image": "8000208475274601819_i_060.jpg",
+    "caption_en": "The entreaties of several",
+    "caption_de": "»Die Bitten mehrerer Personen«"
+  },
+  {
+    "chapter": 7,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_065_a.jpg",
+    "caption_en": "A note for Miss Bennet.",
+    "caption_de": "»Eine Nachricht für Miss Bennet.«"
+  },
+  {
+    "chapter": 7,
+    "after_paragraph": 24,
+    "kind": "inline",
+    "image": "8000208475274601819_i_069.jpg",
+    "caption_en": "Cheerful prognostics",
+    "caption_de": "»Frohe Vorhersagen«"
+  },
+  {
+    "chapter": 7,
+    "after_paragraph": 41,
+    "kind": "inline",
+    "image": "8000208475274601819_i_073.jpg",
+    "caption_en": "The Apothecary came",
+    "caption_de": "»Der Apotheker kam.«"
+  },
+  {
+    "chapter": 8,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_074_a.jpg",
+    "caption_en": "Covering a screen.",
+    "caption_de": "»Einen Wandschirm bespannen«"
+  },
+  {
+    "chapter": 9,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_082_a.jpg",
+    "caption_en": "Mrs Bennet and her two youngest girls.",
+    "caption_de": "Mrs. Bennet und ihre beiden jüngsten Töchter"
+  },
+  {
+    "chapter": 10,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_089_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 10,
+    "after_paragraph": 55,
+    "kind": "inline",
+    "image": "8000208475274601819_i_096.jpg",
+    "caption_en": "No, no; stay where you are",
+    "caption_de": "»Nein, nein; bleiben Sie, wo Sie sind.«"
+  },
+  {
+    "chapter": 11,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_098_a.jpg",
+    "caption_en": "Piling up the fire.",
+    "caption_de": "»Das Feuer schüren«"
+  },
+  {
+    "chapter": 12,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_104_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 13,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_107_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 14,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_113_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 14,
+    "after_paragraph": 13,
+    "kind": "inline",
+    "image": "8000208475274601819_i_116.jpg",
+    "caption_en": "Protested that he never read novels",
+    "caption_de": "»Er erklärte entschuldigend, er lese niemals Romane.«"
+  },
+  {
+    "chapter": 15,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_118_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 16,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_124_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 16,
+    "after_paragraph": 3,
+    "kind": "inline",
+    "image": "8000208475274601819_i_126.jpg",
+    "caption_en": "The officers of the ——shire",
+    "caption_de": "»Die Offiziere des ——shire-Regiments«"
+  },
+  {
+    "chapter": 17,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_137_a.jpg",
+    "caption_en": "delighted to see their dear friend again.",
+    "caption_de": "»Hocherfreut, ihren lieben Freund wiederzusehen«"
+  },
+  {
+    "chapter": 18,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_142_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 18,
+    "after_paragraph": 23,
+    "kind": "inline",
+    "image": "8000208475274601819_i_147.jpg",
+    "caption_en": "Such very superior dancing is not often seen.",
+    "caption_de": "»Solch ausgezeichnetes Tanzen sieht man nicht oft.«"
+  },
+  {
+    "chapter": 19,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_161_a.jpg",
+    "caption_en": "to assure you in the most animated language.",
+    "caption_de": "»Ihnen mit den lebhaftesten Worten zu versichern«"
+  },
+  {
+    "chapter": 20,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_168_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 20,
+    "after_paragraph": 27,
+    "kind": "inline",
+    "image": "8000208475274601819_i_172.jpg",
+    "caption_en": "they entered the breakfast room",
+    "caption_de": "»Sie betraten das Frühstückszimmer.«"
+  },
+  {
+    "chapter": 21,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_175_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 21,
+    "after_paragraph": 5,
+    "kind": "inline",
+    "image": "8000208475274601819_i_177.jpg",
+    "caption_en": "Walked back with them",
+    "caption_de": "»Er ging mit ihnen zurück.«"
+  },
+  {
+    "chapter": 22,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_183_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 22,
+    "after_paragraph": 4,
+    "kind": "inline",
+    "image": "8000208475274601819_i_185.jpg",
+    "caption_en": "So much love and eloquence",
+    "caption_de": "»So viel Liebe und Beredsamkeit«"
+  },
+  {
+    "chapter": 23,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_190_a.jpg",
+    "caption_en": "Protested he must be entirely mistaken.",
+    "caption_de": "»Sie beteuerte, er müsse sich vollkommen irren.«"
+  },
+  {
+    "chapter": 23,
+    "after_paragraph": 15,
+    "kind": "inline",
+    "image": "8000208475274601819_i_195.jpg",
+    "caption_en": "Whenever she spoke in a low voice",
+    "caption_de": "»Wann immer sie leise sprach«"
+  },
+  {
+    "chapter": 24,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_197_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 25,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_204_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 25,
+    "after_paragraph": 6,
+    "kind": "inline",
+    "image": "8000208475274601819_i_206.jpg",
+    "caption_en": "Offended two or three young ladies",
+    "caption_de": "»Er beleidigte zwei oder drei junge Damen.«"
+  },
+  {
+    "chapter": 26,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_210_a.jpg",
+    "caption_en": "Will you come and see me.",
+    "caption_de": "»Werden Sie mich besuchen kommen?«"
+  },
+  {
+    "chapter": 27,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_218_a.jpg",
+    "caption_en": "On the Stairs.",
+    "caption_de": "»Auf der Treppe«"
+  },
+  {
+    "chapter": 28,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_223_a.jpg",
+    "caption_en": "At the door.",
+    "caption_de": "»An der Tür«"
+  },
+  {
+    "chapter": 28,
+    "after_paragraph": 11,
+    "kind": "inline",
+    "image": "8000208475274601819_i_227.jpg",
+    "caption_en": "In Conversation with the ladies",
+    "caption_de": "»Im Gespräch mit den Damen«"
+  },
+  {
+    "chapter": 29,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_229_a.jpg",
+    "caption_en": "Lady Catherine, said she, you have given me a treasure.",
+    "caption_de": "»Lady Catherine«, sagte sie, »Sie haben mir einen Schatz geschenkt.«"
+  },
+  {
+    "chapter": 30,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_238_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 30,
+    "after_paragraph": 4,
+    "kind": "inline",
+    "image": "8000208475274601819_i_240.jpg",
+    "caption_en": "he never failed to inform them",
+    "caption_de": "»Er versäumte nie, sie darüber zu informieren.«"
+  },
+  {
+    "chapter": 30,
+    "after_paragraph": 7,
+    "kind": "inline",
+    "image": "8000208475274601819_i_242.jpg",
+    "caption_en": "The gentlemen accompanied him.",
+    "caption_de": "»Die Herren begleiteten ihn.«"
+  },
+  {
+    "chapter": 31,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_244_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 32,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_250_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 32,
+    "after_paragraph": 26,
+    "kind": "inline",
+    "image": "8000208475274601819_i_254.jpg",
+    "caption_en": "Accompanied by their aunt",
+    "caption_de": "»In Begleitung ihrer Tante«"
+  },
+  {
+    "chapter": 33,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_257_a.jpg",
+    "caption_en": "On looking up.",
+    "caption_de": "»Als sie aufblickte«"
+  },
+  {
+    "chapter": 34,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_264_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 35,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_272_a.jpg",
+    "caption_en": "Hearing herself called.",
+    "caption_de": "»Als sie ihren Namen rufen hörte«"
+  },
+  {
+    "chapter": 36,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_282_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 36,
+    "after_paragraph": 4,
+    "kind": "inline",
+    "image": "8000208475274601819_i_285.jpg",
+    "caption_en": "Meeting accidentally in Town",
+    "caption_de": "»Eine zufällige Begegnung in der Stadt«"
+  },
+  {
+    "chapter": 37,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_290_a.jpg",
+    "caption_en": "His parting obeisance.",
+    "caption_de": "»Seine Abschiedsverbeugung«"
+  },
+  {
+    "chapter": 37,
+    "after_paragraph": 9,
+    "kind": "inline",
+    "image": "8000208475274601819_i_292.jpg",
+    "caption_en": "Dawson",
+    "caption_de": "Dawson"
+  },
+  {
+    "chapter": 38,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_296_a.jpg",
+    "caption_en": "The elevation of his feelings.",
+    "caption_de": "»Die Höhe seiner Empfindungen«"
+  },
+  {
+    "chapter": 38,
+    "after_paragraph": 8,
+    "kind": "inline",
+    "image": "8000208475274601819_i_299.jpg",
+    "caption_en": "They had forgotten to leave any message",
+    "caption_de": "»Sie hatten vergessen, eine Nachricht zu hinterlassen.«"
+  },
+  {
+    "chapter": 39,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_301_a.jpg",
+    "caption_en": "How nicely we are crammed in.",
+    "caption_de": "»Wie schön eng wir zusammengedrängt sind!«"
+  },
+  {
+    "chapter": 40,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_307_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 40,
+    "after_paragraph": 27,
+    "kind": "inline",
+    "image": "8000208475274601819_i_312.jpg",
+    "caption_en": "I am determined never to speak of it again",
+    "caption_de": "»Ich habe beschlossen, mit niemandem mehr darüber zu sprechen.«"
+  },
+  {
+    "chapter": 41,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_314_a.jpg",
+    "caption_en": "When Colonel Miller’s regiment went.",
+    "caption_de": "»Als Colonel Millers Regiment abzog«"
+  },
+  {
+    "chapter": 41,
+    "after_paragraph": 22,
+    "kind": "inline",
+    "image": "8000208475274601819_i_319.jpg",
+    "caption_en": "Tenderly flirting",
+    "caption_de": "»Zärtlich flirten«"
+  },
+  {
+    "chapter": 42,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_323_a.jpg",
+    "caption_en": "The arrival of the Gardiners.",
+    "caption_de": "Die Ankunft der Gardiners"
+  },
+  {
+    "chapter": 43,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_330_a.jpg",
+    "caption_en": "Conjecturing as to the date.",
+    "caption_de": "»Sie rätselten über den Zeitpunkt.«"
+  },
+  {
+    "chapter": 44,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_347_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 44,
+    "after_paragraph": 7,
+    "kind": "inline",
+    "image": "8000208475274601819_i_350.jpg",
+    "caption_en": "To make herself agreeable to all",
+    "caption_de": "»Sie wollte allen angenehm sein.«"
+  },
+  {
+    "chapter": 45,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_356_a.jpg",
+    "caption_en": "Engaged by the river.",
+    "caption_de": "»Am Fluss beschäftigt«"
+  },
+  {
+    "chapter": 46,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_363_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 46,
+    "after_paragraph": 11,
+    "kind": "inline",
+    "image": "8000208475274601819_i_368.jpg",
+    "caption_en": "I have not an instant to lose",
+    "caption_de": "»Ich darf keinen Augenblick verlieren.«"
+  },
+  {
+    "chapter": 47,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_374_a.jpg",
+    "caption_en": "The first pleasing earnest of their welcome.",
+    "caption_de": "»Das erste erfreuliche Zeichen ihres Willkommens«"
+  },
+  {
+    "chapter": 48,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_388_a.jpg",
+    "caption_en": "The Post.",
+    "caption_de": "Die Post"
+  },
+  {
+    "chapter": 48,
+    "after_paragraph": 10,
+    "kind": "inline",
+    "image": "8000208475274601819_i_392.jpg",
+    "caption_en": "To whom I have related the affair",
+    "caption_de": "»Dem ich die Angelegenheit erzählt habe«"
+  },
+  {
+    "chapter": 49,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_397_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 49,
+    "after_paragraph": 13,
+    "kind": "inline",
+    "image": "8000208475274601819_i_399.jpg",
+    "caption_en": "But perhaps you would like to read it",
+    "caption_de": "»Aber vielleicht möchten Sie ihn lesen.«"
+  },
+  {
+    "chapter": 50,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_406_a.jpg",
+    "caption_en": "The spiteful old ladies.",
+    "caption_de": "»Die gehässigen alten Damen«"
+  },
+  {
+    "chapter": 51,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_414_a.jpg",
+    "caption_en": "With an affectionate smile.",
+    "caption_de": "»Mit einem liebevollen Lächeln«"
+  },
+  {
+    "chapter": 52,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_422_a.jpg",
+    "caption_en": "I am sure she did not listen.",
+    "caption_de": "»Ich bin sicher, sie hat nicht zugehört.«"
+  },
+  {
+    "chapter": 53,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_433_a.jpg",
+    "caption_en": "Mr. Darcy with him.",
+    "caption_de": "»Mr. Darcy ist bei ihm.«"
+  },
+  {
+    "chapter": 54,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_444_a.jpg",
+    "caption_en": "Jane happened to look round.",
+    "caption_de": "»Jane sah zufällig zurück.«"
+  },
+  {
+    "chapter": 54,
+    "after_paragraph": 28,
+    "kind": "inline",
+    "image": "8000208475274601819_i_449.jpg",
+    "caption_en": "Mrs. Long and her nieces.",
+    "caption_de": "Mrs. Long und ihre Nichten"
+  },
+  {
+    "chapter": 55,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_451_a.jpg",
+    "caption_en": "Lizzy, my dear, I want to speak to you.",
+    "caption_de": "»Lizzy, meine Liebe, ich möchte mit dir sprechen.«"
+  },
+  {
+    "chapter": 56,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_460_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 56,
+    "after_paragraph": 20,
+    "kind": "inline",
+    "image": "8000208475274601819_i_463.jpg",
+    "caption_en": "After a short survey",
+    "caption_de": "»Nach kurzer Besichtigung«"
+  },
+  {
+    "chapter": 57,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_471_a.jpg",
+    "caption_en": "But now it comes out.",
+    "caption_de": "»Aber jetzt kommt es heraus.«"
+  },
+  {
+    "chapter": 58,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_477_a.jpg",
+    "caption_en": "The efforts of his aunt.",
+    "caption_de": "»Die Bemühungen seiner Tante«"
+  },
+  {
+    "chapter": 59,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_486_a.jpg",
+    "caption_en": "Unable to utter a syllable.",
+    "caption_de": "»Unfähig, auch nur eine Silbe hervorzubringen«"
+  },
+  {
+    "chapter": 60,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_495_a.jpg",
+    "caption_en": "The obsequious civility.",
+    "caption_de": "»Die unterwürfige Höflichkeit«"
+  },
+  {
+    "chapter": 61,
+    "after_paragraph": 0,
+    "kind": "chapter-heading",
+    "image": "8000208475274601819_i_501_a.jpg",
+    "caption_en": null,
+    "caption_de": null
+  },
+  {
+    "chapter": 61,
+    "after_paragraph": 11,
+    "kind": "inline",
+    "image": "8000208475274601819_i_505.jpg",
+    "caption_en": null,
+    "caption_de": null
+  }
+]

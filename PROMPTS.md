@@ -2,3 +2,7 @@
   - get the english original of Jane Austens Pride and Prejudice and divide it up in chapters and use a subagent to translate it to modern german. do not use translation services but translate it directly.
   - make me an epub with it. name the original source reference as basis for the translation. name chatgpt with the help of me (Patrick Stein) as translators. write as dedication "Für meine Eltern Brigitte und Wolfgang, damit Ihr Euch auch dran erfreuen könnt". create a git repository for it with the english version and the german version, write a gitea and github action to generate pdf , html and epub for it. commit the first version.
   - I've created a release on GitHub but it's not building the epub, html, pdf as release artifacts. I see a action build the things in a zip. but i want four artefacts, epub, html , pdf and all together as zip
+ - i forgot to add a license file. use MIT license my name:  Patrick Stein aka jollyjinx
+ - add a line to the book where it can be downloaded from (github link)
+ - add a line with the used license to the book as well.
+ - there have been copyrighted images in one english e-pub i found which were from the year 18xx , the copyright is no longer in place so we could use them in the german version as well. have a look where they are and add them including german annotations as the english images have english annotations.

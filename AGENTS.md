@@ -15,6 +15,8 @@ source:
 
 - Die Übersetzung wird direkt aus der mitgelieferten englischen Project-Gutenberg-Ausgabe angefertigt. Keine Übersetzungsdienste und keine Übernahme bestehender deutscher Übersetzungen.
 - `source-chapters/` ist nur die aufbereitete englische Referenz. Die auslieferbaren Kapitel liegen einzeln in `modern-german-chapters/`.
+- `illustrations/` enthält Hugh Thomsons Illustrationen aus der George-Allen-Ausgabe von 1894. `manifest.json` ordnet sie kapitel- und absatzgenau zu und enthält die deutschen Bildunterschriften; die Kapitel-Markdown-Dateien bleiben dadurch textrein.
+- Die historischen Bilddateien werden nicht retuschiert. Wo englischer Text Teil der Zeichnung ist, ergänzt der Buchbau eine deutsche Bildunterschrift unter dem unveränderten Original.
 - Bewahre Handlung, Ironie, Erzählperspektive, Dialogwechsel und Absatzstruktur. Formuliere idiomatisches, gegenwärtiges Hochdeutsch; vermeide bewusst altertümelnde Syntax, sofern sie nicht eine Figur charakterisiert.
 - Namen, Ortsnamen, Anreden und Titel bleiben grundsätzlich englisch. `Mr.`, `Mrs.`, `Miss`, `Lady` und `Sir` bleiben erhalten, damit die soziale Tonlage nicht verfälscht wird.
 - Nutze deutsche Guillemets (`»…«`) für direkte Rede und den langen Gedankenstrich (`—`) für abrupte Unterbrechungen. Kursivsetzungen werden in Markdown mit `*…*` erhalten.
