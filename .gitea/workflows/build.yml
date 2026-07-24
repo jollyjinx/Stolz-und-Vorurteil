@@ -3,24 +3,89 @@ name: Build book editions
 on:
   push:
   pull_request:
+  release:
+    types: [published]
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Existing Gitea release tag to publish the book files to
+        required: false
+        type: string
+
+permissions:
+  code: read
+  releases: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - uses: r-lib/actions/setup-pandoc@v2
-      - name: Install PDF builder
-        run: python -m pip install --upgrade pip reportlab
+      - name: Install book builders
+        run: |
+          apt-get update
+          apt-get install --yes curl jq pandoc python3 python3-reportlab zip
       - name: Verify translation structure
-        run: python tools/verify_translation.py
+        run: python3 tools/verify_translation.py
       - name: Build EPUB, HTML, and PDF editions
-        run: python tools/build_book.py all
+        run: python3 tools/build_book.py all
+      - name: Create all-formats archive
+        run: |
+          zip -j dist/Stolz-und-Vorurteil-modernes-Deutsch.zip \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.epub \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.html \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.pdf
       - uses: actions/upload-artifact@v4
         with:
           name: book-editions
           path: dist/
+      - name: Add book files to Gitea release
+        env:
+          GITEA_API_URL: ${{ gitea.api_url }}
+          GITEA_REPOSITORY: ${{ gitea.repository }}
+          GITEA_TOKEN: ${{ secrets.GITEA_TOKEN }}
+          RELEASE_EVENT_TAG: ${{ gitea.event.release.tag_name }}
+          RELEASE_INPUT_TAG: ${{ inputs.release_tag }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = release ]; then
+            release_tag="$RELEASE_EVENT_TAG"
+          elif [ "$GITHUB_EVENT_NAME" = workflow_dispatch ] && [ -n "$RELEASE_INPUT_TAG" ]; then
+            release_tag="$RELEASE_INPUT_TAG"
+          else
+            exit 0
+          fi
+
+          release_id="$(
+            curl --fail-with-body --silent --show-error \
+              --header "Authorization: token $GITEA_TOKEN" \
+              "$GITEA_API_URL/repos/$GITEA_REPOSITORY/releases/tags/$release_tag" |
+              jq --exit-status --raw-output '.id'
+          )"
+
+          for file in \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.epub \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.html \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.pdf \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.zip
+          do
+            filename="$(basename "$file")"
+            existing_id="$(
+              curl --fail-with-body --silent --show-error \
+                --header "Authorization: token $GITEA_TOKEN" \
+                "$GITEA_API_URL/repos/$GITEA_REPOSITORY/releases/$release_id/assets" |
+                jq --raw-output --arg name "$filename" \
+                  '.[] | select(.name == $name) | .id' |
+                head -n 1
+            )"
+            if [ -n "$existing_id" ]; then
+              curl --fail-with-body --silent --show-error \
+                --request DELETE \
+                --header "Authorization: token $GITEA_TOKEN" \
+                "$GITEA_API_URL/repos/$GITEA_REPOSITORY/releases/$release_id/assets/$existing_id"
+            fi
+            curl --fail-with-body --silent --show-error \
+              --request POST \
+              --header "Authorization: token $GITEA_TOKEN" \
+              --form "attachment=@$file" \
+              "$GITEA_API_URL/repos/$GITEA_REPOSITORY/releases/$release_id/assets?name=$filename"
+          done

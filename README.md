@@ -39,3 +39,9 @@ Beim Veröffentlichen eines GitHub-Releases baut die GitHub Action das Buch und 
 - `Stolz-und-Vorurteil-modernes-Deutsch.zip` mit allen drei Formaten
 
 Für ein bereits vorhandenes Release kann die Action manuell über **Actions → Build book editions → Run workflow** gestartet werden. Dazu wird dessen Tag, zum Beispiel `2026.07.24.0919`, in `release_tag` eingetragen.
+
+## Gitea-Veröffentlichungen
+
+Beim Veröffentlichen eines Gitea-Releases baut die Gitea Action dieselben vier Dateien und hängt sie an das Release. Der Build installiert Python, ReportLab und Pandoc direkt im Debian-Container, damit er auch auf dem ARM64-Runner funktioniert.
+
+Für ein bereits vorhandenes Release kann die Action manuell über **Actions → Build book editions → Run workflow** gestartet werden. Dazu wird dessen Tag in `release_tag` eingetragen. Ein erneuter Lauf ersetzt gleichnamige Release-Dateien.
