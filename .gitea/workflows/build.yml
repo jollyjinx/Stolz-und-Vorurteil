@@ -35,7 +35,9 @@ jobs:
             dist/Stolz-und-Vorurteil-modernes-Deutsch.epub \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.html \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.pdf
-      - uses: actions/upload-artifact@v4
+      # Gitea's artifact service implements the v3 protocol; upstream v4
+      # deliberately rejects servers other than GitHub.com.
+      - uses: actions/upload-artifact@v3
         with:
           name: book-editions
           path: dist/
