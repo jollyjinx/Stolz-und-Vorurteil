@@ -6,3 +6,7 @@
  - add a line to the book where it can be downloaded from (github link)
  - add a line with the used license to the book as well.
  - there have been copyrighted images in one english e-pub i found which were from the year 18xx , the copyright is no longer in place so we could use them in the german version as well. have a look where they are and add them including german annotations as the english images have english annotations.
+ - why is there an image "Beim Lesen von Janes Briefen. Kapitel XXXIV." before the first chapter ?
+ - i prefer it to be placed in the chapter itself
+ - commit and push
+
