@@ -1,0 +1,36 @@
+@page {
+  size: A5;
+  margin: 22mm 18mm;
+}
+
+body {
+  color: #1d1d1d;
+  font-family: Georgia, "DejaVu Serif", serif;
+  font-size: 1em;
+  line-height: 1.55;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  color: #372b20;
+  font-size: 1.7em;
+  margin: 2.5em 0 1em;
+  page-break-before: always;
+}
+
+h1:first-of-type {
+  page-break-before: avoid;
+}
+
+h2 {
+  color: #5e4530;
+  font-size: 1.25em;
+  margin-top: 2em;
+}
+
+p {
+  margin: 0 0 1em;
+  text-align: justify;
+}

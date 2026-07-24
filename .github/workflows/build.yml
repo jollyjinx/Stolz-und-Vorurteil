@@ -1,0 +1,26 @@
+name: Build book editions
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: r-lib/actions/setup-pandoc@v2
+      - name: Install PDF builder
+        run: python -m pip install --upgrade pip reportlab
+      - name: Verify translation structure
+        run: python tools/verify_translation.py
+      - name: Build EPUB, HTML, and PDF editions
+        run: python tools/build_book.py all
+      - uses: actions/upload-artifact@v4
+        with:
+          name: book-editions
+          path: dist/

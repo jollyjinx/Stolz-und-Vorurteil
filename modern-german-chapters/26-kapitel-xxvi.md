@@ -1,0 +1,57 @@
+# Kapitel XXVI
+
+Mrs. Gardiners Warnung an Elizabeth wurde bei der ersten günstigen Gelegenheit, als sie allein miteinander sprechen konnten, pünktlich und freundlich vorgebracht. Nachdem sie ihr ehrlich gesagt hatte, was sie dachte, fuhr sie fort:—
+
+»Du bist ein viel zu vernünftiges Mädchen, Lizzy, um dich nur deshalb zu verlieben, weil man dich davor warnt; deshalb habe ich keine Scheu, offen zu sprechen. Im Ernst, ich möchte, dass du auf der Hut bist. Verstricke dich nicht selbst und versuche auch nicht, ihn in eine Zuneigung hineinzuziehen, die der Mangel an Vermögen so unklug machen würde. Ich habe nichts gegen ihn zu sagen: Er ist ein äußerst interessanter junger Mann; und hätte er das Vermögen, das er haben sollte, könnte ich mir kaum eine bessere Partie für dich denken. Aber so, wie es steht — du darfst deiner Einbildung nicht freien Lauf lassen. Du hast Verstand, und wir alle erwarten, dass du ihn benutzt. Dein Vater würde sich, dessen bin ich sicher, auf deine Entschlossenheit und dein gutes Verhalten verlassen. Du darfst deinen Vater nicht enttäuschen.«
+
+»Liebe Tante, das ist ja wirklich sehr ernst.«
+
+»Ja, und ich hoffe, dich ebenfalls dazu zu bringen, es ernst zu nehmen.«
+
+»Dann brauchst du dir keine Sorgen zu machen. Ich werde auf mich selbst aufpassen und auch auf Mr. Wickham. Er soll sich nicht in mich verlieben, wenn ich es verhindern kann.«
+
+»Elizabeth, jetzt bist du nicht ernst.«
+
+»Verzeih mir. Ich will es noch einmal versuchen. Im Augenblick bin ich nicht in Mr. Wickham verliebt; nein, das bin ich ganz gewiss nicht. Aber er ist ohne jeden Vergleich der angenehmste Mann, den ich je gesehen habe — und wenn er sich wirklich an mich bindet, glaube ich, wäre es besser, wenn er es nicht täte. Ich sehe ein, wie unklug es wäre. Ach, dieser abscheuliche Mr. Darcy! Die Meinung meines Vaters über mich ehrt mich außerordentlich, und es wäre furchtbar für mich, sie zu verlieren. Mein Vater allerdings ist Mr. Wickham zugetan. Kurz gesagt, liebe Tante, es täte mir sehr leid, wenn ich irgendeinen von euch unglücklich machte; aber da wir täglich sehen, dass junge Leute, wenn Zuneigung im Spiel ist, sich durch einen gegenwärtigen Mangel an Vermögen selten von einer Verlobung abhalten lassen, wie kann ich versprechen, klüger als so viele meiner Mitmenschen zu sein, falls ich in Versuchung gerate, oder wie soll ich überhaupt wissen, dass Widerstand klüger wäre? Alles, was ich dir also versprechen kann, ist, nichts zu überstürzen. Ich werde nicht vorschnell glauben, sein wichtigstes Ziel zu sein. Wenn ich mit ihm zusammen bin, werde ich mir nichts wünschen. Kurz, ich werde mein Bestes tun.«
+
+»Vielleicht wäre es gut, wenn du ihn davon abhalten würdest, so häufig hierherzukommen. Zumindest solltest du deine Mutter nicht daran erinnern, ihn einzuladen.«
+
+»Wie ich es neulich getan habe«, sagte Elizabeth mit einem wissenden Lächeln. »Ganz richtig, es wird klug von mir sein, das zu unterlassen. Aber glaub nicht, dass er sonst immer so oft hier ist. Dass er in dieser Woche so häufig eingeladen wurde, geschah deinetwegen. Du kennst die Vorstellungen meiner Mutter davon, wie notwendig ständige Gesellschaft für ihre Freunde ist. Aber wirklich, bei meiner Ehre, ich werde versuchen, das zu tun, was ich für das Klügste halte; und nun hoffe ich, du bist zufrieden.«
+
+Ihre Tante versicherte ihr, dass sie es sei; und nachdem Elizabeth ihr für die freundlichen Hinweise gedankt hatte, trennten sie sich — ein wunderbares Beispiel dafür, dass ein Rat in einer solchen Sache gegeben werden kann, ohne übelgenommen zu werden.
+
+Mr. Collins kehrte kurz nachdem die Gardiners und Jane Hertfordshire verlassen hatten dorthin zurück; da er jedoch bei den Lucases wohnte, war seine Ankunft für Mrs. Bennet keine große Unannehmlichkeit. Seine Hochzeit rückte nun rasch näher; und schließlich hatte sie sich so weit damit abgefunden, dass sie sie für unvermeidlich hielt und sogar wiederholt in gehässigem Ton sagte, sie »hoffe, sie würden glücklich werden«. Donnerstag sollte der Hochzeitstag sein, und am Mittwoch kam Miss Lucas zu ihrem Abschiedsbesuch. Als sie aufstand, um sich zu verabschieden, begleitete Elizabeth sie aus dem Zimmer, beschämt über die unfreundlichen und widerwilligen Glückwünsche ihrer Mutter und selbst aufrichtig bewegt. Als sie zusammen die Treppe hinuntergingen, sagte Charlotte:—
+
+»Ich werde darauf zählen, sehr oft von dir zu hören, Eliza.«
+
+»Das wirst du ganz bestimmt.«
+
+»Und ich habe noch einen Wunsch. Wirst du mich besuchen kommen?«
+
+»Ich hoffe, wir werden uns in Hertfordshire oft sehen.«
+
+»Es ist nicht wahrscheinlich, dass ich Kent für einige Zeit verlasse. Versprich mir deshalb, nach Hunsford zu kommen.«
+
+Elizabeth konnte nicht ablehnen, obwohl sie von dem Besuch wenig Vergnügen erwartete.
+
+»Mein Vater und Maria werden im März zu mir kommen«, fügte Charlotte hinzu, »und ich hoffe, du wirst einwilligen, zur Gesellschaft zu gehören. Wirklich, Eliza, du bist mir ebenso willkommen wie jeder von beiden.«
+
+Die Hochzeit fand statt: Braut und Bräutigam fuhren direkt von der Kirchentür nach Kent, und wie gewöhnlich hatte jeder ebenso viel zu sagen oder zu hören. Elizabeth erhielt bald einen Brief von ihrer Freundin, und ihr Briefwechsel blieb so regelmäßig und häufig wie immer; dass er ebenso offen sein konnte, war unmöglich. Elizabeth konnte Charlotte nie schreiben, ohne zu fühlen, dass aller Trost ihrer Vertrautheit vorbei war; und obwohl sie entschlossen war, als Briefschreiberin nicht nachzulassen, tat sie es um dessen willen, was gewesen war, nicht um dessen willen, was nun war. Charlottes erste Briefe wurden mit großer Erwartung gelesen: Es musste sie interessieren zu erfahren, wie Charlotte von ihrem neuen Zuhause sprach, wie sie Lady Catherine gefiel und wie glücklich sie zu sein wagte; doch nachdem die Briefe gelesen waren, fühlte Elizabeth, dass Charlotte sich in jedem Punkt genau so ausdrückte, wie sie es vorausgesehen hatte. Sie schrieb heiter, schien von allen Annehmlichkeiten umgeben und erwähnte nichts, was sie nicht loben konnte. Haus, Einrichtung, Nachbarschaft und Straßen gefielen ihr alle, und Lady Catherines Verhalten war äußerst freundlich und entgegenkommend. Es war Mr. Collins’ Bild von Hunsford und Rosings, nur vernünftig abgemildert; und Elizabeth erkannte, dass sie ihren eigenen Besuch abwarten musste, um den Rest zu erfahren.
+
+Jane hatte ihrer Schwester bereits ein paar Zeilen geschrieben, um ihre sichere Ankunft in London mitzuteilen; und als sie wieder schrieb, hoffte Elizabeth, dass sie etwas über die Bingleys würde sagen können.
+
+Ihre Ungeduld auf diesen zweiten Brief wurde so belohnt, wie Ungeduld gewöhnlich belohnt wird. Jane war eine Woche in London, ohne Caroline gesehen oder etwas von ihr gehört zu haben. Sie erklärte es sich jedoch damit, dass ihr letzter Brief an die Freundin aus Longbourn durch irgendeinen Zufall verlorengegangen sein müsse.
+
+»Meine Tante«, fuhr sie fort, »fährt morgen in diesen Teil der Stadt, und ich werde die Gelegenheit nutzen, um in der Grosvenor Street vorbeizugehen.«
+
+Sie schrieb erneut, nachdem der Besuch stattgefunden hatte und sie Miss Bingley gesehen hatte. »Ich fand Caroline nicht besonders guter Stimmung«, schrieb sie, »aber sie freute sich sehr, mich zu sehen, und machte mir Vorwürfe, weil ich ihr meine Ankunft in London nicht angekündigt hatte. Ich hatte also recht: Mein letzter Brief war nie bei ihr angekommen. Natürlich erkundigte ich mich nach ihrem Bruder. Ihm ging es gut, aber er war so sehr mit Mr. Darcy beschäftigt, dass sie ihn kaum jemals sahen. Ich erfuhr, dass Miss Darcy zum Essen erwartet wurde; ich wünschte, ich könnte sie sehen. Mein Besuch war nicht lang, da Caroline und Mrs. Hurst ausgehen wollten. Sicher werde ich sie bald hier sehen.«
+
+Elizabeth schüttelte über diesem Brief den Kopf. Er überzeugte sie, dass nur der Zufall Mr. Bingley entdecken lassen könnte, dass ihre Schwester in London war.
+
+Vier Wochen vergingen, und Jane sah nichts von ihm. Sie versuchte, sich einzureden, dass sie es nicht bedaure; aber Miss Bingleys Gleichgültigkeit konnte sie nicht länger übersehen. Nachdem sie vierzehn Tage lang jeden Vormittag zu Hause gewartet und jeden Abend eine neue Entschuldigung für sie erfunden hatte, erschien die Besucherin schließlich doch; aber die Kürze ihres Aufenthalts und mehr noch die Veränderung ihres Benehmens ließen Jane sich nicht länger täuschen. Der Brief, den sie bei dieser Gelegenheit an ihre Schwester schrieb, wird zeigen, was sie empfand:—
+
+Dieser Brief bereitete Elizabeth einigen Schmerz; doch ihre gute Laune kehrte zurück, als sie bedachte, dass Jane sich wenigstens nicht länger von der Schwester täuschen lassen würde. Jede Hoffnung auf den Bruder war nun völlig vorbei. Sie wollte nicht einmal eine Erneuerung seiner Aufmerksamkeit wünschen. Sein Charakter sank jedes Mal in ihrer Achtung, wenn sie darüber nachdachte; und zu seiner Strafe wie auch als möglicher Vorteil für Jane hoffte sie ernsthaft, er würde wirklich bald Mr. Darcys Schwester heiraten, denn nach Wickhams Darstellung würde sie ihn reichlich bereuen lassen, was er weggeworfen hatte.
+
+Ungefähr zu dieser Zeit erinnerte Mrs. Gardiner Elizabeth an ihr Versprechen in Bezug auf diesen Herrn und verlangte Auskunft; und Elizabeth hatte etwas zu berichten, das ihrer Tante eher Genugtuung als ihr selbst bereiten konnte. Seine offensichtliche Vorliebe war abgeklungen, seine Aufmerksamkeiten waren vorbei, er bewunderte eine andere. Elizabeth war aufmerksam genug, alles zu sehen, aber sie konnte es sehen und darüber schreiben, ohne nennenswerten Schmerz zu empfinden. Ihr Herz war nur leicht berührt worden, und ihre Eitelkeit war damit zufrieden zu glauben, dass sie seine einzige Wahl gewesen wäre, wenn das Vermögen es erlaubt hätte. Der plötzliche Erwerb von zehntausend Pfund war der bemerkenswerteste Reiz der jungen Dame, um die er sich nun bemühte; doch Elizabeth, in diesem Fall vielleicht weniger scharfsichtig als bei Charlotte, nahm es ihm nicht übel, dass er sich Unabhängigkeit wünschte. Im Gegenteil, nichts konnte natürlicher sein; und da sie annehmen konnte, dass es ihn einige Kämpfe gekostet hatte, auf sie zu verzichten, war sie bereit, es für beide als kluge und wünschenswerte Entscheidung gelten zu lassen, und konnte ihm ganz aufrichtig Glück wünschen.
+
+All dies gestand sie Mrs. Gardiner ein; und nachdem sie die Umstände erzählt hatte, fuhr sie fort: »Ich bin jetzt überzeugt, liebe Tante, dass ich nie sehr verliebt gewesen bin; denn hätte ich diese reine und erhebende Leidenschaft wirklich erfahren, müsste ich jetzt schon seinen Namen hassen und ihm alles erdenklich Böse wünschen. Aber meine Gefühle ihm gegenüber sind nicht nur herzlich, sie sind sogar Miss King gegenüber unvoreingenommen. Ich kann nicht entdecken, dass ich sie überhaupt hasse oder auch nur im Geringsten ungern glaube, dass sie ein sehr nettes Mädchen ist. Darin kann keine Liebe liegen. Meine Wachsamkeit war wirksam; und obwohl ich für alle meine Bekannten gewiss ein interessanterer Gegenstand wäre, wenn ich wahnsinnig in ihn verliebt wäre, kann ich nicht sagen, dass ich meine vergleichsweise Unbedeutsamkeit bedaure. Wichtigkeit kann manchmal zu teuer erkauft sein. Kitty und Lydia nehmen seine Untreue viel mehr zu Herzen als ich. Sie sind in den Wegen der Welt noch unerfahren und noch nicht für die demütigende Erkenntnis offen, dass schöne junge Männer ebenso etwas zum Leben brauchen wie die weniger hübschen.«
