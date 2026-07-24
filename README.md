@@ -30,7 +30,7 @@ python3 tools/verify_translation.py
 
 Die Übersetzungsregeln stehen in [AGENTS.md](AGENTS.md). Die Eingabe-EPUB selbst bleibt unverändert in `/Users/jolly/Downloads/pg1342-images-3.epub`.
 
-Die deutsche Ausgabe übernimmt das Frontispiz, die Kapitelköpfe, Szenenbilder und Schlussvignetten der illustrierten Ausgabe. Englische Bildtexte im historischen Originalbild bleiben unverändert; zusätzlich erscheint jeweils eine deutsche Bildunterschrift. Um die Bilddateien und ihre Positionen erneut aus der Quell-EPUB zu importieren:
+Die deutsche Ausgabe übernimmt die Kapitelköpfe, Szenenbilder und Schlussvignetten der illustrierten Ausgabe. Das historische Frontispiz »Reading Jane’s Letters. Chap 34.« erscheint als Szenenbild unmittelbar nach dem ersten Absatz von Kapitel XXXIV. Englische Bildtexte im historischen Originalbild bleiben unverändert; zusätzlich erscheint jeweils eine deutsche Bildunterschrift. Um die Bilddateien und ihre Positionen erneut aus der Quell-EPUB zu importieren:
 
 ```sh
 python3 tools/import_illustrations.py /Users/jolly/Downloads/pg1342-images-3.epub

@@ -178,22 +178,22 @@ def collect(epub_path: Path) -> list[dict[str, object]]:
 
     with zipfile.ZipFile(epub_path) as epub:
         front_document = ET.fromstring(epub.read(EPUB_MEMBERS[0]))
-        frontispieces = [
+        source_frontispieces = [
             node
             for node in front_document.iter()
             if local_name(node) == "img" and "_i_003.jpg" in node.get("src", "")
         ]
-        if len(frontispieces) != 1:
-            raise RuntimeError("Expected exactly one frontispiece.")
-        frontispiece = illustration_entry(
-            frontispieces[0],
-            chapter=0,
-            after_paragraph=0,
-            kind="frontispiece",
-            container=frontispieces[0],
+        if len(source_frontispieces) != 1:
+            raise RuntimeError("Expected exactly one source frontispiece.")
+        jane_letters_illustration = illustration_entry(
+            source_frontispieces[0],
+            chapter=34,
+            after_paragraph=1,
+            kind="inline",
+            container=source_frontispieces[0],
         )
-        assert frontispiece is not None
-        entries.append(frontispiece)
+        assert jane_letters_illustration is not None
+        entries.append(jane_letters_illustration)
 
         for member in EPUB_MEMBERS:
             document = ET.fromstring(epub.read(member))
@@ -241,7 +241,13 @@ def collect(epub_path: Path) -> list[dict[str, object]]:
 
     if chapter_number != 61:
         raise RuntimeError(f"Expected 61 chapters, found {chapter_number}.")
-    return entries
+    return sorted(
+        entries,
+        key=lambda entry: (
+            int(entry["chapter"]),
+            int(entry["after_paragraph"]),
+        ),
+    )
 
 
 def import_files(epub_path: Path, entries: list[dict[str, object]]) -> None:

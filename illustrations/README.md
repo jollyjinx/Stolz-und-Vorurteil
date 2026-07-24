@@ -5,11 +5,11 @@ Dieser Ordner enthält 97 Zeichnungen von Hugh Thomson aus der 1894 bei George A
 `manifest.json` hält für jede Abbildung fest:
 
 - Kapitel und Position nach dem jeweils vorausgehenden Absatz
-- Art der Abbildung (Frontispiz, Kapitelkopf oder Illustration im Text)
+- Art der Abbildung (Kapitelkopf oder Illustration im Text)
 - englische Originalbeschriftung
 - deutsche Bildunterschrift
 
-Die historischen Bilddateien bleiben unverändert. Englische Schrift, die Teil einer Zeichnung ist, bleibt deshalb sichtbar; die deutsche Ausgabe ergänzt darunter eine deutsche Bildunterschrift. Die dekorativen Initialbuchstaben der englischen Ausgabe sind nicht enthalten.
+Die historischen Bilddateien bleiben unverändert. Englische Schrift, die Teil einer Zeichnung ist, bleibt deshalb sichtbar; die deutsche Ausgabe ergänzt darunter eine deutsche Bildunterschrift. Das Frontispiz der englischen Ausgabe zeigt eine Szene aus Kapitel XXXIV und wird in der deutschen Ausgabe dort nach dem ersten Absatz eingesetzt. Die dekorativen Initialbuchstaben der englischen Ausgabe sind nicht enthalten.
 
 Der Import lässt sich mit folgendem Befehl reproduzieren:
 

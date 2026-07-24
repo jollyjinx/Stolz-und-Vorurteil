@@ -142,9 +142,7 @@ def build_markdown(edition: dict[str, object]) -> Path:
         frontispieces = [
             entry for entry in illustrations if int(entry["chapter"]) == 0
         ]
-        if len(frontispieces) != 1:
-            raise RuntimeError("Expected exactly one frontispiece.")
-        parts.append(markdown_illustration(frontispieces[0]))
+        parts.extend(markdown_illustration(entry) for entry in frontispieces)
         parts.extend(
             illustrated_chapter_markdown(path, number, illustrations)
             for number, path in enumerate(chapters, start=1)
@@ -263,16 +261,17 @@ def build_pdf(edition: dict[str, object]) -> None:
         frontispieces = [
             entry for entry in illustrations if int(entry["chapter"]) == 0
         ]
-        if len(frontispieces) != 1:
-            raise RuntimeError("Expected exactly one frontispiece.")
-        story.append(
-            pdf_illustration(
-                frontispieces[0],
-                caption,
-                max_height=142 * mm,
+        for frontispiece in frontispieces:
+            story.extend(
+                [
+                    pdf_illustration(
+                        frontispiece,
+                        caption,
+                        max_height=142 * mm,
+                    ),
+                    PageBreak(),
+                ]
             )
-        )
-        story.append(PageBreak())
 
     chapter_dir = edition["chapters"]
     assert isinstance(chapter_dir, Path)

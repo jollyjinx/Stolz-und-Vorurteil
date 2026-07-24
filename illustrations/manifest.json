@@ -1,13 +1,5 @@
 [
   {
-    "chapter": 0,
-    "after_paragraph": 0,
-    "kind": "frontispiece",
-    "image": "8000208475274601819_i_003.jpg",
-    "caption_en": "Reading Jane’s Letters. Chap 34.",
-    "caption_de": "Beim Lesen von Janes Briefen. Kapitel XXXIV."
-  },
-  {
     "chapter": 1,
     "after_paragraph": 0,
     "kind": "chapter-heading",
@@ -462,6 +454,14 @@
     "image": "8000208475274601819_i_264_a.jpg",
     "caption_en": null,
     "caption_de": null
+  },
+  {
+    "chapter": 34,
+    "after_paragraph": 1,
+    "kind": "inline",
+    "image": "8000208475274601819_i_003.jpg",
+    "caption_en": "Reading Jane’s Letters. Chap 34.",
+    "caption_de": "Beim Lesen von Janes Briefen. Kapitel XXXIV."
   },
   {
     "chapter": 35,
