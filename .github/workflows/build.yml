@@ -3,7 +3,14 @@ name: Build book editions
 on:
   push:
   pull_request:
+  release:
+    types: [published]
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Existing GitHub release tag to publish the book files to
+        required: false
+        type: string
 
 jobs:
   build:
@@ -24,3 +31,36 @@ jobs:
         with:
           name: book-editions
           path: dist/
+
+  publish-release-assets:
+    if: >-
+      github.event_name == 'release' ||
+      (github.event_name == 'workflow_dispatch' && inputs.release_tag != '')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download built editions
+        uses: actions/download-artifact@v4
+        with:
+          name: book-editions
+          path: dist
+      - name: Create all-formats archive
+        run: |
+          zip -j dist/Stolz-und-Vorurteil-modernes-Deutsch.zip \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.epub \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.html \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.pdf
+      - name: Add book files to GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.event_name == 'release' && github.event.release.tag_name || inputs.release_tag }}
+        run: |
+          gh release upload "$RELEASE_TAG" \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.epub \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.html \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.pdf \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.zip \
+            --clobber

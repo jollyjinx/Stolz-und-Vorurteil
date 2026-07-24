@@ -28,3 +28,14 @@ python3 tools/verify_translation.py
 ```
 
 Die Übersetzungsregeln stehen in [AGENTS.md](AGENTS.md). Die Eingabe-EPUB selbst bleibt unverändert in `/Users/jolly/Downloads/pg1342-images-3.epub`.
+
+## GitHub-Veröffentlichungen
+
+Beim Veröffentlichen eines GitHub-Releases baut die GitHub Action das Buch und hängt vier Dateien an das Release:
+
+- `Stolz-und-Vorurteil-modernes-Deutsch.epub`
+- `Stolz-und-Vorurteil-modernes-Deutsch.html`
+- `Stolz-und-Vorurteil-modernes-Deutsch.pdf`
+- `Stolz-und-Vorurteil-modernes-Deutsch.zip` mit allen drei Formaten
+
+Für ein bereits vorhandenes Release kann die Action manuell über **Actions → Build book editions → Run workflow** gestartet werden. Dazu wird dessen Tag, zum Beispiel `2026.07.24.0919`, in `release_tag` eingetragen.
