@@ -17,8 +17,10 @@ from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY
 from reportlab.lib.pagesizes import A5
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
+from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.platypus import (
     Image as ReportLabImage,
+    ImageAndFlowables,
     KeepTogether,
     PageBreak,
     Paragraph,
@@ -32,6 +34,11 @@ DIST = ROOT / "dist"
 CSS = ROOT / "book.css"
 ILLUSTRATIONS = ROOT / "illustrations"
 ILLUSTRATION_MANIFEST = ILLUSTRATIONS / "manifest.json"
+INITIAL_MANIFESTS = [
+    ILLUSTRATIONS / "initials" / "manifest.json",
+    ILLUSTRATIONS / "generated-initials" / "manifest.json",
+]
+OPENING_INITIAL = re.compile(r"^(?P<prefix>[^A-ZÄÖÜ]*)(?P<letter>[A-ZÄÖÜ])(?P<rest>.*)$", re.DOTALL)
 
 EDITIONS = {
     "german": {
@@ -44,6 +51,8 @@ EDITIONS = {
         "translator": "ChatGPT, mit Hilfe von Patrick Stein",
         "illustrator": "Hugh Thomson",
         "illustrations": True,
+        "initials": True,
+        "initials_credit": "Dekorative Initialen: Hugh Thomson (1894); F, U und Z ergänzt mit OpenAI (2026)",
         "dedication": "Für meine Eltern Brigitte und Wolfgang, damit Ihr Euch auch dran erfreuen könnt",
         "download_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/releases",
         "license_name": "MIT License",
@@ -62,6 +71,51 @@ EDITIONS = {
         "language": "en-US",
     },
 }
+
+
+class OpeningInitialImage(ReportLabImage):
+    """A scalable initial image with optional punctuation on its left."""
+
+    def __init__(self, filename: str, prefix: str = "") -> None:
+        super().__init__(filename)
+        scale = min(
+            (14 * mm) / self.imageWidth,
+            (25 * mm) / self.imageHeight,
+            1.0,
+        )
+        self._opening_image_width = self.imageWidth * scale
+        self._opening_image_height = self.imageHeight * scale
+        self._opening_prefix = prefix
+        self._opening_prefix_font_size = 15.0
+        self._opening_prefix_width = (
+            stringWidth(prefix, "Times-Roman", self._opening_prefix_font_size)
+            + 0.6 * mm
+            if prefix
+            else 0.0
+        )
+        self._opening_natural_height = self._opening_image_height
+        self.drawWidth = self._opening_prefix_width + self._opening_image_width
+        self.drawHeight = self._opening_image_height
+
+    def draw(self) -> None:
+        factor = self.drawHeight / self._opening_natural_height
+        prefix_width = self._opening_prefix_width * factor
+        if self._opening_prefix:
+            font_size = self._opening_prefix_font_size * factor
+            self.canv.setFont("Times-Roman", font_size)
+            self.canv.drawString(
+                0,
+                self.drawHeight - font_size * 0.86,
+                self._opening_prefix,
+            )
+        self.canv.drawImage(
+            self._img or self.filename,
+            prefix_width,
+            0,
+            self._opening_image_width * factor,
+            self._opening_image_height * factor,
+            mask=self._mask,
+        )
 
 
 def run(command: list[str]) -> None:
@@ -97,10 +151,136 @@ def markdown_illustration(entry: dict[str, object]) -> str:
     return f"![{caption}]({path}){{.book-illustration}}"
 
 
+def load_initials() -> list[dict[str, object]]:
+    entries: list[dict[str, object]] = []
+    for manifest in INITIAL_MANIFESTS:
+        if not manifest.exists():
+            raise RuntimeError(f"Initial manifest is missing: {manifest}")
+        manifest_entries = json.loads(manifest.read_text(encoding="utf-8"))
+        if not isinstance(manifest_entries, list):
+            raise RuntimeError(f"Initial manifest must contain a JSON list: {manifest}")
+        entries.extend(manifest_entries)
+
+    for entry in entries:
+        letter = str(entry.get("letter", ""))
+        if len(letter) != 1 or not letter.isalpha() or not letter.isupper():
+            raise RuntimeError(f"Invalid initial letter: {letter!r}")
+        image = ILLUSTRATIONS / str(entry["image"])
+        if not image.exists():
+            raise RuntimeError(f"Initial image is missing: {image}")
+    return entries
+
+
+def split_opening_initial(
+    paragraph: str,
+    expected_letter: str | None = None,
+) -> tuple[str, str, str]:
+    match = OPENING_INITIAL.match(paragraph)
+    if not match:
+        raise RuntimeError(f"Cannot find chapter-opening initial in: {paragraph[:80]!r}")
+    prefix = match.group("prefix")
+    letter = match.group("letter")
+    remainder = match.group("rest")
+    if expected_letter is not None and letter != expected_letter:
+        raise RuntimeError(
+            f"Chapter begins with {letter!r}, but its initial image is "
+            f"cataloged as {expected_letter!r}."
+        )
+    return prefix, letter, remainder
+
+
+def assign_initials(
+    chapters: list[Path],
+    catalog: list[dict[str, object]],
+) -> dict[int, dict[str, object]]:
+    openings = {
+        number: split_opening_initial(
+            next(
+                block.strip()
+                for block in chapter.read_text(encoding="utf-8").split("\n\n")
+                if block.strip() and not block.lstrip().startswith("#")
+            )
+        )
+        for number, chapter in enumerate(chapters, start=1)
+    }
+    assignments: dict[int, dict[str, object]] = {}
+    used_images: set[str] = set()
+
+    # Preserve an initial in its historical source chapter whenever the
+    # translated opening happens to begin with the same letter.
+    for chapter, (_, letter, _) in openings.items():
+        exact = next(
+            (
+                entry
+                for entry in catalog
+                if entry.get("source_chapter") == chapter
+                and str(entry["letter"]) == letter
+            ),
+            None,
+        )
+        if exact:
+            assignments[chapter] = exact
+            used_images.add(str(exact["image"]))
+
+    # Then use every still-available design for the required letter before
+    # repeating one.  This keeps the German edition as varied as possible.
+    for chapter, (_, letter, _) in openings.items():
+        if chapter in assignments:
+            continue
+        unused = [
+            entry
+            for entry in catalog
+            if str(entry["letter"]) == letter
+            and str(entry["image"]) not in used_images
+        ]
+        if unused:
+            chosen = unused[0]
+            assignments[chapter] = chosen
+            used_images.add(str(chosen["image"]))
+
+    repeated_by_letter: dict[str, int] = {}
+    for chapter, (_, letter, _) in openings.items():
+        if chapter in assignments:
+            continue
+        candidates = [
+            entry for entry in catalog if str(entry["letter"]) == letter
+        ]
+        if not candidates:
+            raise RuntimeError(f"No decorative initial is available for {letter!r}.")
+        repeat_index = repeated_by_letter.get(letter, 0)
+        assignments[chapter] = candidates[repeat_index % len(candidates)]
+        repeated_by_letter[letter] = repeat_index + 1
+
+    if len(assignments) != len(chapters):
+        raise RuntimeError(
+            f"Expected {len(chapters)} initial assignments, found {len(assignments)}."
+        )
+    return assignments
+
+
+def markdown_initial(
+    paragraph: str,
+    entry: dict[str, object],
+) -> str:
+    prefix, letter, remainder = split_opening_initial(
+        paragraph,
+        str(entry["letter"]),
+    )
+    path = f"illustrations/{entry['image']}"
+    image = f"![{letter}]({path}){{.chapter-initial}}"
+    if prefix:
+        punctuation = f"[{prefix}]{{.chapter-initial-punctuation}}"
+        group = f"[{punctuation}{image}]{{.chapter-initial-group}}"
+    else:
+        group = f"[{image}]{{.chapter-initial-group}}"
+    return f"{group}{remainder}"
+
+
 def illustrated_chapter_markdown(
     chapter: Path,
     chapter_number: int,
     illustrations: list[dict[str, object]],
+    initial: dict[str, object] | None = None,
 ) -> str:
     blocks = [
         block.strip()
@@ -123,6 +303,8 @@ def illustrated_chapter_markdown(
     output = [blocks[0]]
     output.extend(markdown_illustration(entry) for entry in by_position.get(0, []))
     for position, paragraph in enumerate(body, start=1):
+        if position == 1 and initial:
+            paragraph = markdown_initial(paragraph, initial)
         output.append(paragraph)
         output.extend(
             markdown_illustration(entry)
@@ -139,12 +321,22 @@ def build_markdown(edition: dict[str, object]) -> Path:
     chapters = chapter_files(chapter_dir)
     if edition.get("illustrations"):
         illustrations = load_illustrations()
+        initials = (
+            assign_initials(chapters, load_initials())
+            if edition.get("initials")
+            else {}
+        )
         frontispieces = [
             entry for entry in illustrations if int(entry["chapter"]) == 0
         ]
         parts.extend(markdown_illustration(entry) for entry in frontispieces)
         parts.extend(
-            illustrated_chapter_markdown(path, number, illustrations)
+            illustrated_chapter_markdown(
+                path,
+                number,
+                illustrations,
+                initials.get(number),
+            )
             for number, path in enumerate(chapters, start=1)
         )
     else:
@@ -213,6 +405,14 @@ def pdf_illustration(
     return KeepTogether(flowables)
 
 
+def pdf_initial_image(
+    entry: dict[str, object],
+    prefix: str = "",
+) -> OpeningInitialImage:
+    image_path = ILLUSTRATIONS / str(entry["image"])
+    return OpeningInitialImage(str(image_path), prefix)
+
+
 def build_pdf(edition: dict[str, object]) -> None:
     basename = str(edition["basename"])
     output = DIST / f"{basename}.pdf"
@@ -242,6 +442,8 @@ def build_pdf(edition: dict[str, object]) -> None:
         story.append(Paragraph(f"Deutsche Übersetzung: {edition['translator']}", credit))
     if edition.get("illustrator"):
         story.append(Paragraph(f"Illustrationen: {edition['illustrator']} (1894)", credit))
+    if edition.get("initials_credit"):
+        story.append(Paragraph(str(edition["initials_credit"]), credit))
     if edition.get("dedication"):
         story.extend([Spacer(1, 24), Paragraph(str(edition["dedication"]), credit)])
     if edition.get("download_url"):
@@ -276,6 +478,11 @@ def build_pdf(edition: dict[str, object]) -> None:
     chapter_dir = edition["chapters"]
     assert isinstance(chapter_dir, Path)
     chapters = chapter_files(chapter_dir)
+    initials = (
+        assign_initials(chapters, load_initials())
+        if edition.get("initials")
+        else {}
+    )
     for chapter_index, chapter in enumerate(chapters):
         blocks = [block.strip() for block in chapter.read_text(encoding="utf-8").split("\n\n") if block.strip()]
         chapter_illustrations = [
@@ -299,7 +506,23 @@ def build_pdf(edition: dict[str, object]) -> None:
             for entry in by_position.get(0, [])
         )
         for position, block in enumerate(blocks[1:], start=1):
-            story.append(Paragraph(inline_markdown(block), body))
+            initial = initials.get(chapter_index + 1) if position == 1 else None
+            if initial:
+                prefix, _, remainder = split_opening_initial(
+                    block,
+                    str(initial["letter"]),
+                )
+                story.append(
+                    ImageAndFlowables(
+                        pdf_initial_image(initial, prefix),
+                        [Paragraph(inline_markdown(remainder), body)],
+                        imageRightPadding=3 * mm,
+                        imageBottomPadding=1.5 * mm,
+                        imageSide="left",
+                    )
+                )
+            else:
+                story.append(Paragraph(inline_markdown(block), body))
             story.extend(
                 pdf_illustration(entry, caption)
                 for entry in by_position.get(position, [])

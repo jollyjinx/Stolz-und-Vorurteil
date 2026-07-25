@@ -1,6 +1,6 @@
 # Illustrationen
 
-Dieser Ordner enthält 97 Zeichnungen von Hugh Thomson aus der 1894 bei George Allen erschienenen illustrierten Ausgabe von Jane Austens *Pride and Prejudice*. Sie wurden aus der mitgelieferten Project-Gutenberg-EPUB `pg1342-images-3.epub` übernommen.
+Dieser Ordner enthält 97 Zeichnungen und 59 dekorative Initialbuchstaben von Hugh Thomson aus der 1894 bei George Allen erschienenen illustrierten Ausgabe von Jane Austens *Pride and Prejudice*. Sie wurden aus der mitgelieferten Project-Gutenberg-EPUB `pg1342-images-3.epub` übernommen.
 
 `manifest.json` hält für jede Abbildung fest:
 
@@ -9,7 +9,9 @@ Dieser Ordner enthält 97 Zeichnungen von Hugh Thomson aus der 1894 bei George A
 - englische Originalbeschriftung
 - deutsche Bildunterschrift
 
-Die historischen Bilddateien bleiben unverändert. Englische Schrift, die Teil einer Zeichnung ist, bleibt deshalb sichtbar; die deutsche Ausgabe ergänzt darunter eine deutsche Bildunterschrift. Das Frontispiz der englischen Ausgabe zeigt eine Szene aus Kapitel XXXIV und wird in der deutschen Ausgabe dort nach dem ersten Absatz eingesetzt. Die dekorativen Initialbuchstaben der englischen Ausgabe sind nicht enthalten.
+Die historischen Bilddateien bleiben unverändert. Englische Schrift, die Teil einer Zeichnung ist, bleibt deshalb sichtbar; die deutsche Ausgabe ergänzt darunter eine deutsche Bildunterschrift. Das Frontispiz der englischen Ausgabe zeigt eine Szene aus Kapitel XXXIV und wird in der deutschen Ausgabe dort nach dem ersten Absatz eingesetzt.
+
+`initials/` enthält die 59 tatsächlich als Buchstaben gezeichneten historischen Kapitelinitialen und ihr Manifest. Kapitel I verwendet im englischen EPUB nur ein gesetztes `I`; Kapitel XXXVI stellt neben dem ausgeschriebenen Namen `ELIZABETH` ein buchstabenloses Schwertornament, das nicht zum Buchstabenkatalog gehört. Die drei im Originalbestand fehlenden deutschen Initialen `F`, `U` und `Z` liegen als neu erzeugte, ausdrücklich nicht historische Ergänzungen unter `generated-initials/`.
 
 Der Import lässt sich mit folgendem Befehl reproduzieren:
 

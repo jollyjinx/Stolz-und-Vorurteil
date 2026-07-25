@@ -35,6 +35,35 @@ p {
   text-align: justify;
 }
 
+.chapter-initial-group {
+  display: inline-block;
+  float: left;
+  line-height: 1;
+  margin: 0.1em 0.45em 0.05em 0;
+  white-space: nowrap;
+}
+
+.chapter-initial {
+  display: inline-block;
+  height: auto;
+  margin: 0;
+  max-height: 8em;
+  max-width: 5em;
+  object-fit: contain;
+  vertical-align: top;
+  width: auto;
+}
+
+.chapter-initial-punctuation {
+  color: #1d1d1d;
+  display: inline-block;
+  font-family: Georgia, "DejaVu Serif", serif;
+  font-size: 1.65em;
+  line-height: 1;
+  margin-right: 0.08em;
+  vertical-align: top;
+}
+
 figure {
   margin: 2em auto;
   break-inside: avoid;

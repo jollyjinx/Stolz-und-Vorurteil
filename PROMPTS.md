@@ -9,4 +9,6 @@
  - why is there an image "Beim Lesen von Janes Briefen. Kapitel XXXIV." before the first chapter ?
  - i prefer it to be placed in the chapter itself
  - commit and push
-
+ - do we have enough first chapter letter images to use them in german version - which letters are missing so we might gernerate a few ourselves
+ - create the missing 3 letter images in the same style
+ - they are very nice we use them as well as the original ones and add them to the german version so that we have a german version with those chapter letters.

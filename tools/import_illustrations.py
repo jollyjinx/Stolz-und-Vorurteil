@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Import Hugh Thomson's 1894 illustrations from the supplied EPUB.
+"""Import Hugh Thomson's 1894 illustrations and initials from the EPUB.
 
 The generated manifest records the original location of each illustration as
 the number of the preceding prose paragraph.  This keeps the translated
 chapter Markdown text-only while allowing the build to place each image at the
-same point in the German edition.
+same point in the German edition.  A separate catalog records the decorative
+chapter-opening initials by letter and source chapter.
 """
 
 from __future__ import annotations
@@ -20,6 +21,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ILLUSTRATIONS = ROOT / "illustrations"
 MANIFEST = ILLUSTRATIONS / "manifest.json"
+INITIALS = ILLUSTRATIONS / "initials"
+INITIAL_MANIFEST = INITIALS / "manifest.json"
 EPUB_MEMBERS = [
     f"OEBPS/4736806169548129032_1342-h-{part}.htm.xhtml"
     for part in range(6)
@@ -250,6 +253,63 @@ def collect(epub_path: Path) -> list[dict[str, object]]:
     )
 
 
+def collect_initials(epub_path: Path) -> list[dict[str, object]]:
+    entries: list[dict[str, object]] = []
+    chapter_number = 0
+
+    with zipfile.ZipFile(epub_path) as epub:
+        for member in EPUB_MEMBERS:
+            document = ET.fromstring(epub.read(member))
+            body = next(
+                node for node in document.iter() if local_name(node) == "body"
+            )
+            for node in body:
+                ids = [
+                    descendant.get("id", "")
+                    for descendant in node.iter()
+                    if descendant.get("id")
+                ]
+                if (
+                    local_name(node) == "h2"
+                    and any(CHAPTER_ID.match(value) for value in ids)
+                ):
+                    chapter_number += 1
+                    continue
+                if not chapter_number:
+                    continue
+
+                for image in (
+                    descendant
+                    for descendant in node.iter()
+                    if local_name(descendant) == "img"
+                ):
+                    filename = Path(image.get("src", "")).name
+                    if not filename.lower().endswith("_b.png"):
+                        continue
+                    letter_match = re.search(
+                        r"[A-Z]",
+                        image.get("alt", "").lstrip("“”\"' "),
+                    )
+                    # Chapter XXXVI uses a tall sword ornament beside a
+                    # typeset E.  It is not itself an initial letter.
+                    if not letter_match:
+                        continue
+                    entries.append(
+                        {
+                            "source_chapter": chapter_number,
+                            "letter": letter_match.group(0),
+                            "image": f"initials/{filename}",
+                            "source": "Hugh Thomson, 1894",
+                        }
+                    )
+
+    if chapter_number != 61:
+        raise RuntimeError(f"Expected 61 chapters, found {chapter_number}.")
+    if len(entries) != 59:
+        raise RuntimeError(f"Expected 59 lettered initial images, found {len(entries)}.")
+    return entries
+
+
 def import_files(epub_path: Path, entries: list[dict[str, object]]) -> None:
     missing = sorted(
         {
@@ -275,6 +335,21 @@ def import_files(epub_path: Path, entries: list[dict[str, object]]) -> None:
     )
 
 
+def import_initial_files(
+    epub_path: Path,
+    entries: list[dict[str, object]],
+) -> None:
+    INITIALS.mkdir(exist_ok=True)
+    with zipfile.ZipFile(epub_path) as epub:
+        for relative_path in sorted({str(entry["image"]) for entry in entries}):
+            filename = Path(relative_path).name
+            (INITIALS / filename).write_bytes(epub.read(f"OEBPS/{filename}"))
+    INITIAL_MANIFEST.write_text(
+        json.dumps(entries, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("epub", type=Path)
@@ -285,11 +360,22 @@ def main() -> None:
     )
     args = parser.parse_args()
     entries = collect(args.epub)
+    initials = collect_initials(args.epub)
     if args.inspect:
-        print(json.dumps(entries, ensure_ascii=False, indent=2))
+        print(
+            json.dumps(
+                {"illustrations": entries, "initials": initials},
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
     else:
         import_files(args.epub, entries)
-        print(f"Imported {len(entries)} illustrations into {ILLUSTRATIONS}.")
+        import_initial_files(args.epub, initials)
+        print(
+            f"Imported {len(entries)} illustrations and {len(initials)} "
+            f"decorative initials into {ILLUSTRATIONS}."
+        )
 
 
 if __name__ == "__main__":

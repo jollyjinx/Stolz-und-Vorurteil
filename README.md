@@ -12,7 +12,7 @@ Eine direkte Neuübersetzung von Jane Austens *Pride and Prejudice* in modernes 
 
 - `source-chapters/`: englische Referenzkapitel, aus der EPUB extrahiert
 - `modern-german-chapters/`: die 61 fertigen deutschen Kapitel
-- `illustrations/`: 97 Illustrationen von Hugh Thomson aus der George-Allen-Ausgabe von 1894 sowie das Manifest ihrer Kapitel- und Absatzpositionen
+- `illustrations/`: 97 Illustrationen und 59 dekorative Initialen von Hugh Thomson aus der George-Allen-Ausgabe von 1894, ergänzt um drei neu erzeugte Initialen für `F`, `U` und `Z`
 - `frontmatter/`: Titel-, Quellen- und Widmungsseiten
 - `tools/`: Extraktion, Prüfung und Erstellung der Buchausgaben
 - `dist/`: erzeugte EPUB-, HTML- und PDF-Ausgaben beider Sprachfassungen
@@ -30,7 +30,11 @@ python3 tools/verify_translation.py
 
 Die Übersetzungsregeln stehen in [AGENTS.md](AGENTS.md). Die Eingabe-EPUB selbst bleibt unverändert in `/Users/jolly/Downloads/pg1342-images-3.epub`.
 
-Die deutsche Ausgabe übernimmt die Kapitelköpfe, Szenenbilder und Schlussvignetten der illustrierten Ausgabe. Das historische Frontispiz »Reading Jane’s Letters. Chap 34.« erscheint als Szenenbild unmittelbar nach dem ersten Absatz von Kapitel XXXIV. Englische Bildtexte im historischen Originalbild bleiben unverändert; zusätzlich erscheint jeweils eine deutsche Bildunterschrift. Um die Bilddateien und ihre Positionen erneut aus der Quell-EPUB zu importieren:
+Die deutsche Ausgabe übernimmt die Kapitelköpfe, Szenenbilder, Schlussvignetten und dekorativen Kapitelinitialen der illustrierten Ausgabe. Das historische Frontispiz »Reading Jane’s Letters. Chap 34.« erscheint als Szenenbild unmittelbar nach dem ersten Absatz von Kapitel XXXIV. Englische Bildtexte im historischen Originalbild bleiben unverändert; zusätzlich erscheint jeweils eine deutsche Bildunterschrift.
+
+Für jedes deutsche Kapitel wählt der Buchbau eine Initiale mit dem passenden Anfangsbuchstaben. Wenn möglich bleibt das historische Bild in seinem Ursprungskapitel; danach werden zunächst alle verfügbaren Varianten eines Buchstabens verwendet, bevor sich ein Motiv wiederholt. Die im englischen Bestand nicht vorhandenen Buchstaben `F`, `U` und `Z` werden durch ausdrücklich als neu erzeugt dokumentierte Bilder ergänzt.
+
+Um die historischen Bilddateien, Initialen und ihre Manifeste erneut aus der Quell-EPUB zu importieren:
 
 ```sh
 python3 tools/import_illustrations.py /Users/jolly/Downloads/pg1342-images-3.epub
