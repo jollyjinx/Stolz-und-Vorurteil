@@ -1,59 +1,94 @@
-# Stolz und Vorurteil - modernes Deutsch
+# Pride and Prejudice / Stolz und Vorurteil
 
-Eine direkte Neuübersetzung von Jane Austens *Pride and Prejudice* in modernes
-Deutsch, ergänzt um vollständig zweisprachige Ausgaben für deutsch- und
-englischsprachige Leser sowie für Englisch- und Deutschlernende. Grundlage ist
-die mitgelieferte Project-Gutenberg-EPUB-Ausgabe des englischen Originals.
+## Modern German and bilingual editions / Moderne deutsche und zweisprachige Ausgaben
 
-## Ausgaben
+**English:** A direct new translation of Jane Austen’s *Pride and Prejudice*
+into modern German, accompanied by fully bilingual editions for English- and
+German-speaking readers as well as language learners. The English text is
+based on the supplied Project Gutenberg EPUB edition.
 
-| Build-Ziel | Inhalt und Zielgruppe | Dateibasis | Im Release |
+**Deutsch:** Eine direkte Neuübersetzung von Jane Austens *Pride and
+Prejudice* in modernes Deutsch, ergänzt um vollständig zweisprachige Ausgaben
+für deutsch- und englischsprachige Leser sowie für Sprachlernende. Grundlage
+des englischen Textes ist die mitgelieferte Project-Gutenberg-EPUB-Ausgabe.
+
+## Editions / Ausgaben
+
+| Build target / Build-Ziel | Contents / Inhalt | Filename / Dateibasis | Release |
 |---|---|---|---|
-| `german` | moderne deutsche Übersetzung | `Stolz-und-Vorurteil-modernes-Deutsch` | ja |
-| `english` | englisches Project-Gutenberg-Original | `Pride-and-Prejudice-English` | nein, nur Build-Artefakt |
-| `german-english` | vollständig zweisprachig, Deutsch vor Englisch | `Stolz-und-Vorurteil-Deutsch-Englisch` | ja |
-| `english-german` | vollständig zweisprachig, Englisch vor Deutsch | `Pride-and-Prejudice-Englisch-Deutsch` | ja |
+| `german` | Modern German translation / Moderne deutsche Übersetzung | `Stolz-und-Vorurteil-modernes-Deutsch` | yes / ja |
+| `english` | Project Gutenberg English original / Englisches Project-Gutenberg-Original | `Pride-and-Prejudice-English` | build artifact only / nur Build-Artefakt |
+| `german-english` | Fully bilingual, German first / Vollständig zweisprachig, Deutsch zuerst | `Stolz-und-Vorurteil-Deutsch-Englisch` | yes / ja |
+| `english-german` | Fully bilingual, English first / Vollständig zweisprachig, Englisch zuerst | `Pride-and-Prejudice-Englisch-Deutsch` | yes / ja |
 
-Die deutsche Übersetzung stammt von ChatGPT, mit Hilfe von Patrick Stein. Die
-Widmung lautet: »Für meine Eltern Brigitte und Wolfgang, damit Ihr Euch auch
-dran erfreuen könnt«.
+**English:** The German translation was created by ChatGPT with the assistance
+of Patrick Stein. The dedication reads: “For my parents Brigitte and Wolfgang,
+so that you may enjoy it too.”
 
-## Zweisprachig für deutsche und englische Leser
+**Deutsch:** Die deutsche Übersetzung stammt von ChatGPT, mit Hilfe von
+Patrick Stein. Die Widmung lautet: »Für meine Eltern Brigitte und Wolfgang,
+damit Ihr Euch auch dran erfreuen könnt«.
 
-Beide zweisprachigen Fassungen enthalten denselben vollständigen Roman und dieselben
-1.974 deutsch-englischen Absatzpaare. Jeder Absatz ist in beiden Sprachen
-vorhanden. Dadurch können deutsch- und englischsprachige Leser den ganzen
-Roman in ihrer bevorzugten Sprache lesen und den jeweils anderen Text direkt
-daneben vergleichen. Die Ausgaben unterscheiden sich nur in der
-Leserichtung:
+## Bilingual reading / Zweisprachig lesen
 
-- `german-english` beginnt jedes Absatzpaar mit der modernen deutschen
-  Übersetzung und zeigt direkt danach das englische Original. Diese Variante
-  eignet sich besonders für Leser, die Deutsch zuerst sehen möchten, sowie
-  für Deutschsprachige beim Englischlernen.
-- `english-german` beginnt jedes Absatzpaar mit dem englischen Original und
-  zeigt direkt danach die moderne deutsche Übersetzung. Diese Variante eignet
-  sich besonders für Leser, die Englisch zuerst sehen möchten, sowie für
-  Englischsprachige beim Deutschlernen.
+**English:** Both bilingual editions contain the complete novel as 1,974
+German-English paragraph pairs. Every paragraph is present in both languages,
+allowing English- and German-speaking readers to read in their preferred
+language while keeping the other text immediately available for comparison.
 
-Beide Varianten sind gleichwertige zweisprachige Leseausgaben. Sie sind nicht
-nur Lernhilfen: Deutsch- und Englischsprachige können sie ebenso zum
-gemeinsamen Lesen oder zum unmittelbaren Vergleich von Original und
-Übersetzung verwenden, ohne zwischen getrennten Büchern zu wechseln.
+- `german-english` presents the modern German translation first, followed
+  directly by the English original. It is especially convenient for readers
+  who prefer German first and for German speakers learning English.
+- `english-german` presents the English original first, followed directly by
+  the modern German translation. It is especially convenient for readers who
+  prefer English first and for English speakers learning German.
 
-## Aufbau
+These are equal bilingual reading editions, not merely study aids. They also
+support shared reading and direct comparison of Jane Austen’s original with
+the modern German translation without switching between separate books.
 
-- `source-chapters/`: englische Referenzkapitel, aus der EPUB extrahiert
-- `modern-german-chapters/`: die 61 fertigen deutschen Kapitel
-- `illustrations/`: 97 Illustrationen und 59 dekorative Initialen von Hugh Thomson aus der George-Allen-Ausgabe von 1894, ergänzt um drei neu erzeugte Initialen für `F`, `U` und `Z`
-- `frontmatter/`: Titel-, Quellen- und Widmungsseiten
-- `tools/`: Extraktion, Prüfung und Erstellung der Buchausgaben
-- `dist/`: erzeugte EPUB-, HTML- und PDF-Ausgaben der deutschen, englischen und beiden zweisprachigen Fassungen
-- `.github/workflows/` und `.gitea/workflows/`: CI-Builds für GitHub Actions und Gitea Actions
+**Deutsch:** Beide zweisprachigen Fassungen enthalten den vollständigen Roman
+in 1.974 deutsch-englischen Absatzpaaren. Jeder Absatz ist in beiden Sprachen
+vorhanden. Dadurch können deutsch- und englischsprachige Leser in ihrer
+bevorzugten Sprache lesen und den jeweils anderen Text direkt vergleichen.
 
-## Bauen
+- `german-english` zeigt zuerst die moderne deutsche Übersetzung und direkt
+  danach das englische Original. Diese Variante eignet sich besonders für
+  Leser, die Deutsch zuerst sehen möchten, sowie für Deutschsprachige beim
+  Englischlernen.
+- `english-german` zeigt zuerst das englische Original und direkt danach die
+  moderne deutsche Übersetzung. Diese Variante eignet sich besonders für
+  Leser, die Englisch zuerst sehen möchten, sowie für Englischsprachige beim
+  Deutschlernen.
 
-Voraussetzungen: Python 3, `reportlab` und Pandoc.
+Beide Varianten sind gleichwertige zweisprachige Leseausgaben und nicht nur
+Lernhilfen. Sie ermöglichen ebenso gemeinsames Lesen und den unmittelbaren
+Vergleich von Jane Austens Original mit der modernen deutschen Übersetzung,
+ohne zwischen getrennten Büchern zu wechseln.
+
+## Repository layout / Aufbau
+
+- `source-chapters/`: English reference chapters extracted from the EPUB /
+  englische Referenzkapitel, aus der EPUB extrahiert
+- `modern-german-chapters/`: all 61 completed German chapters / alle 61
+  fertigen deutschen Kapitel
+- `illustrations/`: 97 Hugh Thomson illustrations and 59 historical
+  decorative initials from the 1894 George Allen edition, plus three newly
+  generated initials for `F`, `U`, and `Z` / 97 Illustrationen und 59
+  historische Initialen von Hugh Thomson, ergänzt um drei neu erzeugte
+  Initialen für `F`, `U` und `Z`
+- `frontmatter/`: title, source, and dedication pages / Titel-, Quellen- und
+  Widmungsseiten
+- `tools/`: extraction, verification, and book-building tools / Werkzeuge für
+  Extraktion, Prüfung und Buchbau
+- `dist/`: generated EPUB, HTML, and PDF editions / erzeugte EPUB-, HTML- und
+  PDF-Ausgaben
+- `.github/workflows/` and `.gitea/workflows/`: GitHub Actions and Gitea
+  Actions builds / CI-Builds für GitHub Actions und Gitea Actions
+
+## Build / Bauen
+
+**Requirements / Voraussetzungen:** Python 3, `reportlab`, and Pandoc.
 
 ```sh
 python3 -m pip install reportlab
@@ -61,53 +96,120 @@ python3 tools/build_book.py all
 python3 tools/verify_translation.py
 ```
 
-Eine einzelne Ausgabe lässt sich mit `german`, `english`, `german-english`
-oder `english-german` statt `all` bauen. `bilingual` bleibt als Kurzform für
-`german-english` erhalten. Beide zweisprachigen Fassungen werden
-automatisch aus den absatzgleichen deutschen und englischen Kapiteln erzeugt,
-sodass die Texte bei späteren Korrekturen synchron bleiben.
+**English:** Replace `all` with `german`, `english`, `german-english`, or
+`english-german` to build a single edition. `bilingual` remains an alias for
+`german-english`. The bilingual editions are generated automatically from the
+paragraph-aligned English and German chapters, keeping both texts synchronized
+when corrections are made.
 
-In beiden zweisprachigen Fassungen erscheinen die 68 vorhandenen Bildunterschriftspaare
-zweisprachig und in der jeweiligen Sprachreihenfolge. Der Buchbau prüft, dass
-eine Beschriftung entweder in beiden Sprachen oder in keiner vorhanden ist.
-Bild und sämtliche Unterschriften werden als gemeinsamer, untrennbarer
-Seitenblock gesetzt, damit keine Beschriftung auf die Folgeseite rutscht.
+**Deutsch:** Statt `all` kann mit `german`, `english`, `german-english` oder
+`english-german` eine einzelne Ausgabe gebaut werden. `bilingual` bleibt als
+Kurzform für `german-english` erhalten. Die zweisprachigen Fassungen werden
+automatisch aus den absatzgleichen englischen und deutschen Kapiteln erzeugt,
+sodass beide Texte bei späteren Korrekturen synchron bleiben.
 
-Die Übersetzungsregeln stehen in [AGENTS.md](AGENTS.md). Die Eingabe-EPUB selbst bleibt unverändert in `/Users/jolly/Downloads/pg1342-images-3.epub`.
+### Illustrations and captions / Illustrationen und Bildunterschriften
 
-Die deutsche Ausgabe übernimmt die Kapitelköpfe, Szenenbilder, Schlussvignetten und dekorativen Kapitelinitialen der illustrierten Ausgabe. Das historische Frontispiz »Reading Jane’s Letters. Chap 34.« erscheint als Szenenbild unmittelbar nach dem ersten Absatz von Kapitel XXXIV. Englische Bildtexte im historischen Originalbild bleiben unverändert; zusätzlich erscheint jeweils eine deutsche Bildunterschrift.
+**English:** Both bilingual editions contain 68 complete caption pairs in
+their respective language order. The build verifies that a caption exists in
+both languages or in neither. Each image and all of its captions form one
+unbreakable page block, preventing captions from moving to the next page.
 
-Für jedes deutsche Kapitel wählt der Buchbau eine Initiale mit dem passenden Anfangsbuchstaben. Wenn möglich bleibt das historische Bild in seinem Ursprungskapitel; danach werden zunächst alle verfügbaren Varianten eines Buchstabens verwendet, bevor sich ein Motiv wiederholt. Die im englischen Bestand nicht vorhandenen Buchstaben `F`, `U` und `Z` werden durch ausdrücklich als neu erzeugt dokumentierte Bilder ergänzt.
+The German edition includes the chapter headings, scene illustrations, ending
+vignettes, and decorative chapter initials from the illustrated source. The
+historical frontispiece “Reading Jane’s Letters. Chap 34.” appears as a scene
+illustration after the first paragraph of Chapter XXXIV. English text drawn
+inside a historical illustration remains unchanged and is accompanied by a
+translated caption.
 
-Um die historischen Bilddateien, Initialen und ihre Manifeste erneut aus der Quell-EPUB zu importieren:
+For every German chapter, the builder selects an initial matching its opening
+letter. It keeps the historical design in its source chapter where possible,
+then uses every available variant before repeating a design. The missing
+letters `F`, `U`, and `Z` are supplied by clearly documented newly generated
+images.
+
+**Deutsch:** Beide zweisprachigen Fassungen enthalten 68 vollständige
+Bildunterschriftspaare in der jeweiligen Sprachreihenfolge. Der Buchbau prüft,
+dass eine Beschriftung entweder in beiden Sprachen oder in keiner vorhanden
+ist. Bild und sämtliche Unterschriften bilden einen gemeinsamen,
+untrennbaren Seitenblock, damit keine Beschriftung auf die Folgeseite rutscht.
+
+Die deutsche Ausgabe übernimmt Kapitelköpfe, Szenenbilder, Schlussvignetten
+und dekorative Kapitelinitialen der illustrierten Quelle. Das historische
+Frontispiz »Reading Jane’s Letters. Chap 34.« erscheint als Szenenbild nach
+dem ersten Absatz von Kapitel XXXIV. Englischer Text innerhalb einer
+historischen Zeichnung bleibt unverändert und wird durch eine übersetzte
+Bildunterschrift ergänzt.
+
+Für jedes deutsche Kapitel wählt der Buchbau eine Initiale mit dem passenden
+Anfangsbuchstaben. Wenn möglich bleibt das historische Motiv in seinem
+Ursprungskapitel; danach werden alle verfügbaren Varianten verwendet, bevor
+sich ein Motiv wiederholt. Die fehlenden Buchstaben `F`, `U` und `Z` werden
+durch eindeutig dokumentierte neu erzeugte Bilder ergänzt.
+
+**English:** The source assets can be imported again with the following
+command.
+
+**Deutsch:** Die Quellbilder und Manifeste lassen sich mit folgendem Befehl
+erneut importieren.
 
 ```sh
 python3 tools/import_illustrations.py /Users/jolly/Downloads/pg1342-images-3.epub
 ```
 
-## GitHub-Veröffentlichungen
+**English:** Translation rules are documented in [AGENTS.md](AGENTS.md). The
+source EPUB remains unchanged at
+`/Users/jolly/Downloads/pg1342-images-3.epub`.
 
-Beim Veröffentlichen eines GitHub-Releases baut die GitHub Action die deutsche
-Fassung und beide zweisprachigen Fassungen. Sie hängt für jede Ausgabe drei
-Formate sowie ein Formatarchiv an das Release:
+**Deutsch:** Die Übersetzungsregeln stehen in [AGENTS.md](AGENTS.md). Die
+Quell-EPUB bleibt unter `/Users/jolly/Downloads/pg1342-images-3.epub`
+unverändert.
+
+## GitHub releases / GitHub-Veröffentlichungen
+
+**English:** Publishing a GitHub release builds the modern German edition and
+both bilingual editions. Each is attached in three formats and as a ZIP
+archive:
+
+**Deutsch:** Beim Veröffentlichen eines GitHub-Releases werden die moderne
+deutsche und beide zweisprachigen Fassungen gebaut. Jede wird in drei Formaten
+und als ZIP-Archiv angehängt:
 
 - `Stolz-und-Vorurteil-modernes-Deutsch.epub`
 - `Stolz-und-Vorurteil-modernes-Deutsch.html`
 - `Stolz-und-Vorurteil-modernes-Deutsch.pdf`
-- `Stolz-und-Vorurteil-modernes-Deutsch.zip` mit allen drei Formaten
+- `Stolz-und-Vorurteil-modernes-Deutsch.zip`
 - `Stolz-und-Vorurteil-Deutsch-Englisch.epub`
 - `Stolz-und-Vorurteil-Deutsch-Englisch.html`
 - `Stolz-und-Vorurteil-Deutsch-Englisch.pdf`
-- `Stolz-und-Vorurteil-Deutsch-Englisch.zip` mit allen drei Formaten
+- `Stolz-und-Vorurteil-Deutsch-Englisch.zip`
 - `Pride-and-Prejudice-Englisch-Deutsch.epub`
 - `Pride-and-Prejudice-Englisch-Deutsch.html`
 - `Pride-and-Prejudice-Englisch-Deutsch.pdf`
-- `Pride-and-Prejudice-Englisch-Deutsch.zip` mit allen drei Formaten
+- `Pride-and-Prejudice-Englisch-Deutsch.zip`
 
-Für ein bereits vorhandenes Release kann die Action manuell über **Actions → Build book editions → Run workflow** gestartet werden. Dazu wird dessen Tag, zum Beispiel `2026.07.24.0919`, in `release_tag` eingetragen.
+**English:** To publish the files to an existing release, run **Actions →
+Build book editions → Run workflow** and enter its tag, for example
+`2026.07.24.0919`, in `release_tag`.
 
-## Gitea-Veröffentlichungen
+**Deutsch:** Um die Dateien an ein vorhandenes Release anzuhängen, unter
+**Actions → Build book editions → Run workflow** dessen Tag, zum Beispiel
+`2026.07.24.0919`, in `release_tag` eintragen.
 
-Beim Veröffentlichen eines Gitea-Releases baut die Gitea Action dieselben zwölf Dateien und hängt sie an das Release. Der Build installiert Python, ReportLab und Pandoc direkt im Debian-Container, damit er auch auf dem ARM64-Runner funktioniert.
+## Gitea releases / Gitea-Veröffentlichungen
 
-Für ein bereits vorhandenes Release kann die Action manuell über **Actions → Build book editions → Run workflow** gestartet werden. Dazu wird dessen Tag in `release_tag` eingetragen. Ein erneuter Lauf ersetzt gleichnamige Release-Dateien.
+**English:** Gitea Actions builds and publishes the same twelve files. The
+workflow installs Python, ReportLab, and Pandoc in its Debian container so it
+also works on the ARM64 runner. A repeated run replaces release assets with
+the same names.
+
+**Deutsch:** Gitea Actions baut und veröffentlicht dieselben zwölf Dateien.
+Der Workflow installiert Python, ReportLab und Pandoc im Debian-Container,
+damit er auch auf dem ARM64-Runner funktioniert. Ein erneuter Lauf ersetzt
+gleichnamige Release-Dateien.
+
+**English:** For an existing release, run **Actions → Build book editions →
+Run workflow** and provide its tag in `release_tag`.
+
+**Deutsch:** Für ein vorhandenes Release unter **Actions → Build book editions
+→ Run workflow** dessen Tag in `release_tag` eintragen.
