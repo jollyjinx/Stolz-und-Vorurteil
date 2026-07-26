@@ -15,3 +15,4 @@
  - for german english learners a version would be good where each paragraph would be first in german , then in english
  - looks good, make it two versions one german english the other english german , make it that those versions are build additionally to the prior german only book
  - the image subtitles are missing translations, furthermore they should always be blow the image and not be placed on the next page as it's cumbersome to see the image and read the image annotation on the next page.
+ - update the documentation that it contains versions for english and german learners alike and it should be bi-lingual so english and german speakers can read it

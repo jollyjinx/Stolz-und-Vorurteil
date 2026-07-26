@@ -40,6 +40,23 @@ INITIAL_MANIFESTS = [
 ]
 OPENING_INITIAL = re.compile(r"^(?P<prefix>[^A-ZÄÖÜ]*)(?P<letter>[A-ZÄÖÜ])(?P<rest>.*)$", re.DOTALL)
 
+COVER_LABELS = {
+    "de": {
+        "by": "Von",
+        "translation": "Deutsche Übersetzung",
+        "illustrations": "Illustrationen",
+        "download": "Kostenloser Download",
+        "license": "Lizenz",
+    },
+    "en": {
+        "by": "By",
+        "translation": "German translation",
+        "illustrations": "Illustrations",
+        "download": "Free download",
+        "license": "License",
+    },
+}
+
 EDITIONS = {
     "german": {
         "chapters": ROOT / "modern-german-chapters",
@@ -76,7 +93,7 @@ EDITIONS = {
         "frontmatter": ROOT / "frontmatter" / "bilingual.md",
         "basename": "Stolz-und-Vorurteil-Deutsch-Englisch",
         "title": "Stolz und Vorurteil / Pride and Prejudice",
-        "subtitle": "Eine deutsch-englische Ausgabe für Lernende",
+        "subtitle": "Vollständig zweisprachig: Deutsch zuerst",
         "author": "Jane Austen",
         "translator": "ChatGPT, mit Hilfe von Patrick Stein",
         "illustrator": "Hugh Thomson",
@@ -87,7 +104,7 @@ EDITIONS = {
         "secondary_language": "en",
         "secondary_label": "EN",
         "initials_credit": "Dekorative Initialen: Hugh Thomson (1894); F, U und Z ergänzt mit OpenAI (2026)",
-        "dedication": "Für alle, die mit Jane Austen Deutsch oder Englisch lernen möchten",
+        "dedication": "Für deutsch- und englischsprachige Leser und alle, die die jeweils andere Sprache lernen",
         "download_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/releases",
         "license_name": "MIT License",
         "license_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/blob/main/LICENSE",
@@ -99,7 +116,7 @@ EDITIONS = {
         "frontmatter": ROOT / "frontmatter" / "english-german.md",
         "basename": "Pride-and-Prejudice-Englisch-Deutsch",
         "title": "Pride and Prejudice / Stolz und Vorurteil",
-        "subtitle": "Eine englisch-deutsche Ausgabe für Lernende",
+        "subtitle": "Fully bilingual: English first",
         "author": "Jane Austen",
         "translator": "ChatGPT, mit Hilfe von Patrick Stein",
         "illustrator": "Hugh Thomson",
@@ -110,8 +127,8 @@ EDITIONS = {
         "primary_language": "en",
         "secondary_language": "de",
         "secondary_label": "DE",
-        "initials_credit": "Dekorative Initialen: Hugh Thomson (1894)",
-        "dedication": "Für alle, die mit Jane Austen Englisch oder Deutsch lernen möchten",
+        "initials_credit": "Decorative initials: Hugh Thomson (1894)",
+        "dedication": "For German- and English-speaking readers and everyone learning either language",
         "download_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/releases",
         "license_name": "MIT License",
         "license_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/blob/main/LICENSE",
@@ -649,12 +666,24 @@ def build_pdf(edition: dict[str, object]) -> None:
                              fontSize=9.5, leading=13, alignment=TA_CENTER,
                              textColor=HexColor("#5e4530"), spaceBefore=7, spaceAfter=2)
 
+    cover_language = str(edition["language"])[:2]
+    cover_labels = COVER_LABELS.get(cover_language, COVER_LABELS["en"])
     story = [Paragraph(str(edition["title"]), title), Paragraph(str(edition["subtitle"]), subtitle)]
-    story.append(Paragraph(f"Von {edition['author']}", credit))
+    story.append(Paragraph(f"{cover_labels['by']} {edition['author']}", credit))
     if edition.get("translator"):
-        story.append(Paragraph(f"Deutsche Übersetzung: {edition['translator']}", credit))
+        story.append(
+            Paragraph(
+                f"{cover_labels['translation']}: {edition['translator']}",
+                credit,
+            )
+        )
     if edition.get("illustrator"):
-        story.append(Paragraph(f"Illustrationen: {edition['illustrator']} (1894)", credit))
+        story.append(
+            Paragraph(
+                f"{cover_labels['illustrations']}: {edition['illustrator']} (1894)",
+                credit,
+            )
+        )
     if edition.get("initials_credit"):
         story.append(Paragraph(str(edition["initials_credit"]), credit))
     if edition.get("dedication"):
@@ -663,12 +692,22 @@ def build_pdf(edition: dict[str, object]) -> None:
         download_url = html.escape(str(edition["download_url"]), quote=True)
         story.extend([
             Spacer(1, 12),
-            Paragraph(f'Kostenloser Download:<br/><link href="{download_url}">{download_url}</link>', credit),
+            Paragraph(
+                f'{cover_labels["download"]}:<br/>'
+                f'<link href="{download_url}">{download_url}</link>',
+                credit,
+            ),
         ])
     if edition.get("license_name") and edition.get("license_url"):
         license_name = html.escape(str(edition["license_name"]))
         license_url = html.escape(str(edition["license_url"]), quote=True)
-        story.append(Paragraph(f'Lizenz: <link href="{license_url}">{license_name}</link>', credit))
+        story.append(
+            Paragraph(
+                f'{cover_labels["license"]}: '
+                f'<link href="{license_url}">{license_name}</link>',
+                credit,
+            )
+        )
     story.append(PageBreak())
 
     illustrations = load_illustrations() if edition.get("illustrations") else []

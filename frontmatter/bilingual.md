@@ -1,17 +1,17 @@
 ---
 title: "Stolz und Vorurteil / Pride and Prejudice"
-subtitle: "Eine deutsch-englische Ausgabe für Lernende"
+subtitle: "Vollständig zweisprachig: Deutsch zuerst"
 author: "Jane Austen"
 translator: "ChatGPT, mit Hilfe von Patrick Stein"
 lang: de-DE
 rights: "Der englische Originaltext und Hugh Thomsons Illustrationen von 1894 sind gemeinfrei. Diese Übersetzung sowie die ergänzenden Initialen F, U und Z wurden mit OpenAI erstellt."
 ---
 
-# Für alle, die mit Jane Austen Deutsch oder Englisch lernen möchten
+# Zweisprachig lesen: Deutsch zuerst
 
-## Zu dieser Lernfassung
+## Zu dieser zweisprachigen Ausgabe
 
-Jeder Abschnitt erscheint zuerst in modernem Deutsch und unmittelbar danach im englischen Original. So lassen sich Bedeutung, Wortwahl und Satzbau Absatz für Absatz vergleichen.
+Diese vollständig zweisprachige Ausgabe richtet sich an deutsche und englische Leser sowie an Sprachlernende. Jeder Abschnitt erscheint zuerst in modernem Deutsch und unmittelbar danach im englischen Original. So kann der Roman auf Deutsch gelesen werden, während Original, Bedeutung, Wortwahl und Satzbau direkt zum Vergleich bereitstehen.
 
 **Original:** Jane Austen, *Pride and Prejudice* (1813).
 
@@ -19,7 +19,7 @@ Jeder Abschnitt erscheint zuerst in modernem Deutsch und unmittelbar danach im e
 
 **Deutsche Übersetzung:** ChatGPT, mit Hilfe von Patrick Stein.
 
-**Illustrationen:** Hugh Thomson, aus der 1894 bei George Allen erschienenen illustrierten Ausgabe. Die deutschen Bildunterschriften folgen der vorliegenden Übersetzung.
+**Illustrationen:** Hugh Thomson, aus der 1894 bei George Allen erschienenen illustrierten Ausgabe. Unter jeder beschrifteten Abbildung stehen zuerst die deutsche Übersetzung und danach die englische Originalbeschriftung; Bild und beide Zeilen bleiben auf derselben Seite.
 
 **Dekorative Initialen:** Die historischen Initialen stammen von Hugh Thomson. Die im englischen Bestand fehlenden Buchstaben `F`, `U` und `Z` wurden 2026 mit OpenAI passend ergänzt.
 

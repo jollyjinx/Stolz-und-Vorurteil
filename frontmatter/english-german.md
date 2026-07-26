@@ -1,17 +1,17 @@
 ---
 title: "Pride and Prejudice / Stolz und Vorurteil"
-subtitle: "Eine englisch-deutsche Ausgabe für Lernende"
+subtitle: "Fully bilingual: English first"
 author: "Jane Austen"
 translator: "ChatGPT, mit Hilfe von Patrick Stein"
 lang: en-US
 rights: "The English source text and Hugh Thomson's 1894 illustrations are in the public domain. The German translation was created with OpenAI."
 ---
 
-# For everyone learning English or German with Jane Austen
+# Bilingual reading: English first
 
-## About this learning edition
+## About this bilingual edition
 
-Each paragraph appears first in the English original and immediately afterwards in modern German. This makes it easy to compare meaning, vocabulary, and sentence structure paragraph by paragraph.
+This fully bilingual edition is for English- and German-speaking readers as well as language learners. Each paragraph appears first in the English original and immediately afterwards in modern German. Readers can enjoy the novel in English while keeping the translation, meaning, vocabulary, and sentence structure immediately available for comparison.
 
 **Original:** Jane Austen, *Pride and Prejudice* (1813).
 
@@ -19,7 +19,7 @@ Each paragraph appears first in the English original and immediately afterwards 
 
 **German translation:** ChatGPT, with the assistance of Patrick Stein.
 
-**Illustrations:** Hugh Thomson, from the illustrated edition published by George Allen in 1894. Captions follow the English original.
+**Illustrations:** Hugh Thomson, from the illustrated edition published by George Allen in 1894. Every captioned illustration is followed first by its original English caption and then by the German translation; the image and both lines remain on the same page.
 
 **Decorative initials:** The historical initials are by Hugh Thomson. Where no matching historical design is available, the regular typeset opening letter is retained.
 

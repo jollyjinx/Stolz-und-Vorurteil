@@ -1,14 +1,45 @@
 # Stolz und Vorurteil - modernes Deutsch
 
-Eine direkte Neuübersetzung von Jane Austens *Pride and Prejudice* in modernes Deutsch. Grundlage ist die mitgelieferte Project-Gutenberg-EPUB-Ausgabe des englischen Originals.
+Eine direkte Neuübersetzung von Jane Austens *Pride and Prejudice* in modernes
+Deutsch, ergänzt um vollständig zweisprachige Ausgaben für deutsch- und
+englischsprachige Leser sowie für Englisch- und Deutschlernende. Grundlage ist
+die mitgelieferte Project-Gutenberg-EPUB-Ausgabe des englischen Originals.
 
 ## Ausgaben
 
-- Englisches Original: Jane Austen, *Pride and Prejudice* (1813), aus der mitgelieferten Project-Gutenberg-Ausgabe.
-- Deutsche Übersetzung: ChatGPT, mit Hilfe von Patrick Stein.
-- Deutsch-englische Lernfassung: jeder Absatz zuerst in modernem Deutsch, danach im englischen Original.
-- Englisch-deutsche Lernfassung: jeder Absatz zuerst im englischen Original, danach in modernem Deutsch.
-- Widmung: »Für meine Eltern Brigitte und Wolfgang, damit Ihr Euch auch dran erfreuen könnt«.
+| Build-Ziel | Inhalt und Zielgruppe | Dateibasis | Im Release |
+|---|---|---|---|
+| `german` | moderne deutsche Übersetzung | `Stolz-und-Vorurteil-modernes-Deutsch` | ja |
+| `english` | englisches Project-Gutenberg-Original | `Pride-and-Prejudice-English` | nein, nur Build-Artefakt |
+| `german-english` | vollständig zweisprachig, Deutsch vor Englisch | `Stolz-und-Vorurteil-Deutsch-Englisch` | ja |
+| `english-german` | vollständig zweisprachig, Englisch vor Deutsch | `Pride-and-Prejudice-Englisch-Deutsch` | ja |
+
+Die deutsche Übersetzung stammt von ChatGPT, mit Hilfe von Patrick Stein. Die
+Widmung lautet: »Für meine Eltern Brigitte und Wolfgang, damit Ihr Euch auch
+dran erfreuen könnt«.
+
+## Zweisprachig für deutsche und englische Leser
+
+Beide zweisprachigen Fassungen enthalten denselben vollständigen Roman und dieselben
+1.974 deutsch-englischen Absatzpaare. Jeder Absatz ist in beiden Sprachen
+vorhanden. Dadurch können deutsch- und englischsprachige Leser den ganzen
+Roman in ihrer bevorzugten Sprache lesen und den jeweils anderen Text direkt
+daneben vergleichen. Die Ausgaben unterscheiden sich nur in der
+Leserichtung:
+
+- `german-english` beginnt jedes Absatzpaar mit der modernen deutschen
+  Übersetzung und zeigt direkt danach das englische Original. Diese Variante
+  eignet sich besonders für Leser, die Deutsch zuerst sehen möchten, sowie
+  für Deutschsprachige beim Englischlernen.
+- `english-german` beginnt jedes Absatzpaar mit dem englischen Original und
+  zeigt direkt danach die moderne deutsche Übersetzung. Diese Variante eignet
+  sich besonders für Leser, die Englisch zuerst sehen möchten, sowie für
+  Englischsprachige beim Deutschlernen.
+
+Beide Varianten sind gleichwertige zweisprachige Leseausgaben. Sie sind nicht
+nur Lernhilfen: Deutsch- und Englischsprachige können sie ebenso zum
+gemeinsamen Lesen oder zum unmittelbaren Vergleich von Original und
+Übersetzung verwenden, ohne zwischen getrennten Büchern zu wechseln.
 
 ## Aufbau
 
@@ -32,14 +63,15 @@ python3 tools/verify_translation.py
 
 Eine einzelne Ausgabe lässt sich mit `german`, `english`, `german-english`
 oder `english-german` statt `all` bauen. `bilingual` bleibt als Kurzform für
-`german-english` erhalten. Beide zweisprachigen Lernfassungen werden
+`german-english` erhalten. Beide zweisprachigen Fassungen werden
 automatisch aus den absatzgleichen deutschen und englischen Kapiteln erzeugt,
 sodass die Texte bei späteren Korrekturen synchron bleiben.
 
-In beiden Lernfassungen erscheinen auch die Bildunterschriften zweisprachig
-und in der jeweiligen Sprachreihenfolge. Bild und Unterschriften werden als
-gemeinsamer Seitenblock gesetzt, damit die Beschriftung nicht auf die
-Folgeseite rutscht.
+In beiden zweisprachigen Fassungen erscheinen die 68 vorhandenen Bildunterschriftspaare
+zweisprachig und in der jeweiligen Sprachreihenfolge. Der Buchbau prüft, dass
+eine Beschriftung entweder in beiden Sprachen oder in keiner vorhanden ist.
+Bild und sämtliche Unterschriften werden als gemeinsamer, untrennbarer
+Seitenblock gesetzt, damit keine Beschriftung auf die Folgeseite rutscht.
 
 Die Übersetzungsregeln stehen in [AGENTS.md](AGENTS.md). Die Eingabe-EPUB selbst bleibt unverändert in `/Users/jolly/Downloads/pg1342-images-3.epub`.
 
@@ -56,7 +88,7 @@ python3 tools/import_illustrations.py /Users/jolly/Downloads/pg1342-images-3.epu
 ## GitHub-Veröffentlichungen
 
 Beim Veröffentlichen eines GitHub-Releases baut die GitHub Action die deutsche
-Fassung und beide zweisprachigen Lernfassungen. Sie hängt für jede Ausgabe drei
+Fassung und beide zweisprachigen Fassungen. Sie hängt für jede Ausgabe drei
 Formate sowie ein Formatarchiv an das Release:
 
 - `Stolz-und-Vorurteil-modernes-Deutsch.epub`
