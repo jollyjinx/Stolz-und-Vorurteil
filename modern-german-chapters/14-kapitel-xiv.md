@@ -24,9 +24,7 @@ Während des Essens sprach Mr. Bennet kaum; als die Bediensteten sich zurückgez
 
 Mr. Bennets Erwartungen erfüllten sich vollkommen. Sein Cousin war so lächerlich, wie er gehofft hatte, und er hörte ihm mit größtem Vergnügen zu, während er zugleich die entschiedenste Gelassenheit im Gesicht wahrte und, abgesehen von einem gelegentlichen Blick zu Elizabeth, keinen Teilhaber an seinem Vergnügen brauchte.
 
-Bis zur Teezeit allerdings hatte er genug von dieser Dosis und war froh, seinen Gast wieder ins Wohnzimmer zu führen; nach dem Tee war er froh, ihn einzuladen,
-
-den Damen vorzulesen. Mr. Collins stimmte bereitwillig zu, und man brachte ein Buch; doch als er es erblickte — alles daran verriet eine Leihbibliothek — fuhr er zurück und erklärte entschuldigend, er lese niemals Romane. Kitty starrte ihn an, und Lydia rief aus. Man brachte andere Bücher, und nach einigem Überlegen wählte er »Fordyces Predigten«. Lydia gähnte, als er den Band aufschlug; und bevor er drei Seiten in sehr eintönigem Ernst gelesen hatte, unterbrach sie ihn: —
+Bis zur Teezeit allerdings hatte er genug von dieser Dosis und war froh, seinen Gast wieder ins Wohnzimmer zu führen; nach dem Tee war er froh, ihn einzuladen, den Damen vorzulesen. Mr. Collins stimmte bereitwillig zu, und man brachte ein Buch; doch als er es erblickte — alles daran verriet eine Leihbibliothek — fuhr er zurück und erklärte entschuldigend, er lese niemals Romane. Kitty starrte ihn an, und Lydia rief aus. Man brachte andere Bücher, und nach einigem Überlegen wählte er »Fordyces Predigten«. Lydia gähnte, als er den Band aufschlug; und bevor er drei Seiten in sehr eintönigem Ernst gelesen hatte, unterbrach sie ihn: —
 
 »Wisst ihr, Mamma, dass Onkel Philips davon spricht, Richard zu entlassen? Und wenn er das tut, stellt Colonel Forster ihn ein. Tante hat es mir selbst am Samstag erzählt. Morgen gehe ich nach Meryton, um mehr darüber zu hören und zu fragen, wann Mr. Denny aus der Stadt zurückkommt.«
 

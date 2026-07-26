@@ -17,3 +17,12 @@
  - the image subtitles are missing translations, furthermore they should always be blow the image and not be placed on the next page as it's cumbersome to see the image and read the image annotation on the next page.
  - update the documentation that it contains versions for english and german learners alike and it should be bi-lingual so english and german speakers can read it
  - update the readme so it's bilingual
+ - I've found an error in the formatting of the english german epub version in chapter 3 . 
+there is 
+“An invitation to dinner was soon 
+...
+he ought to be. Lady Lucas quieted her fears a little by starting the idea of his”
+and then a german part comes and then a large blank page and then an image and then the english part and the reset of the german part. this is cumbersome to read.
+maybe we should always have acompanied translations on the same page and never broken up by images.
+
+

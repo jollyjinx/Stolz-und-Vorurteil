@@ -17,6 +17,18 @@ def paragraphs(path: Path) -> list[str]:
     return [paragraph.strip() for paragraph in path.read_text(encoding="utf-8").split("\n\n") if paragraph.strip()]
 
 
+def suspicious_mid_sentence_splits(items: list[str]) -> list[int]:
+    """Return paragraph numbers whose following break cuts through a sentence."""
+    return [
+        number
+        for number, (current, following) in enumerate(
+            zip(items[1:], items[2:]),
+            start=1,
+        )
+        if current[-1].isalnum() and following[0].islower()
+    ]
+
+
 def main() -> None:
     failures: list[str] = []
     source_files = sorted(SOURCE.glob("*.md"))
@@ -43,6 +55,15 @@ def main() -> None:
                 f"chapter {number}: source has {len(source_paragraphs)} paragraphs; "
                 f"translation has {len(translated_paragraphs)}"
             )
+        for language, items in (
+            ("source", source_paragraphs),
+            ("translation", translated_paragraphs),
+        ):
+            for paragraph_number in suspicious_mid_sentence_splits(items):
+                failures.append(
+                    f"chapter {number}: {language} paragraph {paragraph_number} "
+                    "appears to end in the middle of a sentence"
+                )
 
     if failures:
         print("Translation verification failed:", *failures, sep="\n- ")

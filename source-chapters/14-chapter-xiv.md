@@ -24,9 +24,7 @@ URING dinner, Mr. Bennet scarcely spoke at all; but when the servants were withd
 
 Mr. Bennet’s expectations were fully answered. His cousin was as absurd as he had hoped; and he listened to him with the keenest enjoyment, maintaining at the same time the most resolute composure of countenance, and, except in an occasional glance at Elizabeth, requiring no partner in his pleasure.
 
-By tea-time, however, the dose had been enough, and Mr. Bennet was glad to take his guest into the drawing-room again, and when tea was over, glad to invite him
-
-to read aloud to the ladies. Mr. Collins readily assented, and a book was produced; but on beholding it (for everything announced it to be from a circulating library) he started back, and, begging pardon, protested that he never read novels. Kitty stared at him, and Lydia exclaimed. Other books were produced, and after some deliberation he chose “Fordyce’s Sermons.” Lydia gaped as he opened the volume; and before he had, with very monotonous solemnity, read three pages, she interrupted him with,—
+By tea-time, however, the dose had been enough, and Mr. Bennet was glad to take his guest into the drawing-room again, and when tea was over, glad to invite him to read aloud to the ladies. Mr. Collins readily assented, and a book was produced; but on beholding it (for everything announced it to be from a circulating library) he started back, and, begging pardon, protested that he never read novels. Kitty stared at him, and Lydia exclaimed. Other books were produced, and after some deliberation he chose “Fordyce’s Sermons.” Lydia gaped as he opened the volume; and before he had, with very monotonous solemnity, read three pages, she interrupted him with,—
 
 “Do you know, mamma, that my uncle Philips talks of turning away Richard? and if he does, Colonel Forster will hire him. My aunt told me so herself on Saturday. I shall walk to Meryton to-morrow to hear more about it, and to ask when Mr. Denny comes back from town.”
 

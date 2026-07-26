@@ -20,9 +20,7 @@ Als er das Zimmer verlassen hatte, setzte sie sich hin, unfähig, sich aufrecht 
 
 »Nein, danke«, erwiderte sie und bemühte sich, sich zu fassen. »Mir fehlt nichts. Mir geht es ganz gut, ich bin nur durch eine schreckliche Nachricht aus Longbourn erschüttert worden.«
 
-Bei der Erwähnung brach sie in Tränen aus und konnte einige Minuten kein weiteres Wort sagen. Darcy konnte in seinem qualvollen Schwebezustand nur etwas Unverständliches über seine Anteilnahme sagen.
-
-Er beobachtete sie schweigend mit Mitleid. Schließlich sprach sie wieder: »Ich habe gerade einen Brief von Jane erhalten, mit so schrecklichen Nachrichten. Es kann niemandem verborgen bleiben. Meine jüngste Schwester hat alle ihre Freunde verlassen—ist durchgebrannt; sie hat sich in die Gewalt von—von Mr. Wickham gegeben. Sie sind zusammen aus Brighton geflohen. Sie kennen ihn zu gut, um am Übrigen zu zweifeln. Sie hat kein Geld, keine Verbindungen, nichts, was ihn dazu verleiten könnte—sie ist für immer verloren.«
+Bei der Erwähnung brach sie in Tränen aus und konnte einige Minuten kein weiteres Wort sagen. Darcy konnte in seinem qualvollen Schwebezustand nur etwas Unverständliches über seine Anteilnahme sagen. Er beobachtete sie schweigend mit Mitleid. Schließlich sprach sie wieder: »Ich habe gerade einen Brief von Jane erhalten, mit so schrecklichen Nachrichten. Es kann niemandem verborgen bleiben. Meine jüngste Schwester hat alle ihre Freunde verlassen—ist durchgebrannt; sie hat sich in die Gewalt von—von Mr. Wickham gegeben. Sie sind zusammen aus Brighton geflohen. Sie kennen ihn zu gut, um am Übrigen zu zweifeln. Sie hat kein Geld, keine Verbindungen, nichts, was ihn dazu verleiten könnte—sie ist für immer verloren.«
 
 Darcy erstarrte vor Bestürzung.
 

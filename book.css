@@ -35,6 +35,12 @@ p {
   text-align: justify;
 }
 
+.learner-pair {
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
 .learner-paragraph {
   position: relative;
 }

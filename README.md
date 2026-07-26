@@ -31,7 +31,7 @@ damit Ihr Euch auch dran erfreuen könnt«.
 
 ## Bilingual reading / Zweisprachig lesen
 
-**English:** Both bilingual editions contain the complete novel as 1,974
+**English:** Both bilingual editions contain the complete novel as 1,970
 German-English paragraph pairs. Every paragraph is present in both languages,
 allowing English- and German-speaking readers to read in their preferred
 language while keeping the other text immediately available for comparison.
@@ -48,7 +48,7 @@ support shared reading and direct comparison of Jane Austen’s original with
 the modern German translation without switching between separate books.
 
 **Deutsch:** Beide zweisprachigen Fassungen enthalten den vollständigen Roman
-in 1.974 deutsch-englischen Absatzpaaren. Jeder Absatz ist in beiden Sprachen
+in 1.970 deutsch-englischen Absatzpaaren. Jeder Absatz ist in beiden Sprachen
 vorhanden. Dadurch können deutsch- und englischsprachige Leser in ihrer
 bevorzugten Sprache lesen und den jeweils anderen Text direkt vergleichen.
 
@@ -114,6 +114,9 @@ sodass beide Texte bei späteren Korrekturen synchron bleiben.
 their respective language order. The build verifies that a caption exists in
 both languages or in neither. Each image and all of its captions form one
 unbreakable page block, preventing captions from moving to the next page.
+Each English-German paragraph pair likewise forms one pagination unit whenever
+it fits on a page. Illustrations are inserted only between complete pairs and
+can never separate an original paragraph from its translation.
 
 The German edition includes the chapter headings, scene illustrations, ending
 vignettes, and decorative chapter initials from the illustrated source. The
@@ -133,6 +136,10 @@ Bildunterschriftspaare in der jeweiligen Sprachreihenfolge. Der Buchbau prüft,
 dass eine Beschriftung entweder in beiden Sprachen oder in keiner vorhanden
 ist. Bild und sämtliche Unterschriften bilden einen gemeinsamen,
 untrennbaren Seitenblock, damit keine Beschriftung auf die Folgeseite rutscht.
+Ebenso bildet jedes deutsch-englische Absatzpaar eine gemeinsame
+Seiteneinheit, sofern es vollständig auf eine Seite passt. Illustrationen
+stehen ausschließlich zwischen vollständigen Paaren und können Original und
+zugehörige Übersetzung nie voneinander trennen.
 
 Die deutsche Ausgabe übernimmt Kapitelköpfe, Szenenbilder, Schlussvignetten
 und dekorative Kapitelinitialen der illustrierten Quelle. Das historische

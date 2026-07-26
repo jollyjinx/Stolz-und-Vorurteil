@@ -20,9 +20,7 @@ On his quitting the room, she sat down, unable to support herself, and looking s
 
 “No, I thank you,” she replied, endeavouring to recover herself. “There is nothing the matter with me. I am quite well, I am only distressed by some dreadful news which I have just received from Longbourn.”
 
-She burst into tears as she alluded to it, and for a few minutes could not speak another word. Darcy, in wretched suspense, could only say something indistinctly of his
-
-concern, and observe her in compassionate silence. At length she spoke again. “I have just had a letter from Jane, with such dreadful news. It cannot be concealed from anyone. My youngest sister has left all her friends—has eloped; has thrown herself into the power of—of Mr. Wickham. They are gone off together from Brighton. You know him too well to doubt the rest. She has no money, no connections, nothing that can tempt him to—she is lost for ever.”
+She burst into tears as she alluded to it, and for a few minutes could not speak another word. Darcy, in wretched suspense, could only say something indistinctly of his concern, and observe her in compassionate silence. At length she spoke again. “I have just had a letter from Jane, with such dreadful news. It cannot be concealed from anyone. My youngest sister has left all her friends—has eloped; has thrown herself into the power of—of Mr. Wickham. They are gone off together from Brighton. You know him too well to doubt the rest. She has no money, no connections, nothing that can tempt him to—she is lost for ever.”
 
 Darcy was fixed in astonishment.
 

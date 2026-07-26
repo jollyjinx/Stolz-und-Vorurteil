@@ -464,11 +464,15 @@ def paired_chapter_markdown(
     ):
         if position == 1 and initial:
             primary = markdown_initial(primary, initial)
-        output.extend(
-            [
-                f"::: {{.learner-paragraph .learner-primary lang={primary_language}}}\n{primary}\n:::",
-                f"::: {{.learner-paragraph .learner-secondary lang={secondary_language} data-label={secondary_label}}}\n{secondary}\n:::",
-            ]
+        output.append(
+            "\n\n".join(
+                [
+                    ":::: {.learner-pair}",
+                    f"::: {{.learner-paragraph .learner-primary lang={primary_language}}}\n{primary}\n:::",
+                    f"::: {{.learner-paragraph .learner-secondary lang={secondary_language} data-label={secondary_label}}}\n{secondary}\n:::",
+                    "::::",
+                ]
+            )
         )
         output.extend(
             markdown_illustration(
@@ -797,12 +801,13 @@ def build_pdf(edition: dict[str, object]) -> None:
         for position, block in enumerate(blocks[1:], start=1):
             paragraph_style = learner_primary if paired_blocks else body
             initial = initials.get(chapter_index + 1) if position == 1 else None
+            paragraph_flowables = []
             if initial:
                 prefix, _, remainder = split_opening_initial(
                     block,
                     str(initial["letter"]),
                 )
-                story.append(
+                paragraph_flowables.append(
                     ImageAndFlowables(
                         pdf_initial_image(initial, prefix),
                         [Paragraph(inline_markdown(remainder), paragraph_style)],
@@ -812,16 +817,21 @@ def build_pdf(edition: dict[str, object]) -> None:
                     )
                 )
             else:
-                story.append(Paragraph(inline_markdown(block), paragraph_style))
+                paragraph_flowables.append(
+                    Paragraph(inline_markdown(block), paragraph_style)
+                )
             if paired_blocks:
                 secondary = paired_blocks[position]
                 secondary_label = html.escape(str(edition["secondary_label"]))
-                story.append(
+                paragraph_flowables.append(
                     Paragraph(
                         f'<font size="7"><b>{secondary_label}</b></font>&nbsp;&nbsp;{inline_markdown(secondary)}',
                         learner_secondary,
                     )
                 )
+                story.append(KeepTogether(paragraph_flowables))
+            else:
+                story.extend(paragraph_flowables)
             story.extend(
                 pdf_illustration(
                     entry,
