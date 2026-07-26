@@ -35,6 +35,36 @@ p {
   text-align: justify;
 }
 
+.learner-paragraph {
+  position: relative;
+}
+
+.learner-primary {
+  margin-bottom: 0.35em;
+}
+
+.learner-secondary {
+  background: #f6f1eb;
+  border-left: 0.2em solid #b99a7b;
+  color: #5e4530;
+  font-size: 0.94em;
+  margin: 0 0 1.15em 1.2em;
+  padding: 0.45em 0.7em;
+}
+
+.learner-secondary::before {
+  content: attr(data-label);
+  float: left;
+  font-size: 0.68em;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  margin: 0.25em 0.65em 0 0;
+}
+
+.learner-paragraph p {
+  margin: 0;
+}
+
 .chapter-initial-group {
   display: inline-block;
   float: left;
@@ -64,19 +94,22 @@ p {
   vertical-align: top;
 }
 
+.book-figure,
 figure {
   margin: 2em auto;
+  break-before: auto;
   break-inside: avoid;
+  break-inside: avoid-page;
+  break-after: auto;
   page-break-inside: avoid;
   text-align: center;
 }
 
-figure img,
-img.book-illustration {
+figure img {
   display: block;
   width: auto;
   max-width: 100%;
-  max-height: 85vh;
+  max-height: 75vh;
   margin: 2em auto;
   object-fit: contain;
 }
@@ -85,10 +118,35 @@ figure img {
   margin-bottom: 0.75em;
 }
 
+.book-figure img.book-illustration {
+  display: block;
+  height: auto;
+  margin: 0 auto 0.75em;
+  max-height: 62vh;
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
+.book-figure > p {
+  margin: 0;
+  text-align: center;
+}
+
+.book-figure .caption-language {
+  font-size: 0.72em;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  margin-right: 0.5em;
+}
+
+.book-figure > p:not(:first-child),
 figcaption {
   color: #5e4530;
   font-size: 0.9em;
   font-style: italic;
   line-height: 1.4;
+  margin: 0.25em 0 0;
   text-align: center;
 }

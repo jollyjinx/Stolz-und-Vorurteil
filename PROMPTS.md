@@ -12,3 +12,6 @@
  - do we have enough first chapter letter images to use them in german version - which letters are missing so we might gernerate a few ourselves
  - create the missing 3 letter images in the same style
  - they are very nice we use them as well as the original ones and add them to the german version so that we have a german version with those chapter letters.
+ - for german english learners a version would be good where each paragraph would be first in german , then in english
+ - looks good, make it two versions one german english the other english german , make it that those versions are build additionally to the prior german only book
+ - the image subtitles are missing translations, furthermore they should always be blow the image and not be placed on the next page as it's cumbersome to see the image and read the image annotation on the next page.

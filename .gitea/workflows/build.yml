@@ -35,6 +35,14 @@ jobs:
             dist/Stolz-und-Vorurteil-modernes-Deutsch.epub \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.html \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.pdf
+          zip -j dist/Stolz-und-Vorurteil-Deutsch-Englisch.zip \
+            dist/Stolz-und-Vorurteil-Deutsch-Englisch.epub \
+            dist/Stolz-und-Vorurteil-Deutsch-Englisch.html \
+            dist/Stolz-und-Vorurteil-Deutsch-Englisch.pdf
+          zip -j dist/Pride-and-Prejudice-Englisch-Deutsch.zip \
+            dist/Pride-and-Prejudice-Englisch-Deutsch.epub \
+            dist/Pride-and-Prejudice-Englisch-Deutsch.html \
+            dist/Pride-and-Prejudice-Englisch-Deutsch.pdf
       # Gitea's artifact service implements the v3 protocol; upstream v4
       # deliberately rejects servers other than GitHub.com.
       - uses: actions/upload-artifact@v3
@@ -68,7 +76,15 @@ jobs:
             dist/Stolz-und-Vorurteil-modernes-Deutsch.epub \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.html \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.pdf \
-            dist/Stolz-und-Vorurteil-modernes-Deutsch.zip
+            dist/Stolz-und-Vorurteil-modernes-Deutsch.zip \
+            dist/Stolz-und-Vorurteil-Deutsch-Englisch.epub \
+            dist/Stolz-und-Vorurteil-Deutsch-Englisch.html \
+            dist/Stolz-und-Vorurteil-Deutsch-Englisch.pdf \
+            dist/Stolz-und-Vorurteil-Deutsch-Englisch.zip \
+            dist/Pride-and-Prejudice-Englisch-Deutsch.epub \
+            dist/Pride-and-Prejudice-Englisch-Deutsch.html \
+            dist/Pride-and-Prejudice-Englisch-Deutsch.pdf \
+            dist/Pride-and-Prejudice-Englisch-Deutsch.zip
           do
             filename="$(basename "$file")"
             existing_id="$(

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build English and German EPUB, HTML, and PDF editions from chapter Markdown."""
+"""Build German, English, and bilingual EPUB, HTML, and PDF editions."""
 
 from __future__ import annotations
 
@@ -68,6 +68,53 @@ EDITIONS = {
         "author": "Jane Austen",
         "translator": None,
         "dedication": None,
+        "language": "en-US",
+    },
+    "german-english": {
+        "chapters": ROOT / "modern-german-chapters",
+        "paired_chapters": ROOT / "source-chapters",
+        "frontmatter": ROOT / "frontmatter" / "bilingual.md",
+        "basename": "Stolz-und-Vorurteil-Deutsch-Englisch",
+        "title": "Stolz und Vorurteil / Pride and Prejudice",
+        "subtitle": "Eine deutsch-englische Ausgabe für Lernende",
+        "author": "Jane Austen",
+        "translator": "ChatGPT, mit Hilfe von Patrick Stein",
+        "illustrator": "Hugh Thomson",
+        "illustrations": True,
+        "initials": True,
+        "paired": True,
+        "primary_language": "de",
+        "secondary_language": "en",
+        "secondary_label": "EN",
+        "initials_credit": "Dekorative Initialen: Hugh Thomson (1894); F, U und Z ergänzt mit OpenAI (2026)",
+        "dedication": "Für alle, die mit Jane Austen Deutsch oder Englisch lernen möchten",
+        "download_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/releases",
+        "license_name": "MIT License",
+        "license_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/blob/main/LICENSE",
+        "language": "de-DE",
+    },
+    "english-german": {
+        "chapters": ROOT / "source-chapters",
+        "paired_chapters": ROOT / "modern-german-chapters",
+        "frontmatter": ROOT / "frontmatter" / "english-german.md",
+        "basename": "Pride-and-Prejudice-Englisch-Deutsch",
+        "title": "Pride and Prejudice / Stolz und Vorurteil",
+        "subtitle": "Eine englisch-deutsche Ausgabe für Lernende",
+        "author": "Jane Austen",
+        "translator": "ChatGPT, mit Hilfe von Patrick Stein",
+        "illustrator": "Hugh Thomson",
+        "illustrations": True,
+        "initials": True,
+        "allow_missing_initials": True,
+        "paired": True,
+        "primary_language": "en",
+        "secondary_language": "de",
+        "secondary_label": "DE",
+        "initials_credit": "Dekorative Initialen: Hugh Thomson (1894)",
+        "dedication": "Für alle, die mit Jane Austen Englisch oder Deutsch lernen möchten",
+        "download_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/releases",
+        "license_name": "MIT License",
+        "license_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/blob/main/LICENSE",
         "language": "en-US",
     },
 }
@@ -142,13 +189,41 @@ def load_illustrations() -> list[dict[str, object]]:
         image = ILLUSTRATIONS / str(entry["image"])
         if not image.exists():
             raise RuntimeError(f"Illustration is missing: {image}")
+        has_german_caption = bool(entry.get("caption_de"))
+        has_english_caption = bool(entry.get("caption_en"))
+        if has_german_caption != has_english_caption:
+            raise RuntimeError(
+                f"Illustration captions must be present in both languages: {image}"
+            )
     return entries
 
 
-def markdown_illustration(entry: dict[str, object]) -> str:
-    caption = str(entry.get("caption_de") or "")
+def markdown_illustration(
+    entry: dict[str, object],
+    languages: tuple[str, ...] = ("de",),
+) -> str:
     path = f"illustrations/{entry['image']}"
-    return f"![{caption}]({path}){{.book-illustration}}"
+    output = [
+        "::: {.book-figure}",
+        f"![]({path}){{.book-illustration}}",
+    ]
+    for language in languages:
+        caption = str(entry.get(f"caption_{language}") or "")
+        if caption:
+            caption_text = f"[{caption}]{{lang={language}}}"
+            if len(languages) > 1:
+                caption_text = (
+                    f"[{language.upper()}]{{.caption-language}} "
+                    f"{caption_text}"
+                )
+            output.extend(
+                [
+                    "",
+                    caption_text,
+                ]
+            )
+    output.append(":::")
+    return "\n".join(output)
 
 
 def load_initials() -> list[dict[str, object]]:
@@ -192,6 +267,8 @@ def split_opening_initial(
 def assign_initials(
     chapters: list[Path],
     catalog: list[dict[str, object]],
+    *,
+    allow_missing: bool = False,
 ) -> dict[int, dict[str, object]]:
     openings = {
         number: split_opening_initial(
@@ -246,12 +323,14 @@ def assign_initials(
             entry for entry in catalog if str(entry["letter"]) == letter
         ]
         if not candidates:
+            if allow_missing:
+                continue
             raise RuntimeError(f"No decorative initial is available for {letter!r}.")
         repeat_index = repeated_by_letter.get(letter, 0)
         assignments[chapter] = candidates[repeat_index % len(candidates)]
         repeated_by_letter[letter] = repeat_index + 1
 
-    if len(assignments) != len(chapters):
+    if not allow_missing and len(assignments) != len(chapters):
         raise RuntimeError(
             f"Expected {len(chapters)} initial assignments, found {len(assignments)}."
         )
@@ -313,13 +392,127 @@ def illustrated_chapter_markdown(
     return "\n\n".join(output)
 
 
+def paired_chapter_markdown(
+    primary_chapter: Path,
+    secondary_chapter: Path,
+    chapter_number: int,
+    illustrations: list[dict[str, object]],
+    primary_language: str,
+    secondary_language: str,
+    secondary_label: str,
+    initial: dict[str, object] | None = None,
+) -> str:
+    primary_blocks = [
+        block.strip()
+        for block in primary_chapter.read_text(encoding="utf-8").split("\n\n")
+        if block.strip()
+    ]
+    secondary_blocks = [
+        block.strip()
+        for block in secondary_chapter.read_text(encoding="utf-8").split("\n\n")
+        if block.strip()
+    ]
+    if len(primary_blocks) != len(secondary_blocks):
+        raise RuntimeError(
+            f"Cannot pair chapter {chapter_number}: {primary_chapter.name} has "
+            f"{len(primary_blocks) - 1} paragraphs, but {secondary_chapter.name} "
+            f"has {len(secondary_blocks) - 1}."
+        )
+
+    by_position: dict[int, list[dict[str, object]]] = {}
+    for entry in illustrations:
+        if int(entry["chapter"]) != chapter_number:
+            continue
+        position = int(entry["after_paragraph"])
+        if position > len(primary_blocks) - 1:
+            raise RuntimeError(
+                f"Illustration {entry['image']} follows paragraph {position}, "
+                f"but {primary_chapter.name} has only {len(primary_blocks) - 1} paragraphs."
+            )
+        by_position.setdefault(position, []).append(entry)
+
+    primary_heading = primary_blocks[0].removeprefix("# ")
+    secondary_heading = secondary_blocks[0].removeprefix("# ")
+    output = [f"# {primary_heading} / {secondary_heading}"]
+    output.extend(
+        markdown_illustration(
+            entry,
+            (primary_language, secondary_language),
+        )
+        for entry in by_position.get(0, [])
+    )
+    for position, (primary, secondary) in enumerate(
+        zip(primary_blocks[1:], secondary_blocks[1:], strict=True),
+        start=1,
+    ):
+        if position == 1 and initial:
+            primary = markdown_initial(primary, initial)
+        output.extend(
+            [
+                f"::: {{.learner-paragraph .learner-primary lang={primary_language}}}\n{primary}\n:::",
+                f"::: {{.learner-paragraph .learner-secondary lang={secondary_language} data-label={secondary_label}}}\n{secondary}\n:::",
+            ]
+        )
+        output.extend(
+            markdown_illustration(
+                entry,
+                (primary_language, secondary_language),
+            )
+            for entry in by_position.get(position, [])
+        )
+    return "\n\n".join(output)
+
+
 def build_markdown(edition: dict[str, object]) -> Path:
     chapter_dir = edition["chapters"]
     assert isinstance(chapter_dir, Path)
     output = DIST / f"{edition['basename']}.md"
     parts = [Path(edition["frontmatter"]).read_text(encoding="utf-8").rstrip()]
     chapters = chapter_files(chapter_dir)
-    if edition.get("illustrations"):
+    if edition.get("paired"):
+        paired_chapter_dir = edition["paired_chapters"]
+        assert isinstance(paired_chapter_dir, Path)
+        paired_chapters = chapter_files(paired_chapter_dir)
+        primary_language = str(edition["primary_language"])
+        secondary_language = str(edition["secondary_language"])
+        secondary_label = str(edition["secondary_label"])
+        illustrations = load_illustrations() if edition.get("illustrations") else []
+        initials = (
+            assign_initials(
+                chapters,
+                load_initials(),
+                allow_missing=bool(edition.get("allow_missing_initials")),
+            )
+            if edition.get("initials")
+            else {}
+        )
+        frontispieces = [
+            entry for entry in illustrations if int(entry["chapter"]) == 0
+        ]
+        parts.extend(
+            markdown_illustration(
+                entry,
+                (primary_language, secondary_language),
+            )
+            for entry in frontispieces
+        )
+        parts.extend(
+            paired_chapter_markdown(
+                primary_path,
+                secondary_path,
+                number,
+                illustrations,
+                primary_language,
+                secondary_language,
+                secondary_label,
+                initials.get(number),
+            )
+            for number, (primary_path, secondary_path) in enumerate(
+                zip(chapters, paired_chapters, strict=True),
+                start=1,
+            )
+        )
+    elif edition.get("illustrations"):
         illustrations = load_illustrations()
         initials = (
             assign_initials(chapters, load_initials())
@@ -385,7 +578,8 @@ def pdf_illustration(
     entry: dict[str, object],
     caption_style: ParagraphStyle,
     *,
-    max_height: float = 125 * mm,
+    languages: tuple[str, ...] = ("de",),
+    max_height: float = 112 * mm,
 ) -> KeepTogether:
     image_path = ILLUSTRATIONS / str(entry["image"])
     image = ReportLabImage(str(image_path))
@@ -398,9 +592,19 @@ def pdf_illustration(
     image.drawHeight = image.imageHeight * scale
     image.hAlign = "CENTER"
     flowables = [Spacer(1, 4 * mm), image]
-    caption = entry.get("caption_de")
-    if caption:
-        flowables.append(Paragraph(html.escape(str(caption)), caption_style))
+    for language in languages:
+        caption = entry.get(f"caption_{language}")
+        if caption:
+            caption_text = html.escape(str(caption))
+            if len(languages) > 1:
+                label = html.escape(language.upper())
+                caption_text = f"<b>{label}</b>&nbsp;&nbsp;{caption_text}"
+            flowables.append(
+                Paragraph(
+                    caption_text,
+                    caption_style,
+                )
+            )
     flowables.append(Spacer(1, 4 * mm))
     return KeepTogether(flowables)
 
@@ -432,6 +636,15 @@ def build_pdf(edition: dict[str, object]) -> None:
                              leading=23, textColor=HexColor("#372b20"), spaceBefore=2, spaceAfter=18)
     body = ParagraphStyle("Body", parent=styles["BodyText"], fontName="Times-Roman", fontSize=10.5,
                           leading=15, alignment=TA_JUSTIFY, spaceAfter=10)
+    learner_primary = ParagraphStyle(
+        "LearnerPrimary", parent=body, spaceAfter=4
+    )
+    learner_secondary = ParagraphStyle(
+        "LearnerSecondary", parent=body, fontSize=9.8, leading=14,
+        leftIndent=5 * mm, rightIndent=2 * mm, textColor=HexColor("#5e4530"),
+        backColor=HexColor("#f6f1eb"), borderPadding=(3, 5, 3, 5),
+        spaceAfter=12,
+    )
     caption = ParagraphStyle("IllustrationCaption", parent=styles["Normal"], fontName="Times-Italic",
                              fontSize=9.5, leading=13, alignment=TA_CENTER,
                              textColor=HexColor("#5e4530"), spaceBefore=7, spaceAfter=2)
@@ -459,6 +672,12 @@ def build_pdf(edition: dict[str, object]) -> None:
     story.append(PageBreak())
 
     illustrations = load_illustrations() if edition.get("illustrations") else []
+    primary_illustration_language = str(
+        edition.get("primary_language") or str(edition["language"])[:2]
+    )
+    illustration_languages = (primary_illustration_language,)
+    if edition.get("paired"):
+        illustration_languages += (str(edition["secondary_language"]),)
     if illustrations:
         frontispieces = [
             entry for entry in illustrations if int(entry["chapter"]) == 0
@@ -469,7 +688,8 @@ def build_pdf(edition: dict[str, object]) -> None:
                     pdf_illustration(
                         frontispiece,
                         caption,
-                        max_height=142 * mm,
+                        languages=illustration_languages,
+                        max_height=(124 if edition.get("paired") else 132) * mm,
                     ),
                     PageBreak(),
                 ]
@@ -478,13 +698,36 @@ def build_pdf(edition: dict[str, object]) -> None:
     chapter_dir = edition["chapters"]
     assert isinstance(chapter_dir, Path)
     chapters = chapter_files(chapter_dir)
+    paired_chapters: list[Path] = []
+    if edition.get("paired"):
+        paired_chapter_dir = edition["paired_chapters"]
+        assert isinstance(paired_chapter_dir, Path)
+        paired_chapters = chapter_files(paired_chapter_dir)
     initials = (
-        assign_initials(chapters, load_initials())
+        assign_initials(
+            chapters,
+            load_initials(),
+            allow_missing=bool(edition.get("allow_missing_initials")),
+        )
         if edition.get("initials")
         else {}
     )
     for chapter_index, chapter in enumerate(chapters):
         blocks = [block.strip() for block in chapter.read_text(encoding="utf-8").split("\n\n") if block.strip()]
+        paired_blocks: list[str] = []
+        if edition.get("paired"):
+            paired_blocks = [
+                block.strip()
+                for block in paired_chapters[chapter_index]
+                .read_text(encoding="utf-8")
+                .split("\n\n")
+                if block.strip()
+            ]
+            if len(blocks) != len(paired_blocks):
+                raise RuntimeError(
+                    f"Cannot pair chapter {chapter_index + 1}: "
+                    f"{len(blocks) - 1} primary and {len(paired_blocks) - 1} secondary paragraphs."
+                )
         chapter_illustrations = [
             entry
             for entry in illustrations
@@ -500,12 +743,20 @@ def build_pdf(edition: dict[str, object]) -> None:
                 )
             by_position.setdefault(position, []).append(entry)
 
-        story.append(Paragraph(inline_markdown(blocks[0].removeprefix("# ")), heading))
+        chapter_heading = blocks[0].removeprefix("# ")
+        if paired_blocks:
+            chapter_heading += f" / {paired_blocks[0].removeprefix('# ')}"
+        story.append(Paragraph(inline_markdown(chapter_heading), heading))
         story.extend(
-            pdf_illustration(entry, caption)
+            pdf_illustration(
+                entry,
+                caption,
+                languages=illustration_languages,
+            )
             for entry in by_position.get(0, [])
         )
         for position, block in enumerate(blocks[1:], start=1):
+            paragraph_style = learner_primary if paired_blocks else body
             initial = initials.get(chapter_index + 1) if position == 1 else None
             if initial:
                 prefix, _, remainder = split_opening_initial(
@@ -515,16 +766,29 @@ def build_pdf(edition: dict[str, object]) -> None:
                 story.append(
                     ImageAndFlowables(
                         pdf_initial_image(initial, prefix),
-                        [Paragraph(inline_markdown(remainder), body)],
+                        [Paragraph(inline_markdown(remainder), paragraph_style)],
                         imageRightPadding=3 * mm,
                         imageBottomPadding=1.5 * mm,
                         imageSide="left",
                     )
                 )
             else:
-                story.append(Paragraph(inline_markdown(block), body))
+                story.append(Paragraph(inline_markdown(block), paragraph_style))
+            if paired_blocks:
+                secondary = paired_blocks[position]
+                secondary_label = html.escape(str(edition["secondary_label"]))
+                story.append(
+                    Paragraph(
+                        f'<font size="7"><b>{secondary_label}</b></font>&nbsp;&nbsp;{inline_markdown(secondary)}',
+                        learner_secondary,
+                    )
+                )
             story.extend(
-                pdf_illustration(entry, caption)
+                pdf_illustration(
+                    entry,
+                    caption,
+                    languages=illustration_languages,
+                )
                 for entry in by_position.get(position, [])
             )
         if chapter_index != len(chapters) - 1:
@@ -541,12 +805,18 @@ def build(edition_name: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("edition", choices=["german", "english", "all"], default="all", nargs="?")
+    parser.add_argument(
+        "edition",
+        choices=[*EDITIONS, "bilingual", "all"],
+        default="all",
+        nargs="?",
+    )
     args = parser.parse_args()
     if shutil.which("pandoc") is None:
         raise SystemExit("pandoc is required; install it and rerun this command.")
     DIST.mkdir(exist_ok=True)
-    for edition_name in (EDITIONS if args.edition == "all" else [args.edition]):
+    selected = "german-english" if args.edition == "bilingual" else args.edition
+    for edition_name in (EDITIONS if selected == "all" else [selected]):
         build(edition_name)
 
 
