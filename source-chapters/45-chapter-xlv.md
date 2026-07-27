@@ -1,6 +1,6 @@
 # Chapter XLV
 
-ONVINCED as Elizabeth now was that Miss Bingley’s dislike of her had originated in jealousy, she could not help feeling how very unwelcome her appearance at Pemberley must be to her, and was curious to know with how much civility on that lady’s side the acquaintance would now be renewed.
+CONVINCED as Elizabeth now was that Miss Bingley’s dislike of her had originated in jealousy, she could not help feeling how very unwelcome her appearance at Pemberley must be to her, and was curious to know with how much civility on that lady’s side the acquaintance would now be renewed.
 
 On reaching the house, they were shown through the hall into the saloon, whose northern aspect rendered it delightful for summer. Its windows, opening to the ground, admitted a most refreshing view of the high woody hills behind the house, and of the beautiful oaks and Spanish chestnuts which were scattered over the intermediate lawn.
 

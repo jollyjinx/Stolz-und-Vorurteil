@@ -1,6 +1,6 @@
 # Chapter X
 
-HE day passed much as the day before had done. Mrs. Hurst and Miss Bingley had spent some hours of the morning with the invalid, who continued, though slowly, to mend; and, in the evening, Elizabeth joined their party in the drawing-room. The loo table, however, did not appear. Mr. Darcy was writing, and Miss Bingley, seated near him, was watching the progress of his letter, and repeatedly calling off his attention by messages to his sister. Mr. Hurst and Mr. Bingley were at piquet, and Mrs. Hurst was observing their game.
+THE day passed much as the day before had done. Mrs. Hurst and Miss Bingley had spent some hours of the morning with the invalid, who continued, though slowly, to mend; and, in the evening, Elizabeth joined their party in the drawing-room. The loo table, however, did not appear. Mr. Darcy was writing, and Miss Bingley, seated near him, was watching the progress of his letter, and repeatedly calling off his attention by messages to his sister. Mr. Hurst and Mr. Bingley were at piquet, and Mrs. Hurst was observing their game.
 
 Elizabeth took up some needlework, and was sufficiently amused in attending to what passed between Darcy and his companion. The perpetual commendations of the lady either on his hand-writing, or on the evenness of his lines, or on the length of his letter, with the perfect unconcern with which her praises were received, formed a curious dialogue, and was exactly in unison with her opinion of each.
 
@@ -109,3 +109,25 @@ Miss Bingley saw, or suspected, enough to be jealous; and her great anxiety for 
 She often tried to provoke Darcy into disliking her guest, by talking of their supposed marriage, and planning his happiness in such an alliance.
 
 “I hope,” said she, as they were walking together in the shrubbery the next day, “you will give your mother-in-law a few hints, when this desirable event takes place, as to the advantage of holding her tongue; and if you can compass it, to cure the younger girls of running after the officers. And, if I may mention so delicate a subject, endeavour to check that little something, bordering on conceit and impertinence, which your lady possesses.”
+
+“Have you anything else to propose for my domestic felicity?”
+
+“Oh yes. Do let the portraits of your uncle and aunt Philips be placed in the gallery at Pemberley. Put them next to your great-uncle the judge. They are in the same profession, you know, only in different lines. As for your Elizabeth’s picture, you must not attempt to have it taken, for what painter could do justice to those beautiful eyes?”
+
+“It would not be easy, indeed, to catch their expression; but their colour and shape, and the eyelashes, so remarkably fine, might be copied.”
+
+At that moment they were met from another walk by Mrs. Hurst and Elizabeth herself.
+
+“I did not know that you intended to walk,” said Miss Bingley, in some confusion, lest they had been overheard.
+
+“You used us abominably ill,” answered Mrs. Hurst, “running away without telling us that you were coming out.”
+
+Then taking the disengaged arm of Mr. Darcy, she left Elizabeth to walk by herself. The path just admitted three. Mr. Darcy felt their rudeness, and immediately said,—
+
+“This walk is not wide enough for our party. We had better go into the avenue.”
+
+But Elizabeth, who had not the least inclination to remain with them, laughingly answered,—
+
+“No, no; stay where you are. You are charmingly grouped, and appear to uncommon advantage. The picturesque would be spoilt by admitting a fourth. Good-bye.”
+
+She then ran gaily off, rejoicing, as she rambled about, in the hope of being at home again in a day or two. Jane was already so much recovered as to intend leaving her room for a couple of hours that evening.

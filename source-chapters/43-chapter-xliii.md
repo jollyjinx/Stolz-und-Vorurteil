@@ -1,6 +1,6 @@
 # Chapter XLIII
 
-LIZABETH, as they drove along, watched for the first appearance of Pemberley Woods with some perturbation; and when at length they turned in at the lodge, her spirits were in a high flutter.
+ELIZABETH, as they drove along, watched for the first appearance of Pemberley Woods with some perturbation; and when at length they turned in at the lodge, her spirits were in a high flutter.
 
 The park was very large, and contained great variety of ground. They entered it in one of its lowest points, and drove for some time through a beautiful wood stretching over a wide extent.
 

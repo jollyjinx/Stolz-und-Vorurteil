@@ -24,5 +24,5 @@ there is
 he ought to be. Lady Lucas quieted her fears a little by starting the idea of his”
 and then a german part comes and then a large blank page and then an image and then the english part and the reset of the german part. this is cumbersome to read.
 maybe we should always have acompanied translations on the same page and never broken up by images.
-
+ - I found in the english-german version a  probelem in chapter 7 that the order of the english then german was incorrect - I think it happend that some translation was wrong/missing. Now I'm fearing that we have more such errors. I would suggest to have subagents for each chapter check for such problems
 

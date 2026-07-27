@@ -1,6 +1,6 @@
-# Chapter 28
+# Chapter XXVIII
 
-VERY object in the next day’s journey was new and interesting to Elizabeth; and her spirits were in a state of enjoyment; for she had seen her sister looking so well as to banish all fear for her health, and the prospect of her northern tour was a constant source of delight.
+EVERY object in the next day’s journey was new and interesting to Elizabeth; and her spirits were in a state of enjoyment; for she had seen her sister looking so well as to banish all fear for her health, and the prospect of her northern tour was a constant source of delight.
 
 When they left the high road for the lane to Hunsford, every eye was in search of the Parsonage, and every turning expected to bring it in view. The paling of Rosings park was their boundary on one side. Elizabeth smiled at the recollection of all that she had heard of its inhabitants.
 

@@ -1,6 +1,6 @@
 # Chapter XLVI
 
-LIZABETH had been a good deal disappointed in not finding a letter from Jane on their first arrival at Lambton; and this disappointment had been renewed on each of the mornings that had now been spent there; but on the third her repining was over, and her sister justified, by the receipt of two letters from her at once, on one of which was marked that it had been mis-sent elsewhere. Elizabeth was not surprised at it, as Jane had written the direction remarkably ill.
+ELIZABETH had been a good deal disappointed in not finding a letter from Jane on their first arrival at Lambton; and this disappointment had been renewed on each of the mornings that had now been spent there; but on the third her repining was over, and her sister justified, by the receipt of two letters from her at once, on one of which was marked that it had been mis-sent elsewhere. Elizabeth was not surprised at it, as Jane had written the direction remarkably ill.
 
 They had just been preparing to walk as the letters came in; and her uncle and aunt, leaving her to enjoy them in quiet, set off by themselves. The one mis-sent must be first attended to; it had been written five days ago. The beginning contained an account of all their little parties and engagements, with such news as the country afforded; but the latter half, which was dated a day later, and written in evident agitation, gave more important intelligence. It was to this effect:—
 

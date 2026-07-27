@@ -1,6 +1,6 @@
 # Chapter XLIX
 
-WO days after Mr. Bennet’s return, as Jane and Elizabeth were walking together in the shrubbery behind the house, they saw the housekeeper coming towards them, and concluding that she came to call them to their mother, went forward to meet her; but instead of the expected summons, when they approached her, she said to Miss Bennet, “I beg your pardon, madam, for interrupting you, but I was in hopes you might have got some good news from town, so I took the liberty of coming to ask.”
+TWO days after Mr. Bennet’s return, as Jane and Elizabeth were walking together in the shrubbery behind the house, they saw the housekeeper coming towards them, and concluding that she came to call them to their mother, went forward to meet her; but instead of the expected summons, when they approached her, she said to Miss Bennet, “I beg your pardon, madam, for interrupting you, but I was in hopes you might have got some good news from town, so I took the liberty of coming to ask.”
 
 “What do you mean, Hill? We have heard nothing from town.”
 
@@ -25,6 +25,18 @@ Jane, who was not so light, nor so much in the habit of running as Elizabeth, so
 Elizabeth impatiently caught it from his hand. Jane now came up.
 
 “Read it aloud,” said their father, “for I hardly know myself what it is about.”
+
+“Gracechurch Street, Monday, August 2.
+
+“My dear Brother,
+
+“At last I am able to send you some tidings of my niece, and such as, upon the whole, I hope will give you satisfaction. Soon after you left me on Saturday, I was fortunate enough to find out in what part of London they were. The particulars I reserve till we meet. It is enough to know they are discovered: I have seen them both——”
+
+“Then it is as I always hoped,” cried Jane: “they are married!”
+
+Elizabeth read on: “I have seen them both. They are not married, nor can I find there was any intention of being so; but if you are willing to perform the engagements which I have ventured to make on your side, I hope it will not be long before they are. All that is required of you is, to assure to your daughter, by settlement, her equal share of the five thousand pounds, secured among your children after the decease of yourself and my sister; and, moreover, to enter into an engagement of allowing her, during your life, one hundred pounds per annum. These are conditions which, considering everything, I had no hesitation in complying with, as far as I thought myself privileged, for you. I shall send this by express, that no time may be lost in bringing me your answer. You will easily comprehend, from these particulars, that Mr. Wickham’s circumstances are not so hopeless as they are generally believed to be. The world has been deceived in that respect; and I am happy to say, there will be some little money, even when all his debts are discharged, to settle on my niece, in addition to her own fortune. If, as I conclude will be the case, you send me full powers to act in your name throughout the whole of this business, I will immediately give directions to Haggerston for preparing a proper settlement. There will not be the smallest occasion for your coming to town again; therefore stay quietly at Longbourn, and depend on my diligence and care. Send back your answer as soon as you can, and be careful to write explicitly. We have judged it best that my niece should be married from this house, of which I hope you will approve. She comes to us to-day. I shall write again as soon as anything more is determined on. Yours, etc.
+
+“Edw. Gardiner.”
 
 “Is it possible?” cried Elizabeth, when she had finished. “Can it be possible that he will marry her?”
 

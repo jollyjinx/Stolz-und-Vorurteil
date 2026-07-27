@@ -1,6 +1,6 @@
 # Chapter XLI
 
-HE first week of their return was soon gone. The second began. It was the last of the regiment’s stay in Meryton, and all the young ladies in the neighbourhood were drooping apace. The dejection was almost universal. The elder Miss Bennets alone were still able to eat, drink, and sleep, and pursue the usual course of their employments. Very frequently were they reproached for this insensibility by Kitty and Lydia, whose own misery was extreme, and who could not comprehend such hard-heartedness in any of the family.
+THE first week of their return was soon gone. The second began. It was the last of the regiment’s stay in Meryton, and all the young ladies in the neighbourhood were drooping apace. The dejection was almost universal. The elder Miss Bennets alone were still able to eat, drink, and sleep, and pursue the usual course of their employments. Very frequently were they reproached for this insensibility by Kitty and Lydia, whose own misery was extreme, and who could not comprehend such hard-heartedness in any of the family.
 
 “Good Heaven! What is to become of us? What are we to do?” would they often exclaim in the bitterness of woe. “How can you be smiling so, Lizzy?”
 

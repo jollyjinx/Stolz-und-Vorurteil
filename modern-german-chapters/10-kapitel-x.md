@@ -109,3 +109,25 @@ Miss Bingley sah oder ahnte genug, um eifersüchtig zu werden; und ihre große S
 Oft versuchte sie, Darcy dazu zu bringen, seine Besucherin nicht zu mögen, indem sie von ihrer vermeintlichen Heirat sprach und sein Glück in einer solchen Verbindung ausmalte.
 
 „Ich hoffe“, sagte sie, als sie am nächsten Tag zusammen im Gebüschgarten spazieren gingen, „Sie werden Ihrer Schwiegermutter, wenn dieses wünschenswerte Ereignis eintritt, einige Hinweise auf den Vorteil geben, den Mund zu halten; und wenn Sie es erreichen können, die jüngeren Mädchen davon heilen, den Offizieren nachzulaufen. Und wenn ich ein so heikles Thema erwähnen darf, bemühen Sie sich, jene kleine Neigung zu Einbildung und Unverschämtheit, die Ihre Dame besitzt, zu zügeln.“
+
+»Haben Sie noch etwas für mein häusliches Glück vorzuschlagen?«
+
+»Oh ja. Lassen Sie die Porträts Ihres Onkels und Ihrer Tante Philips in der Galerie von Pemberley aufhängen. Hängen Sie sie neben Ihren Großonkel, den Richter. Sie gehören schließlich demselben Berufsstand an, nur in unterschiedlichen Zweigen. Was das Porträt Ihrer Elizabeth betrifft, dürfen Sie gar nicht erst versuchen, es anfertigen zu lassen; denn welcher Maler könnte diesen schönen Augen gerecht werden?«
+
+»Ihren Ausdruck einzufangen wäre tatsächlich nicht leicht; aber ihre Farbe und Form und die so auffallend schönen Wimpern ließen sich vielleicht wiedergeben.«
+
+In diesem Augenblick kamen ihnen Mrs. Hurst und Elizabeth selbst von einem anderen Spazierweg entgegen.
+
+»Ich wusste nicht, dass Sie spazieren gehen wollten«, sagte Miss Bingley etwas verlegen, aus Sorge, man könne sie belauscht haben.
+
+»Sie haben uns abscheulich behandelt«, erwiderte Mrs. Hurst, »einfach fortzulaufen, ohne uns zu sagen, dass Sie hinausgingen.«
+
+Dann nahm sie Mr. Darcys freien Arm und überließ Elizabeth sich selbst. Der Weg bot gerade Platz für drei. Mr. Darcy bemerkte ihre Grobheit und sagte sofort:
+
+»Dieser Weg ist für unsere Gruppe nicht breit genug. Wir gehen besser in die Allee.«
+
+Doch Elizabeth, die nicht die geringste Lust hatte, bei ihnen zu bleiben, antwortete lachend:
+
+»Nein, nein; bleiben Sie, wo Sie sind. Sie bilden eine bezaubernde Gruppe und kommen so ungewöhnlich gut zur Geltung. Eine vierte Person würde das malerische Bild verderben. Auf Wiedersehen.«
+
+Dann lief sie gut gelaunt davon und freute sich auf ihrem Streifzug bei dem Gedanken, in ein oder zwei Tagen wieder zu Hause zu sein. Jane hatte sich bereits so weit erholt, dass sie beabsichtigte, an diesem Abend für ein paar Stunden ihr Zimmer zu verlassen.

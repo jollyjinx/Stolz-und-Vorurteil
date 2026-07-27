@@ -31,7 +31,7 @@ damit Ihr Euch auch dran erfreuen könnt«.
 
 ## Bilingual reading / Zweisprachig lesen
 
-**English:** Both bilingual editions contain the complete novel as 1,970
+**English:** Both bilingual editions contain the complete novel as 2,051
 German-English paragraph pairs. Every paragraph is present in both languages,
 allowing English- and German-speaking readers to read in their preferred
 language while keeping the other text immediately available for comparison.
@@ -48,7 +48,7 @@ support shared reading and direct comparison of Jane Austen’s original with
 the modern German translation without switching between separate books.
 
 **Deutsch:** Beide zweisprachigen Fassungen enthalten den vollständigen Roman
-in 1.970 deutsch-englischen Absatzpaaren. Jeder Absatz ist in beiden Sprachen
+in 2.051 deutsch-englischen Absatzpaaren. Jeder Absatz ist in beiden Sprachen
 vorhanden. Dadurch können deutsch- und englischsprachige Leser in ihrer
 bevorzugten Sprache lesen und den jeweils anderen Text direkt vergleichen.
 
@@ -88,12 +88,13 @@ ohne zwischen getrennten Büchern zu wechseln.
 
 ## Build / Bauen
 
-**Requirements / Voraussetzungen:** Python 3, `reportlab`, and Pandoc.
+**Requirements / Voraussetzungen:** Python 3, `lxml`, `reportlab`, and Pandoc.
 
 ```sh
-python3 -m pip install reportlab
+python3 -m pip install lxml reportlab
 python3 tools/build_book.py all
 python3 tools/verify_translation.py
+python3 tools/verify_translation.py --epub /Users/jolly/Downloads/pg1342-images-3.epub
 ```
 
 **English:** Replace `all` with `german`, `english`, `german-english`, or
@@ -107,6 +108,25 @@ when corrections are made.
 Kurzform für `german-english` erhalten. Die zweisprachigen Fassungen werden
 automatisch aus den absatzgleichen englischen und deutschen Kapiteln erzeugt,
 sodass beide Texte bei späteren Korrekturen synchron bleiben.
+
+**English:** The verifier checks headings, paragraph counts, suspicious
+mid-sentence splits, and the hashes of every manually audited chapter pairing
+in `alignment-manifest.json`. The optional `--epub` check also proves that the
+committed English chapters exactly match a fresh extraction of the supplied
+EPUB. After an intentional text change, update the manifest only after
+reviewing every changed English-German pair:
+
+**Deutsch:** Die Prüfung kontrolliert Überschriften, Absatzanzahlen,
+verdächtige Satztrennungen und die Hashes jeder manuell geprüften
+Kapitelzuordnung in `alignment-manifest.json`. Mit der optionalen
+`--epub`-Prüfung wird zusätzlich nachgewiesen, dass die eingecheckten
+englischen Kapitel exakt einer neuen Extraktion der mitgelieferten EPUB-Datei
+entsprechen. Nach einer beabsichtigten Textänderung darf das Manifest erst
+aktualisiert werden, wenn jedes geänderte Englisch-Deutsch-Paar geprüft wurde:
+
+```sh
+python3 tools/verify_translation.py --update-alignment-manifest
+```
 
 ### Illustrations and captions / Illustrationen und Bildunterschriften
 

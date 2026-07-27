@@ -8,7 +8,9 @@ Das Dorf Longbourn lag nur eine Meile von Meryton entfernt, eine sehr bequeme En
 
 Ihre Besuche bei Mrs. Philips brachten nun die interessantesten Nachrichten. Jeden Tag erfuhren sie mehr über Namen und Verbindungen der Offiziere. Ihre Quartiere blieben nicht lange ein Geheimnis, und schließlich lernten sie die Offiziere selbst kennen. Mr. Philips besuchte sie alle, was seinen Nichten eine bis dahin unbekannte Quelle des Glücks eröffnete. Sie sprachen von nichts anderem als von Offizieren; Mr. Bingleys großes Vermögen, dessen Erwähnung ihre Mutter belebte, war in ihren Augen nichts gegen die Uniform eines Fähnrichs.
 
-Nachdem Mr. Bennet eines Morgens ihren Ergüssen zugehört hatte, sagte er kühl: »Nach allem, was ich aus eurer Art zu reden schließen kann, müsst ihr zwei die dümmsten Mädchen auf dem Land sein. Ich habe es seit einiger Zeit vermutet, jetzt bin ich überzeugt.«
+Nachdem Mr. Bennet eines Morgens ihren Ergüssen zugehört hatte, sagte er kühl:
+
+»Nach allem, was ich aus eurer Art zu reden schließen kann, müsst ihr zwei die dümmsten Mädchen auf dem Land sein. Ich habe es seit einiger Zeit vermutet, jetzt bin ich überzeugt.«
 
 Catherine war bestürzt und sagte nichts; Lydia sprach völlig ungerührt weiter von ihrer Bewunderung für Captain Carter und ihrer Hoffnung, ihn noch am selben Tag zu sehen, da er am nächsten Morgen nach London fahren sollte.
 
@@ -24,11 +26,17 @@ Catherine war bestürzt und sagte nichts; Lydia sprach völlig ungerührt weiter
 
 »Mama«, rief Lydia, »Tante sagt, Colonel Forster und Captain Carter gingen nicht mehr so oft zu Miss Watson wie anfangs; jetzt sieht sie sie oft in Clarkes Leihbibliothek stehen.«
 
-Mrs. Bennet wurde durch den Eintritt des Dieners unterbrochen, der einen Brief für Miss Bennet brachte. Er kam aus Netherfield und der Bote wartete auf Antwort. Mrs. Bennets Augen leuchteten vergnügt auf, während Jane las, rief sie ungeduldig: »Nun, Jane, von wem ist er? Worum geht es? Was schreibt sie? Nun, Jane, beeil dich und sag es uns, meine Liebe.«
+Mrs. Bennet wurde durch den Eintritt des Dieners unterbrochen, der einen Brief für Miss Bennet brachte. Er kam aus Netherfield und der Bote wartete auf Antwort. Mrs. Bennets Augen leuchteten vergnügt auf, und während ihre Tochter las, rief sie ungeduldig:
+
+»Nun, Jane, von wem ist er? Worum geht es? Was schreibt sie? Nun, Jane, beeil dich und sag es uns, meine Liebe.«
 
 »Er ist von Miss Bingley«, sagte Jane und las vor:
 
-»Meine liebe Jane, wenn Sie nicht so barmherzig sind, heute mit Louisa und mir zu speisen, werden wir in Gefahr sein, einander zu hassen, denn zwei Frauen, die sich acht Stunden lang nichts zu sagen haben, müssen sich übel miteinander zerstreiten. Kommen Sie, sobald Sie können. Mein Bruder und die Herren essen mit den Offizieren. Ihre stets ergebene Caroline Bingley.«
+»Meine liebe Freundin,
+
+»Wenn Sie nicht so mitfühlend sind, heute mit Louisa und mir zu essen, laufen wir Gefahr, einander für den Rest unseres Lebens zu hassen; denn ein ganzer Tag unter vier Augen zwischen zwei Frauen kann unmöglich ohne Streit enden. Kommen Sie, sobald Sie diesen Brief erhalten. Mein Bruder und die Herren essen mit den Offizieren. Für immer die Ihre,
+
+»Caroline Bingley.«
 
 »Bei den Offizieren!«, rief Lydia. »Ich wundere mich, dass Tante uns das nicht erzählt hat.«
 
@@ -54,7 +62,11 @@ Sie rang ihrem Vater schließlich das Geständnis ab, dass die Pferde vergeben s
 
 »Das war wirklich ein glücklicher Einfall von mir!«, sagte Mrs. Bennet mehr als einmal, als wäre das Verdienst, es regnen zu lassen, ganz ihr eigenes. Bis zum nächsten Morgen wusste sie allerdings nicht, wie vollständig ihr Plan gelungen war. Das Frühstück war kaum beendet, als ein Diener aus Netherfield Elizabeth folgenden Brief brachte:
 
-»Meine liebe Lizzy, ich finde mich heute sehr unwohl, offenbar wegen einer heftigen Erkältung, und möchte dich bitten, zu mir zu kommen, wenn du es ohne allzu große Umstände kannst. Sie würden mich nicht nach Hause schicken wollen, weil wir uns vorstellen, dass das Fahren mich noch kränker machen würde. Mit großem Ernst wird mir Mr. Jones verordnet. Daher nimm bitte keinen Anstoß, wenn ich dich dringend bitte, zu mir zu kommen. Deine Jane.«
+»Meine liebste Lizzy,
+
+»Mir geht es heute Morgen sehr schlecht, was, wie ich annehme, darauf zurückzuführen ist, dass ich gestern völlig durchnässt wurde. Meine freundlichen Gastgeber wollen nichts davon hören, dass ich nach Hause zurückkehre, bevor es mir besser geht. Sie bestehen außerdem darauf, dass ich Mr. Jones empfange — sei daher nicht beunruhigt, falls du hören solltest, dass er bei mir war —, und abgesehen von Halsschmerzen und Kopfschmerzen fehlt mir nicht viel.
+
+»Deine usw.«
 
 »Nun, meine Liebe«, sagte Mr. Bennet, nachdem Elizabeth den Brief vorgelesen hatte, »wenn deine Tochter einen gefährlichen Krankheitsanfall bekommen und sterben sollte, wäre es ein Trost zu wissen, dass alles auf der Jagd nach Mr. Bingley und auf deine Anordnung geschehen ist.«
 

@@ -12,7 +12,9 @@ Die Mädchen liefen los, viel zu erregt, um sprechen zu können. Sie rannten dur
 
 Bei dieser Auskunft liefen sie sofort wieder durch die Halle und über den Rasen ihrem Vater nach, der gemächlich auf ein kleines Gehölz am Rand der Weide zuging.
 
-Jane, die weder so leichtfüßig war noch so häufig lief wie Elizabeth, blieb bald zurück. Ihre Schwester erreichte ihn außer Atem und rief begierig: »Oh, Papa, was gibt es? Was gibt es? Haben Sie von meinem Onkel gehört?«
+Jane, die weder so leichtfüßig war noch so häufig lief wie Elizabeth, blieb bald zurück. Ihre Schwester erreichte ihn außer Atem und rief begierig:
+
+»Oh, Papa, was gibt es? Was gibt es? Haben Sie von meinem Onkel gehört?«
 
 »Ja, ein Eilbrief von ihm ist gekommen.«
 
@@ -23,6 +25,18 @@ Jane, die weder so leichtfüßig war noch so häufig lief wie Elizabeth, blieb b
 Ungeduldig riss Elizabeth ihn ihm aus der Hand. Jetzt kam auch Jane heran.
 
 »Lies ihn laut vor«, sagte ihr Vater. »Ich weiß selbst kaum, worum es geht.«
+
+»Gracechurch Street, Montag, den 2. August.
+
+»Mein lieber Bruder,
+
+»endlich kann ich dir etwas über meine Nichte berichten, und zwar etwas, das dich im Großen und Ganzen hoffentlich zufriedenstellen wird. Bald nachdem du uns am Samstag verlassen hattest, gelang es mir herauszufinden, in welchem Teil Londons sie sich aufhielten. Die Einzelheiten hebe ich mir für unser Wiedersehen auf. Es genügt zu wissen, dass sie gefunden sind: Ich habe sie beide gesehen —«
+
+»Dann ist es so, wie ich immer gehofft habe«, rief Jane. »Sie sind verheiratet!«
+
+Elizabeth las weiter: »Ich habe sie beide gesehen. Sie sind nicht verheiratet, und ich kann auch nicht feststellen, dass dies je beabsichtigt war. Wenn du jedoch bereit bist, die Verpflichtungen zu erfüllen, die ich in deinem Namen einzugehen gewagt habe, hoffe ich, dass es bis zu ihrer Heirat nicht mehr lange dauern wird. Von dir wird lediglich verlangt, deiner Tochter durch einen Ehevertrag ihren gleichen Anteil an den fünftausend Pfund zuzusichern, die nach dem Tod von dir und meiner Schwester unter euren Kindern aufgeteilt werden, und dich darüber hinaus zu verpflichten, ihr zu deinen Lebzeiten jährlich hundert Pfund zu zahlen. Diesen Bedingungen habe ich unter Berücksichtigung aller Umstände ohne Zögern zugestimmt, soweit ich mich dazu in deinem Namen berechtigt glaubte. Ich schicke diesen Brief per Eilboten, damit bei der Übermittlung deiner Antwort keine Zeit verloren geht. Aus diesen Einzelheiten wirst du leicht ersehen, dass Mr. Wickhams Verhältnisse nicht so hoffnungslos sind, wie man allgemein annimmt. Darin hat sich die Welt getäuscht; und ich freue mich sagen zu können, dass selbst nach Begleichung all seiner Schulden noch eine kleine Summe übrig bleiben wird, die zusätzlich zu ihrem eigenen Vermögen für meine Nichte ausgesetzt werden kann. Wenn du mir, wie ich annehme, umfassende Vollmacht erteilst, in dieser ganzen Angelegenheit in deinem Namen zu handeln, werde ich Haggerston sofort anweisen, einen ordnungsgemäßen Ehevertrag aufzusetzen. Es besteht nicht der geringste Anlass für dich, wieder nach London zu kommen; bleib daher ruhig in Longbourn und verlass dich auf meinen Fleiß und meine Sorgfalt. Schick deine Antwort so bald wie möglich zurück und achte darauf, dich unmissverständlich auszudrücken. Wir hielten es für das Beste, meine Nichte von diesem Haus aus heiraten zu lassen, womit du hoffentlich einverstanden bist. Sie kommt heute zu uns. Ich schreibe wieder, sobald Weiteres beschlossen ist. Dein usw.
+
+»Edw. Gardiner.«
 
 »Kann das wahr sein?«, rief Elizabeth, als sie zu Ende gelesen hatte. »Ist es möglich, dass er sie heiraten will?«
 
@@ -48,9 +62,7 @@ Damit kehrte er mit ihnen um und ging zum Haus zurück.
 
 »Und sie müssen heiraten! Obwohl er so ein Mann ist.«
 
-»Ja, ja, sie müssen heiraten. Es bleibt nichts anderes.«
-
-»Aber zwei Dinge möchte ich sehr gern wissen: Erstens, wie viel Geld dein Onkel hingelegt hat, um das zustande zu bringen, und zweitens, wie ich es ihm jemals zurückzahlen soll.«
+»Ja, ja, sie müssen heiraten. Es bleibt nichts anderes. Aber zwei Dinge möchte ich sehr gern wissen: Erstens, wie viel Geld dein Onkel hingelegt hat, um das zustande zu bringen, und zweitens, wie ich es ihm jemals zurückzahlen soll.«
 
 »Geld! Mein Onkel!«, rief Jane. »Was meinen Sie, Sir?«
 

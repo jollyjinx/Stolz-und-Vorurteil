@@ -1,6 +1,6 @@
 # Chapter LV
 
-FEW days after this visit, Mr. Bingley called again, and alone. His friend had left him that morning for London, but was to return home in ten days’ time. He sat with them above an hour, and was in remarkably good spirits. Mrs. Bennet invited him to dine with them; but, with many expressions of concern, he confessed himself engaged elsewhere.
+A FEW days after this visit, Mr. Bingley called again, and alone. His friend had left him that morning for London, but was to return home in ten days’ time. He sat with them above an hour, and was in remarkably good spirits. Mrs. Bennet invited him to dine with them; but, with many expressions of concern, he confessed himself engaged elsewhere.
 
 “Next time you call,” said she, “I hope we shall be more lucky.”
 

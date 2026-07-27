@@ -1,6 +1,6 @@
 # Chapter XLVII
 
-“ HAVE been thinking it over again, Elizabeth,” said her uncle, as they drove from the town; “and really, upon serious consideration, I am much more inclined than I was to judge as your eldest sister does of the matter. It appears to me so very unlikely that any young man should form such a design against a girl who is by no means unprotected or friendless, and who was actually staying in his Colonel’s family, that I am strongly inclined to hope the best. Could he expect that her friends would not step forward? Could he expect to be noticed again by the regiment, after such an affront to Colonel Forster? His temptation is not adequate to the risk.”
+“I HAVE been thinking it over again, Elizabeth,” said her uncle, as they drove from the town; “and really, upon serious consideration, I am much more inclined than I was to judge as your eldest sister does of the matter. It appears to me so very unlikely that any young man should form such a design against a girl who is by no means unprotected or friendless, and who was actually staying in his Colonel’s family, that I am strongly inclined to hope the best. Could he expect that her friends would not step forward? Could he expect to be noticed again by the regiment, after such an affront to Colonel Forster? His temptation is not adequate to the risk.”
 
 “Do you really think so?” cried Elizabeth, brightening up for a moment.
 
@@ -121,3 +121,27 @@ In the afternoon, the two elder Miss Bennets were able to be for half an hour by
 “He brought it with him for us to see.”
 
 Jane then took it from her pocket-book, and gave it to Elizabeth. These were the contents:—
+
+“My dear Harriet,
+
+“You will laugh when you know where I am gone, and I cannot help laughing myself at your surprise to-morrow morning, as soon as I am missed. I am going to Gretna Green, and if you cannot guess with who, I shall think you a simpleton, for there is but one man in the world I love, and he is an angel. I should never be happy without him, so think it no harm to be off. You need not send them word at Longbourn of my going, if you do not like it, for it will make the surprise the greater when I write to them, and sign my name Lydia Wickham. What a good joke it will be! I can hardly write for laughing. Pray make my excuses to Pratt for not keeping my engagement, and dancing with him to-night. Tell him I hope he will excuse me when he knows all, and tell him I will dance with him at the next ball we meet with great pleasure. I shall send for my clothes when I get to Longbourn; but I wish you would tell Sally to mend a great slit in my worked muslin gown before they are packed up. Good-bye. Give my love to Colonel Forster. I hope you will drink to our good journey.
+
+“Your affectionate friend, “Lydia Bennet.”
+
+“Oh, thoughtless, thoughtless Lydia!” cried Elizabeth when she had finished it. “What a letter is this, to be written at such a moment! But at least it shows that she was serious in the object of her journey. Whatever he might afterwards persuade her to, it was not on her side a scheme of infamy. My poor father! how he must have felt it!”
+
+“I never saw anyone so shocked. He could not speak a word for full ten minutes. My mother was taken ill immediately, and the whole house in such confusion!”
+
+“Oh, Jane,” cried Elizabeth, “was there a servant belonging to it who did not know the whole story before the end of the day?”
+
+“I do not know: I hope there was. But to be guarded at such a time is very difficult. My mother was in hysterics; and though I endeavoured to give her every assistance in my power, I am afraid I did not do so much as I might have done. But the horror of what might possibly happen almost took from me my faculties.”
+
+“Your attendance upon her has been too much for you. You do not look well. Oh that I had been with you! you have had every care and anxiety upon yourself alone.”
+
+“Mary and Kitty have been very kind, and would have shared in every fatigue, I am sure, but I did not think it right for either of them. Kitty is slight and delicate, and Mary studies so much that her hours of repose should not be broken in on. My aunt Philips came to Longbourn on Tuesday, after my father went away; and was so good as to stay till Thursday with me. She was of great use and comfort to us all, and Lady Lucas has been very kind: she walked here on Wednesday morning to condole with us, and offered her services, or any of her daughters, if they could be of use to us.”
+
+“She had better have stayed at home,” cried Elizabeth: “perhaps she meant well, but, under such a misfortune as this, one cannot see too little of one’s neighbours. Assistance is impossible; condolence, insufferable. Let them triumph over us at a distance, and be satisfied.”
+
+She then proceeded to inquire into the measures which her father had intended to pursue, while in town, for the recovery of his daughter.
+
+“He meant, I believe,” replied Jane, “to go to Epsom, the place where they last changed horses, see the postilions, and try if anything could be made out from them. His principal object must be to discover the number of the hackney coach which took them from Clapham. It had come with a fare from London; and as he thought the circumstance of a gentleman and lady’s removing from one carriage into another might be remarked, he meant to make inquiries at Clapham. If he could anyhow discover at what house the coachman had before set down his fare, he determined to make inquiries there, and hoped it might not be impossible to find out the stand and number of the coach. I do not know of any other designs that he had formed; but he was in such a hurry to be gone, and his spirits so greatly discomposed, that I had difficulty in finding out even so much as this.”

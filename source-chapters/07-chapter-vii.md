@@ -1,6 +1,6 @@
 # Chapter VII
 
-R. BENNET’S property consisted almost entirely in an estate of two thousand a year, which, unfortunately for his daughters, was entailed, in default of heirs male, on a distant relation; and their mother’s fortune, though ample for her situation in life, could but ill supply the deficiency of his. Her father had been an attorney in Meryton, and had left her four thousand pounds.
+MR. BENNET’S property consisted almost entirely in an estate of two thousand a year, which, unfortunately for his daughters, was entailed, in default of heirs male, on a distant relation; and their mother’s fortune, though ample for her situation in life, could but ill supply the deficiency of his. Her father had been an attorney in Meryton, and had left her four thousand pounds.
 
 She had a sister married to a Mr. Philips, who had been a clerk to their father and succeeded him in the business, and a brother settled in London in a respectable line of trade.
 
@@ -32,6 +32,12 @@ Mrs. Bennet was prevented replying by the entrance of the footman with a note fo
 
 “It is from Miss Bingley,” said Jane, and then read it aloud.
 
+“My dear friend,
+
+“If you are not so compassionate as to dine to-day with Louisa and me, we shall be in danger of hating each other for the rest of our lives; for a whole day’s tête-à-tête between two women can never end without a quarrel. Come as soon as you can on the receipt of this. My brother and the gentlemen are to dine with the officers. Yours ever,
+
+“Caroline Bingley.”
+
 “With the officers!” cried Lydia: “I wonder my aunt did not tell us of that.”
 
 “Dining out,” said Mrs. Bennet; “that is very unlucky.”
@@ -55,6 +61,12 @@ Mrs. Bennet was prevented replying by the entrance of the footman with a note fo
 She did at last extort from her father an acknowledgment that the horses were engaged; Jane was therefore obliged to go on horseback, and her mother attended her to the door with many cheerful prognostics of a bad day. Her hopes were answered; Jane had not been gone long before it rained hard. Her sisters were uneasy for her, but her mother was delighted. The rain continued the whole evening without intermission; Jane certainly could not come back.
 
 “This was a lucky idea of mine, indeed!” said Mrs. Bennet, more than once, as if the credit of making it rain were all her own. Till the next morning, however, she was not aware of all the felicity of her contrivance. Breakfast was scarcely over when a servant from Netherfield brought the following note for Elizabeth:—
+
+“My dearest Lizzie,
+
+“I find myself very unwell this morning, which, I suppose, is to be imputed to my getting wet through yesterday. My kind friends will not hear of my returning home till I am better. They insist also on my seeing Mr. Jones—therefore do not be alarmed if you should hear of his having been to me—and, excepting a sore throat and a headache, there is not much the matter with me.
+
+“Yours, etc.”
 
 “Well, my dear,” said Mr. Bennet, when Elizabeth had read the note aloud, “if your daughter should have a dangerous fit of illness—if she should die—it would be a comfort to know that it was all in pursuit of Mr. Bingley, and under your orders.”
 

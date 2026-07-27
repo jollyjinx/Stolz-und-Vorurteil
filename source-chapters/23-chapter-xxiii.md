@@ -1,6 +1,6 @@
 # Chapter XXIII
 
-LIZABETH was sitting with her mother and sisters, reflecting on what she had heard, and doubting whether she was authorized to mention it, when Sir William Lucas himself appeared, sent by his daughter to announce her engagement to the family. With many compliments to them, and much self-gratulation on the prospect of a connection between the houses, he unfolded the matter,—to an audience not merely wondering, but incredulous; for Mrs. Bennet, with more perseverance than politeness, protested he must be entirely mistaken; and Lydia, always unguarded and often uncivil, boisterously exclaimed,—
+ELIZABETH was sitting with her mother and sisters, reflecting on what she had heard, and doubting whether she was authorized to mention it, when Sir William Lucas himself appeared, sent by his daughter to announce her engagement to the family. With many compliments to them, and much self-gratulation on the prospect of a connection between the houses, he unfolded the matter,—to an audience not merely wondering, but incredulous; for Mrs. Bennet, with more perseverance than politeness, protested he must be entirely mistaken; and Lydia, always unguarded and often uncivil, boisterously exclaimed,—
 
 “Good Lord! Sir William, how can you tell such a story? Do not you know that Mr. Collins wants to marry Lizzy?”
 

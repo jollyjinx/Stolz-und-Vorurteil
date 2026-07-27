@@ -1,6 +1,6 @@
 # Chapter LIV
 
-S soon as they were gone, Elizabeth walked out to recover her spirits; or, in other words, to dwell without interruption on those subjects which must deaden them more. Mr. Darcy’s behaviour astonished and vexed her.
+AS soon as they were gone, Elizabeth walked out to recover her spirits; or, in other words, to dwell without interruption on those subjects which must deaden them more. Mr. Darcy’s behaviour astonished and vexed her.
 
 “Why, if he came only to be silent, grave, and indifferent,” said she, “did he come at all?”
 

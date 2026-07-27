@@ -121,3 +121,27 @@ Am Nachmittag konnten die beiden älteren Miss Bennets eine halbe Stunde allein 
 »Er brachte sie mit, damit wir sie sehen konnten.«
 
 Jane nahm sie daraufhin aus ihrem Notizbuch und gab sie Elizabeth. Ihr Inhalt lautete:
+
+»Meine liebe Harriet,
+
+»du wirst lachen, wenn du erfährst, wohin ich verschwunden bin, und ich selbst muss schon lachen, wenn ich an deine Überraschung morgen früh denke, sobald man mich vermisst. Ich fahre nach Gretna Green, und wenn du nicht erraten kannst, mit wem, halte ich dich für eine Einfaltspinselin; denn es gibt nur einen Mann auf der Welt, den ich liebe, und er ist ein Engel. Ohne ihn könnte ich niemals glücklich sein, also finde es nicht schlimm, dass ich fortgehe. Du brauchst ihnen in Longbourn nichts von meiner Abreise zu sagen, wenn du nicht möchtest; dann ist die Überraschung umso größer, wenn ich ihnen schreibe und mit Lydia Wickham unterschreibe. Was für ein herrlicher Spaß! Ich kann vor Lachen kaum schreiben. Bitte entschuldige mich bei Pratt dafür, dass ich meine Verabredung nicht einhalte und heute Abend nicht mit ihm tanze. Sag ihm, ich hoffe, er wird mir verzeihen, wenn er alles erfährt, und ich werde mit größtem Vergnügen beim nächsten Ball mit ihm tanzen, auf dem wir uns begegnen. Ich lasse meine Kleider holen, sobald ich in Longbourn bin; aber bitte sag Sally, sie soll den großen Riss in meinem bestickten Musselinkleid flicken, bevor sie eingepackt werden. Leb wohl. Grüße Colonel Forster von mir. Ich hoffe, ihr werdet auf unsere gute Reise trinken.
+
+»Deine dich liebende Freundin, Lydia Bennet.«
+
+»Oh, gedankenlose, gedankenlose Lydia!«, rief Elizabeth, als sie den Brief zu Ende gelesen hatte. »Was für ein Brief in einem solchen Augenblick! Aber wenigstens zeigt er, dass *sie* es mit dem Ziel ihrer Reise ernst meinte. Wozu er sie später auch überredet haben mag, von ihrer Seite war es kein schändlicher Plan. Mein armer Vater! Was muss er dabei empfunden haben!«
+
+»Ich habe noch nie jemanden so erschüttert gesehen. Ganze zehn Minuten lang brachte er kein Wort heraus. Mama wurde sofort krank, und das ganze Haus geriet in solche Verwirrung!«
+
+»Oh Jane«, rief Elizabeth, »gab es im ganzen Haus auch nur einen Bediensteten, der die Geschichte nicht noch vor Ende des Tages kannte?«
+
+»Ich weiß es nicht; ich hoffe, dass es einen gab. Aber in einem solchen Augenblick ist es sehr schwer, vorsichtig zu sein. Mama hatte hysterische Anfälle, und obwohl ich versuchte, ihr nach Kräften zu helfen, fürchte ich, dass ich nicht so viel getan habe, wie ich hätte tun können. Doch das Entsetzen über das, was möglicherweise geschehen würde, raubte mir beinahe alle Besinnung.«
+
+»Die Pflege deiner Mutter hat dich zu sehr angestrengt. Du siehst nicht gut aus. Ach, wäre ich doch bei dir gewesen! Du musstest alle Sorgen und Ängste ganz allein tragen.«
+
+»Mary und Kitty waren sehr lieb und hätten gewiss jede Mühe mit mir geteilt, aber ich hielt es nicht für richtig, eine von ihnen damit zu belasten. Kitty ist zart und empfindlich, und Mary lernt so viel, dass man ihre Ruhezeiten nicht stören sollte. Tante Philips kam am Dienstag nach Longbourn, nachdem Papa abgereist war, und war so gut, bis Donnerstag bei mir zu bleiben. Sie war uns allen eine große Hilfe und ein Trost. Auch Lady Lucas war sehr freundlich: Sie kam am Mittwochmorgen zu Fuß herüber, um uns ihr Beileid auszusprechen, und bot ihre Hilfe oder die einer ihrer Töchter an, falls sie uns nützlich sein könnten.«
+
+»Sie wäre besser zu Hause geblieben«, rief Elizabeth. »Vielleicht *meinte* sie es gut, aber bei einem solchen Unglück kann man seine Nachbarn gar nicht selten genug sehen. Hilfe ist unmöglich, Beileidsbekundungen sind unerträglich. Sie sollen aus der Ferne über uns triumphieren und sich damit zufriedengeben.«
+
+Dann erkundigte sie sich weiter nach den Maßnahmen, die ihr Vater in London zur Wiederauffindung seiner Tochter hatte ergreifen wollen.
+
+»Er wollte, glaube ich«, erwiderte Jane, »nach Epsom fahren, wo sie zuletzt die Pferde wechselten, die Postillione befragen und versuchen, etwas aus ihnen herauszubekommen. Vor allem musste er die Nummer der Mietkutsche herausfinden, die sie von Clapham fortbrachte. Sie war mit einem Fahrgast aus London gekommen; und weil er dachte, der Wechsel eines Herrn und einer Dame von einer Kutsche in eine andere könnte aufgefallen sein, wollte er in Clapham Nachforschungen anstellen. Falls er irgendwie herausfinden konnte, an welchem Haus der Kutscher seinen vorherigen Fahrgast abgesetzt hatte, wollte er dort nachfragen und hoffte, es sei vielleicht möglich, den Standplatz und die Nummer der Kutsche zu ermitteln. Von weiteren Plänen weiß ich nichts; aber er hatte es so eilig fortzukommen und war so außer sich, dass ich selbst dies nur mit Mühe von ihm erfahren konnte.«

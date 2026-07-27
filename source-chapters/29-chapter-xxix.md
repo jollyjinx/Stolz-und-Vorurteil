@@ -1,6 +1,6 @@
 # Chapter XXIX
 
-R. COLLINS’S triumph, in consequence of this invitation, was complete. The power of displaying the grandeur of his patroness to his wondering visitors, and of letting them see her civility towards himself and his wife, was exactly what he had wished for; and that an opportunity of doing it should be given so soon was such an instance of Lady Catherine’s condescension as he knew not how to admire enough.
+MR. COLLINS’S triumph, in consequence of this invitation, was complete. The power of displaying the grandeur of his patroness to his wondering visitors, and of letting them see her civility towards himself and his wife, was exactly what he had wished for; and that an opportunity of doing it should be given so soon was such an instance of Lady Catherine’s condescension as he knew not how to admire enough.
 
 “I confess,” said he, “that I should not have been at all surprised by her Ladyship’s asking us on Sunday to drink tea and spend the evening at Rosings. I rather expected, from my knowledge of her affability, that it would happen. But who could have foreseen such an attention as this? Who could have imagined that we should receive an invitation to dine there (an invitation, moreover, including the whole party) so immediately after your arrival?”
 

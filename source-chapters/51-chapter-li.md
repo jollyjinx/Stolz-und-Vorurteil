@@ -1,6 +1,6 @@
 # Chapter LI
 
-HEIR sister’s wedding-day arrived; and Jane and Elizabeth felt for her probably more than she felt for herself. The carriage was sent to meet them at——, and they were to return in it by dinnertime. Their arrival was dreaded by the elder Miss Bennets—and Jane more especially, who gave Lydia the feelings which would have attended herself, had she been the culprit, and was wretched in the thought of what her sister must endure.
+THEIR sister’s wedding-day arrived; and Jane and Elizabeth felt for her probably more than she felt for herself. The carriage was sent to meet them at——, and they were to return in it by dinnertime. Their arrival was dreaded by the elder Miss Bennets—and Jane more especially, who gave Lydia the feelings which would have attended herself, had she been the culprit, and was wretched in the thought of what her sister must endure.
 
 They came. The family were assembled in the breakfast-room to receive them. Smiles decked the face of Mrs. Bennet, as the carriage drove up to the door; her husband looked impenetrably grave; her daughters, alarmed, anxious, uneasy.
 
