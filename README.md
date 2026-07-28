@@ -77,6 +77,9 @@ ohne zwischen getrennten Büchern zu wechseln.
   generated initials for `F`, `U`, and `Z` / 97 Illustrationen und 59
   historische Initialen von Hugh Thomson, ergänzt um drei neu erzeugte
   Initialen für `F`, `U` und `Z`
+- `covers/`: newly generated cover artwork for the German and both bilingual
+  release editions / neu erzeugte Umschlaggestaltung für die deutsche und
+  beide zweisprachigen Veröffentlichungsausgaben
 - `frontmatter/`: title, source, and dedication pages / Titel-, Quellen- und
   Widmungsseiten
 - `tools/`: extraction, verification, and book-building tools / Werkzeuge für
@@ -108,6 +111,16 @@ when corrections are made.
 Kurzform für `german-english` erhalten. Die zweisprachigen Fassungen werden
 automatisch aus den absatzgleichen englischen und deutschen Kapiteln erzeugt,
 sodass beide Texte bei späteren Korrekturen synchron bleiben.
+
+**English:** The three release editions use their matching artwork from
+`covers/`: as the semantic cover in EPUB, before the title block in HTML, and
+as the first full cover page in PDF. The English source-only build remains
+without newly generated cover artwork.
+
+**Deutsch:** Die drei Veröffentlichungsausgaben verwenden jeweils das
+passende Bild aus `covers/`: als semantisches Cover im EPUB, vor dem Titelblock
+im HTML und als erste ganzseitige Umschlagseite im PDF. Der rein englische
+Referenz-Build bleibt ohne neu erzeugte Umschlaggestaltung.
 
 **English:** The verifier checks headings, paragraph counts, suspicious
 mid-sentence splits, and the hashes of every manually audited chapter pairing

@@ -13,6 +13,24 @@ body {
   padding: 1rem;
 }
 
+.book-cover {
+  break-after: page;
+  margin: 0 auto 3rem;
+  max-width: 32rem;
+  page-break-after: always;
+  text-align: center;
+}
+
+.book-cover img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-height: 95vh;
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
 h1 {
   color: #372b20;
   font-size: 1.7em;

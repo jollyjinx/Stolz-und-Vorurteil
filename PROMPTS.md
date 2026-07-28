@@ -25,4 +25,6 @@ he ought to be. Lady Lucas quieted her fears a little by starting the idea of hi
 and then a german part comes and then a large blank page and then an image and then the english part and the reset of the german part. this is cumbersome to read.
 maybe we should always have acompanied translations on the same page and never broken up by images.
  - I found in the english-german version a  probelem in chapter 7 that the order of the english then german was incorrect - I think it happend that some translation was wrong/missing. Now I'm fearing that we have more such errors. I would suggest to have subagents for each chapter check for such problems
-
+ - create a book cover image in the style of  the attached image which is from the original book, but I did not take that picture so i don't have the rights. The book itself is free so we can create a cover image that will be inspired by the original book cover.
+ - (steered) we need different covers for the different versions
+ - perfect , add them to the books.

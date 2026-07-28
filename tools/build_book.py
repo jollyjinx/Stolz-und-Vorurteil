@@ -17,6 +17,7 @@ from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY
 from reportlab.lib.pagesizes import A5
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
+from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.platypus import (
     Image as ReportLabImage,
@@ -32,6 +33,7 @@ from reportlab.platypus import (
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 CSS = ROOT / "book.css"
+COVERS = ROOT / "covers"
 ILLUSTRATIONS = ROOT / "illustrations"
 ILLUSTRATION_MANIFEST = ILLUSTRATIONS / "manifest.json"
 INITIAL_MANIFESTS = [
@@ -64,6 +66,7 @@ EDITIONS = {
         "basename": "Stolz-und-Vorurteil-modernes-Deutsch",
         "title": "Stolz und Vorurteil",
         "subtitle": "Eine moderne deutsche Übersetzung",
+        "cover": COVERS / "Stolz-und-Vorurteil-modernes-Deutsch.png",
         "author": "Jane Austen",
         "translator": "ChatGPT, mit Hilfe von Patrick Stein",
         "illustrator": "Hugh Thomson",
@@ -94,6 +97,7 @@ EDITIONS = {
         "basename": "Stolz-und-Vorurteil-Deutsch-Englisch",
         "title": "Stolz und Vorurteil / Pride and Prejudice",
         "subtitle": "Vollständig zweisprachig: Deutsch zuerst",
+        "cover": COVERS / "Stolz-und-Vorurteil-Deutsch-Englisch.png",
         "author": "Jane Austen",
         "translator": "ChatGPT, mit Hilfe von Patrick Stein",
         "illustrator": "Hugh Thomson",
@@ -117,6 +121,7 @@ EDITIONS = {
         "basename": "Pride-and-Prejudice-Englisch-Deutsch",
         "title": "Pride and Prejudice / Stolz und Vorurteil",
         "subtitle": "Fully bilingual: English first",
+        "cover": COVERS / "Pride-and-Prejudice-Englisch-Deutsch.png",
         "author": "Jane Austen",
         "translator": "ChatGPT, mit Hilfe von Patrick Stein",
         "illustrator": "Hugh Thomson",
@@ -185,6 +190,16 @@ class OpeningInitialImage(ReportLabImage):
 def run(command: list[str]) -> None:
     print("+", " ".join(command))
     subprocess.run(command, cwd=ROOT, check=True)
+
+
+def edition_cover(edition: dict[str, object]) -> Path | None:
+    cover = edition.get("cover")
+    if cover is None:
+        return None
+    cover_path = Path(cover)
+    if not cover_path.exists():
+        raise RuntimeError(f"Cover image is missing: {cover_path}")
+    return cover_path
 
 
 def chapter_files(directory: Path) -> list[Path]:
@@ -561,6 +576,7 @@ def build_markdown(edition: dict[str, object]) -> Path:
 
 def build_pandoc(markdown: Path, edition: dict[str, object]) -> None:
     basename = str(edition["basename"])
+    cover = edition_cover(edition)
     common = [
         "pandoc", str(markdown), "--standalone", "--toc", "--toc-depth=1",
         "--css", str(CSS), "--metadata", f"title={edition['title']}",
@@ -576,11 +592,31 @@ def build_pandoc(markdown: Path, edition: dict[str, object]) -> None:
             "--metadata", f"illustrator={illustrator}",
             "--metadata", f"contributor={illustrator}",
         ]
-    run(common + [
+    html_command = common + [
         "--self-contained", "--to=html5",
         "--output", str(DIST / f"{basename}.html"),
-    ])
-    run(common + ["--to=epub3", "--output", str(DIST / f"{basename}.epub")])
+    ]
+    cover_fragment: Path | None = None
+    if cover:
+        cover_fragment = DIST / f".{basename}-cover.html"
+        cover_fragment.write_text(
+            '<div class="book-cover">\n'
+            f'  <img src="{html.escape(str(cover), quote=True)}" '
+            f'alt="{html.escape(str(edition["title"]), quote=True)}">\n'
+            "</div>\n",
+            encoding="utf-8",
+        )
+        html_command += ["--include-before-body", str(cover_fragment)]
+    try:
+        run(html_command)
+    finally:
+        if cover_fragment:
+            cover_fragment.unlink(missing_ok=True)
+
+    epub_command = common + ["--to=epub3", "--output", str(DIST / f"{basename}.epub")]
+    if cover:
+        epub_command += ["--epub-cover-image", str(cover)]
+    run(epub_command)
 
 
 def inline_markdown(text: str) -> str:
@@ -588,11 +624,36 @@ def inline_markdown(text: str) -> str:
     return re.sub(r"\*([^*]+)\*", r"<i>\1</i>", escaped)
 
 
-def page_number(canvas, document) -> None:
-    if document.page > 1:
+def page_number(canvas, document, offset: int = 1) -> None:
+    if document.page > offset:
         canvas.setFont("Times-Roman", 9)
         canvas.setFillColor(HexColor("#5e4530"))
-        canvas.drawCentredString(A5[0] / 2, 12 * mm, str(document.page - 1))
+        canvas.drawCentredString(
+            A5[0] / 2,
+            12 * mm,
+            str(document.page - offset),
+        )
+
+
+def draw_pdf_cover(canvas, cover: Path) -> None:
+    image = ImageReader(str(cover))
+    image_width, image_height = image.getSize()
+    scale = min(A5[0] / image_width, A5[1] / image_height)
+    draw_width = image_width * scale
+    draw_height = image_height * scale
+    canvas.saveState()
+    canvas.setFillColor(HexColor("#050706"))
+    canvas.rect(0, 0, A5[0], A5[1], stroke=0, fill=1)
+    canvas.drawImage(
+        image,
+        (A5[0] - draw_width) / 2,
+        (A5[1] - draw_height) / 2,
+        width=draw_width,
+        height=draw_height,
+        preserveAspectRatio=True,
+        anchor="c",
+    )
+    canvas.restoreState()
 
 
 def pdf_illustration(
@@ -640,6 +701,7 @@ def pdf_initial_image(
 
 def build_pdf(edition: dict[str, object]) -> None:
     basename = str(edition["basename"])
+    cover = edition_cover(edition)
     output = DIST / f"{basename}.pdf"
     document = SimpleDocTemplate(
         str(output), pagesize=A5, rightMargin=18 * mm, leftMargin=18 * mm,
@@ -672,7 +734,15 @@ def build_pdf(edition: dict[str, object]) -> None:
 
     cover_language = str(edition["language"])[:2]
     cover_labels = COVER_LABELS.get(cover_language, COVER_LABELS["en"])
-    story = [Paragraph(str(edition["title"]), title), Paragraph(str(edition["subtitle"]), subtitle)]
+    story = []
+    if cover:
+        story.append(PageBreak())
+    story.extend(
+        [
+            Paragraph(str(edition["title"]), title),
+            Paragraph(str(edition["subtitle"]), subtitle),
+        ]
+    )
     story.append(Paragraph(f"{cover_labels['by']} {edition['author']}", credit))
     if edition.get("translator"):
         story.append(
@@ -842,7 +912,18 @@ def build_pdf(edition: dict[str, object]) -> None:
             )
         if chapter_index != len(chapters) - 1:
             story.append(PageBreak())
-    document.build(story, onFirstPage=page_number, onLaterPages=page_number)
+    if cover:
+        document.build(
+            story,
+            onFirstPage=lambda canvas, document: draw_pdf_cover(canvas, cover),
+            onLaterPages=lambda canvas, document: page_number(
+                canvas,
+                document,
+                offset=2,
+            ),
+        )
+    else:
+        document.build(story, onFirstPage=page_number, onLaterPages=page_number)
 
 
 def build(edition_name: str) -> None:
