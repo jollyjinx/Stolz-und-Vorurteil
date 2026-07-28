@@ -28,3 +28,5 @@ maybe we should always have acompanied translations on the same page and never b
  - create a book cover image in the style of  the attached image which is from the original book, but I did not take that picture so i don't have the rights. The book itself is free so we can create a cover image that will be inspired by the original book cover.
  - (steered) we need different covers for the different versions
  - perfect , add them to the books.
+ - /ask is it possible to add the covers to the readme.md and make them link to the latest github release ?
+ - make it so

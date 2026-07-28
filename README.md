@@ -12,6 +12,39 @@ Prejudice* in modernes Deutsch, ergänzt um vollständig zweisprachige Ausgaben
 für deutsch- und englischsprachige Leser sowie für Sprachlernende. Grundlage
 des englischen Textes ist die mitgelieferte Project-Gutenberg-EPUB-Ausgabe.
 
+## Latest release / Neueste Veröffentlichung
+
+Click any cover to open the latest GitHub release. /
+Ein Klick auf einen Umschlag öffnet die neueste GitHub-Veröffentlichung.
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/jollyjinx/pride-and-prejudice-bilingual-german-english/releases/latest">
+        <img src="covers/Stolz-und-Vorurteil-modernes-Deutsch.png"
+             alt="Stolz und Vorurteil – modernes Deutsch" width="240">
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/jollyjinx/pride-and-prejudice-bilingual-german-english/releases/latest">
+        <img src="covers/Stolz-und-Vorurteil-Deutsch-Englisch.png"
+             alt="Stolz und Vorurteil – Deutsch und Englisch" width="240">
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/jollyjinx/pride-and-prejudice-bilingual-german-english/releases/latest">
+        <img src="covers/Pride-and-Prejudice-Englisch-Deutsch.png"
+             alt="Pride and Prejudice – English and German" width="240">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">Modern German<br>Modernes Deutsch</td>
+    <td align="center">German first<br>Deutsch zuerst</td>
+    <td align="center">English first<br>Englisch zuerst</td>
+  </tr>
+</table>
+
 ## Editions / Ausgaben
 
 | Build target / Build-Ziel | Contents / Inhalt | Filename / Dateibasis | Release |
