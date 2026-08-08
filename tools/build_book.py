@@ -43,6 +43,8 @@ ILLUSTRATIONS = ROOT / "illustrations"
 ILLUSTRATION_MANIFEST = ILLUSTRATIONS / "manifest.json"
 EASY_GERMAN_GLOSSARY = ROOT / "easy-german-glossary.json"
 EASY_GERMAN_NOTES = ROOT / "easy-german-notes.json"
+MODERN_GERMAN_INTRODUCTION = ROOT / "frontmatter" / "before-you-read-de.md"
+MODERN_ENGLISH_INTRODUCTION = ROOT / "frontmatter" / "before-you-read-en.md"
 INITIAL_MANIFESTS = [
     ILLUSTRATIONS / "initials" / "manifest.json",
     ILLUSTRATIONS / "generated-initials" / "manifest.json",
@@ -70,6 +72,7 @@ EDITIONS = {
     "german": {
         "chapters": ROOT / "modern-german-chapters",
         "frontmatter": ROOT / "frontmatter" / "german.md",
+        "introductions": [MODERN_GERMAN_INTRODUCTION],
         "basename": "Stolz-und-Vorurteil-modernes-Deutsch",
         "title": "Stolz und Vorurteil",
         "subtitle": "Eine moderne deutsche Übersetzung",
@@ -115,6 +118,7 @@ EDITIONS = {
     "english": {
         "chapters": ROOT / "source-chapters",
         "frontmatter": ROOT / "frontmatter" / "english.md",
+        "introductions": [MODERN_ENGLISH_INTRODUCTION],
         "basename": "Pride-and-Prejudice-English",
         "title": "Pride and Prejudice",
         "subtitle": "The supplied Project Gutenberg source edition",
@@ -129,6 +133,10 @@ EDITIONS = {
         "chapters": ROOT / "modern-german-chapters",
         "paired_chapters": ROOT / "source-chapters",
         "frontmatter": ROOT / "frontmatter" / "bilingual.md",
+        "introductions": [
+            MODERN_GERMAN_INTRODUCTION,
+            MODERN_ENGLISH_INTRODUCTION,
+        ],
         "basename": "Stolz-und-Vorurteil-Deutsch-Englisch",
         "title": "Stolz und Vorurteil / Pride and Prejudice",
         "subtitle": "Vollständig zweisprachig: Deutsch zuerst",
@@ -159,6 +167,10 @@ EDITIONS = {
         "chapters": ROOT / "source-chapters",
         "paired_chapters": ROOT / "modern-german-chapters",
         "frontmatter": ROOT / "frontmatter" / "english-german.md",
+        "introductions": [
+            MODERN_ENGLISH_INTRODUCTION,
+            MODERN_GERMAN_INTRODUCTION,
+        ],
         "basename": "Pride-and-Prejudice-Englisch-Deutsch",
         "title": "Pride and Prejudice / Stolz und Vorurteil",
         "subtitle": "Fully bilingual: English first",
@@ -434,6 +446,22 @@ def chapter_files(directory: Path) -> list[Path]:
     if len(files) != 61:
         raise RuntimeError(f"Expected 61 chapters in {directory}, found {len(files)}.")
     return files
+
+
+def edition_introductions(edition: dict[str, object]) -> list[Path]:
+    configured = edition.get("introductions")
+    if configured is None:
+        configured = [edition["introduction"]] if edition.get("introduction") else []
+    if not isinstance(configured, list):
+        raise RuntimeError("Edition introductions must be configured as a list.")
+    introductions: list[Path] = []
+    for value in configured:
+        if not isinstance(value, Path):
+            raise RuntimeError(f"Invalid introduction path: {value!r}")
+        if not value.exists():
+            raise RuntimeError(f"Introduction is missing: {value}")
+        introductions.append(value)
+    return introductions
 
 
 def load_illustrations() -> list[dict[str, object]]:
@@ -879,10 +907,10 @@ def build_markdown(edition: dict[str, object]) -> Path:
     assert isinstance(chapter_dir, Path)
     output = DIST / f"{edition['basename']}.md"
     parts = [Path(edition["frontmatter"]).read_text(encoding="utf-8").rstrip()]
-    if edition.get("introduction"):
-        parts.append(
-            Path(edition["introduction"]).read_text(encoding="utf-8").rstrip()
-        )
+    parts.extend(
+        introduction.read_text(encoding="utf-8").rstrip()
+        for introduction in edition_introductions(edition)
+    )
     chapters = chapter_files(chapter_dir)
     if edition.get("paired"):
         paired_chapter_dir = edition["paired_chapters"]
@@ -1249,11 +1277,10 @@ def build_pdf(edition: dict[str, object], cover: Path | None) -> None:
         )
     story.append(PageBreak())
 
-    introduction = edition.get("introduction")
-    if introduction:
+    for introduction in edition_introductions(edition):
         append_pdf_markdown(
             story,
-            Path(introduction),
+            introduction,
             section_heading,
             subheading,
             body,

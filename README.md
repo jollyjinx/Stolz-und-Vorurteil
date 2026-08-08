@@ -38,11 +38,11 @@ umbenannte Ausgabe muss keine neue Umschlagillustration erzeugt werden.
 
 | Build target / Build-Ziel | Contents / Inhalt | Filename / Dateibasis | Release |
 |---|---|---|---|
-| `german` | Modern German translation / Moderne deutsche Übersetzung | `Stolz-und-Vorurteil-modernes-Deutsch` | yes / ja |
+| `german` | Modern German translation with historical introduction / Moderne deutsche Übersetzung mit historischer Einführung | `Stolz-und-Vorurteil-modernes-Deutsch` | yes / ja |
 | `easy-german` | Complete translation in accessible Easy German, with introduction, footnotes, and glossary / Vollständige Übersetzung in zugänglichem Einfachem Deutsch mit Einführung, Fußnoten und Glossar | `Stolz-und-Vorurteil-Einfaches-Deutsch` | yes / ja |
-| `english` | Project Gutenberg English original / Englisches Project-Gutenberg-Original | `Pride-and-Prejudice-English` | build artifact only / nur Build-Artefakt |
-| `german-english` | Fully bilingual, German first / Vollständig zweisprachig, Deutsch zuerst | `Stolz-und-Vorurteil-Deutsch-Englisch` | yes / ja |
-| `english-german` | Fully bilingual, English first / Vollständig zweisprachig, Englisch zuerst | `Pride-and-Prejudice-Englisch-Deutsch` | yes / ja |
+| `english` | Project Gutenberg English original with a modern English historical introduction / Englisches Project-Gutenberg-Original mit moderner englischer historischer Einführung | `Pride-and-Prejudice-English` | build artifact only / nur Build-Artefakt |
+| `german-english` | Fully bilingual, German first, with both introductions / Vollständig zweisprachig, Deutsch zuerst, mit beiden Einführungen | `Stolz-und-Vorurteil-Deutsch-Englisch` | yes / ja |
+| `english-german` | Fully bilingual, English first, with both introductions / Vollständig zweisprachig, Englisch zuerst, mit beiden Einführungen | `Pride-and-Prejudice-Englisch-Deutsch` | yes / ja |
 
 **English:** The German translations were created by ChatGPT with the
 assistance of Patrick Stein. The modern German edition is dedicated to
@@ -93,6 +93,42 @@ So wird bei Netherfield Park erklärt, dass es sich um ein Landhaus mit privatem
 Grundstück und nicht um einen öffentlichen Park handelt. Dasselbe
 Begriffsregister leitet alle Kapitelübersetzungen und erzeugt am Buchende das
 ausführlichere Leseglossar.
+
+## Historical introduction / Historische Einführung
+
+**English:** Every edition begins with a spoiler-light “Important Things to
+Know Before Reading” section. The Easy German book uses a shorter accessible
+version. The other books use fuller introductions in modern German or modern
+English; both bilingual editions contain both languages, with their primary
+language first.
+
+The introduction explains the late Georgian setting, war and travel, rank and
+the landed gentry, women's legal and financial position, the Longbourn entail,
+estates, clerical patronage, the militia, house names, and Austen's irony. It
+also gives readers scale for the details Austen's first audience understood:
+Darcy's £10,000 a year probably placed his family around the richest 0.1 per
+cent, while a single dance could last twenty to thirty minutes. Choosing the
+same partner beyond the customary pair of dances was therefore a conspicuous
+public sign of courtship, though not literally a proposal. Historical money
+conversions are presented as estimates rather than exact modern equivalents.
+
+**Deutsch:** Jede Ausgabe beginnt mit einem spoilerarmen Abschnitt »Wichtig
+vor dem Lesen«. Das Buch in Einfachem Deutsch verwendet eine kürzere,
+zugängliche Fassung. Die anderen Bücher enthalten ausführlichere Einführungen
+in modernem Deutsch oder modernem Englisch. Beide zweisprachigen Ausgaben
+enthalten beide Sprachen, wobei ihre Hauptsprache zuerst steht.
+
+Die Einführung erklärt die spätgeorgianische Zeit, Krieg und Reisen,
+gesellschaftlichen Rang und Landadel, die rechtliche und finanzielle Lage von
+Frauen, die Erbbindung von Longbourn, Landgüter, kirchliche Patronage, die
+Miliz, Häusernamen und Austens Ironie. Sie macht außerdem Einzelheiten
+verständlich, die Austens erstes Publikum einordnen konnte: Darcys 10.000
+Pfund im Jahr brachten seine Familie vermutlich in die obersten 0,1 Prozent,
+während ein einziger Tanz zwanzig bis dreißig Minuten dauern konnte. Wer
+dieselbe Partnerin über das übliche zusammengehörige Tanzpaar hinaus erneut
+wählte, zeigte deshalb öffentlich auffälliges Interesse. Das war jedoch noch
+kein wörtlicher Heiratsantrag. Historische Geldbeträge werden als begründete
+Schätzungen und nicht als exakte heutige Werte erklärt.
 
 ## Bilingual reading / Zweisprachig lesen
 
@@ -152,8 +188,8 @@ ohne zwischen getrennten Büchern zu wechseln.
 - `covers/`: reusable text-free peacock binding master; edition covers are
   typeset during the build / wiederverwendbare schriftfreie Pfauen-Einbandvorlage;
   die Ausgabentitel werden beim Buchbau gesetzt
-- `frontmatter/`: title, source, and dedication pages / Titel-, Quellen- und
-  Widmungsseiten
+- `frontmatter/`: title, source, dedication, and pre-reading background pages /
+  Titel-, Quellen-, Widmungs- und historische Einführungsseiten
 - `tools/`: extraction, verification, and book-building tools / Werkzeuge für
   Extraktion, Prüfung und Buchbau
 - `dist/`: generated EPUB, HTML, and PDF editions / erzeugte EPUB-, HTML- und

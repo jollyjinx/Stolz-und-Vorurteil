@@ -28,9 +28,15 @@ Familie, Besitz und Titel bestimmten den gesellschaftlichen Rang. `Sir` und `Lad
 
 Man konnte fremde Menschen nicht immer einfach ansprechen oder besuchen. Eine Vorstellung durch andere Personen war wichtig. Auf Bällen konnten junge Frauen und Männer sich kennenlernen. Jeder bemerkte, wer miteinander tanzte und wie oft das geschah.
 
+Ein Tanz war viel länger als ein heutiges Lied. Er konnte zwanzig bis dreißig Minuten dauern. Manchmal dauerte er noch länger. Oft gehörten zwei Tänze direkt zusammen. Wenn ein Mann später noch einmal dieselbe Frau zum Tanzen aufforderte, zeigte er damit öffentlich großes Interesse. Andere Menschen konnten dann schon über eine mögliche Heirat sprechen. Das war noch kein echter Heiratsantrag. Es kam einer öffentlichen Werbung aber sehr nahe.
+
 ## Ein großes Einkommen bedeutete Freiheit
 
 Im Buch wird Reichtum oft als Einkommen pro Jahr genannt. Mr. Bingley hat vier- oder fünftausend Pfund im Jahr. Mr. Darcy hat ungefähr zehntausend. Beides ist sehr viel Geld. Mr. Darcy ist aber noch deutlich reicher.
+
+Altes Geld kann man nicht genau in heutiges Geld umrechnen. Je nach Vergleich wären Darcys zehntausend Pfund heute mehrere hunderttausend oder sogar mehrere Millionen Pfund im Jahr. Wichtiger ist sein Platz in der Gesellschaft. Forschende schätzen: Darcy würde zu den ungefähr vierhundert reichsten Familien Englands gehören. Das sind die obersten 0,1 Prozent. Manchmal heißt es, er gehöre zu den hundert reichsten Menschen. Diese genaue Zahl lässt sich aber nicht sicher belegen.
+
+Auch Mr. Bennet ist mit ungefähr zweitausend Pfund im Jahr wohlhabend. Seine Familie ist nicht arm. Das Problem liegt in der Zukunft: Die Töchter erben das Landgut nicht, und für fünf Töchter wurde nur wenig Geld zurückgelegt.
 
 ## Pfarrer bekamen ihre Stellen oft durch reiche Förderer
 
