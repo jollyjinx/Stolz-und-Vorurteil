@@ -1,6 +1,6 @@
 ---
-title: Stolz und Vorurteil - Übersetzungsleitfaden
-description: Arbeitsregeln für die direkte Neuübersetzung von Jane Austens Pride and Prejudice in modernes Deutsch.
+title: Stolz und Vorurteil - Übersetzungs- und Bearbeitungsleitfaden
+description: Arbeitsregeln für die deutschen Neuübersetzungen und die Easy-English-Bearbeitung von Jane Austens Pride and Prejudice.
 doc_type: agent-guidance
 status: active
 scope: Books/Stolz-und-Vorurteil-modern-deutsch
@@ -11,27 +11,29 @@ source:
   source_status: Project Gutenberg public-domain edition
 ---
 
-# Übersetzungsleitfaden
+# Übersetzungs- und Bearbeitungsleitfaden
 
 - Die Übersetzung wird direkt aus der mitgelieferten englischen Project-Gutenberg-Ausgabe angefertigt. Keine Übersetzungsdienste und keine Übernahme bestehender deutscher Übersetzungen.
 - `source-chapters/` ist nur die aufbereitete englische Referenz. Die auslieferbaren Kapitel liegen einzeln in `modern-german-chapters/`.
 - `easy-german-chapters/` enthält die vollständige zusätzliche Ausgabe in Einfachem Deutsch. Sie ist weder gekürzt noch als formal geregelte *Leichte Sprache* ausgewiesen. Für diese Kapitel gelten zusätzlich und vorrangig die Regeln in `AI/easy-german-translation.md` sowie die verbindlichen Schreibweisen in `easy-german-glossary.json`.
 - Fußnoten der Ausgabe in Einfachem Deutsch werden zentral in `easy-german-notes.json` an Kapitel und Absatz verankert und erst beim Buchbau eingesetzt. Dadurch bleiben die Kapiteldateien textrein und absatzgleich mit der englischen Quelle. Dasselbe Glossar dient dem Übersetzungsprozess und wird als Leseglossar am Ende des Buches erzeugt.
-- Jede Ausgabe enthält vor dem Roman eine spoilerarme historische Einführung. `frontmatter/easy-german-introduction.md` bleibt kurz und zugänglich. Die übrigen Ausgaben verwenden die ausführlicheren Texte `frontmatter/before-you-read-de.md` und `frontmatter/before-you-read-en.md`; zweisprachige Ausgaben enthalten beide in derselben Sprachreihenfolge wie den Roman.
+- `easy-english-chapters/` enthält die vollständige, absatzgleiche Ausgabe in zugänglichem modernem Englisch. Sie ist nicht gekürzt und nicht als formal geregelter *Easy Read*-Standard ausgewiesen. Verbindlich sind `AI/easy-english-adaptation.md`, `easy-english-glossary.json` und `easy-english-notes.json`; Fußnoten werden wie beim Einfachen Deutsch erst beim Buchbau eingesetzt.
+- Jede Ausgabe enthält vor dem Roman eine spoilerarme historische Einführung. `frontmatter/easy-german-introduction.md` und `frontmatter/easy-english-introduction.md` bleiben kurz und zugänglich. Die übrigen Ausgaben verwenden die ausführlicheren Texte `frontmatter/before-you-read-de.md` und `frontmatter/before-you-read-en.md`; zweisprachige Ausgaben enthalten beide in derselben Sprachreihenfolge wie den Roman.
 - Die EPUB-Extraktion behandelt die sechs XHTML-Dateien als fortlaufenden Text, übernimmt den `alt`-Buchstaben historischer Initialen, erhält jeden inneren Briefabsatz einzeln, verbindet nur durch Illustrationen getrennte Absatzfragmente und verwirft Druckervermerke. Prüfe die eingecheckte Referenz lokal mit `python3 tools/verify_translation.py --epub /Users/jolly/Downloads/pg1342-images-3.epub`.
 - Die beiden vollständig zweisprachigen Fassungen werden beim Buchbau automatisch aus den absatzgleichen Dateien in `modern-german-chapters/` und `source-chapters/` erzeugt. Beide enthalten jeden Absatz auf Deutsch und Englisch und müssen als Leseausgaben für deutsch- und englischsprachige Leser sowie als Lernhilfen dokumentiert werden. `german-english` zeigt Deutsch zuerst, `english-german` Englisch zuerst. Keine separaten zweisprachigen Kapiteldateien pflegen.
 - `alignment-manifest.json` fixiert die manuell geprüfte Absatzfolge kapitelweise. Aktualisiere es mit `python3 tools/verify_translation.py --update-alignment-manifest` nur nach einer erneuten inhaltlichen Prüfung sämtlicher geänderter Englisch-Deutsch-Paare; gleiche Absatzanzahlen allein beweisen keine korrekte Zuordnung.
 - `easy-german-alignment-manifest.json` erfüllt dieselbe Aufgabe für Einfaches Deutsch. Aktualisiere es mit `python3 tools/verify_translation.py --update-easy-alignment-manifest` erst nach Inhalts-, Absatz- und Zugänglichkeitsprüfung sämtlicher geänderter Kapitel.
+- `easy-english-alignment-manifest.json` fixiert die geprüfte Absatzfolge der Easy-English-Ausgabe. Aktualisiere es mit `python3 tools/verify_translation.py --update-easy-english-alignment-manifest` erst nach Inhalts-, Absatz- und Zugänglichkeitsprüfung sämtlicher geänderter Kapitel.
 - Titel-, Metadaten- und Beschriftungsreihenfolge folgt der jeweils zuerst stehenden Sprache: Deutsch in `german-english`, Englisch in `english-german`.
 - Das öffentliche `README.md` bleibt vollständig zweisprachig. Inhaltliche Änderungen werden dort gleichwertig auf Englisch und Deutsch dokumentiert; gemeinsame Befehle und Dateilisten müssen nicht dupliziert werden.
 - `covers/peacock-binding-template.png` ist die einzige aktive Umschlagillustration. Der Buchbau setzt Titel, Autorin, Ausgabentyp und die aus dem Commit-Datum abgeleitete Versionsnummer im Format `YYYY.MM.DD.HHMMSS` ein und erzeugt `dist/*-cover.png`. Keine neuen separat beschrifteten Umschlagbilder anlegen; frühere Varianten unter `covers/legacy/` dienen nur der Provenienz.
 - In der englisch-deutschen Fassung nutzt der Buchbau historische Initialen, wo ein passender Buchstabe vorhanden ist. Fehlt ein Motiv im Bestand, bleibt der normale gesetzte Anfangsbuchstabe stehen.
 - `illustrations/` enthält Hugh Thomsons Illustrationen und dekorative Initialen aus der George-Allen-Ausgabe von 1894. `manifest.json` ordnet die Illustrationen kapitel- und absatzgenau zu; `initials/manifest.json` katalogisiert die historischen Initialen nach Buchstabe und Ursprungskapitel. Die drei neu erzeugten Initialen `F`, `U` und `Z` liegen mit eindeutig dokumentierter Provenienz unter `generated-initials/`. Die Kapitel-Markdown-Dateien bleiben dadurch textrein.
-- Die historischen Bilddateien werden nicht retuschiert. In den zweisprachigen Fassungen stehen die deutsche und englische Bildunterschrift in derselben Sprachreihenfolge wie der Fließtext direkt unter dem unveränderten Original. Bild und alle Bildunterschriften bilden im EPUB-, HTML- und PDF-Buchbau einen untrennbaren Seitenblock.
+- Die historischen Bilddateien werden nicht retuschiert. Die Easy-English-Ausgabe verwendet ausschließlich die englischen Bildunterschriften. In den zweisprachigen Fassungen stehen die deutsche und englische Bildunterschrift in derselben Sprachreihenfolge wie der Fließtext direkt unter dem unveränderten Original. Bild und alle Bildunterschriften bilden im EPUB-, HTML- und PDF-Buchbau einen untrennbaren Seitenblock.
 - In den zweisprachigen Fassungen bildet jedes deutsch-englische Absatzpaar einen gemeinsamen Seitenblock. Illustrationen dürfen nur zwischen vollständigen Absatzpaaren stehen, nie zwischen Original und zugehöriger Übersetzung.
 - Bildbeschriftungen in `illustrations/manifest.json` müssen entweder als vollständiges Paar aus `caption_de` und `caption_en` oder in beiden Sprachen leer vorliegen; der Buchbau prüft diese Invariante.
 - Bewahre Handlung, Ironie, Erzählperspektive, Dialogwechsel und Absatzstruktur. Formuliere idiomatisches, gegenwärtiges Hochdeutsch; vermeide bewusst altertümelnde Syntax, sofern sie nicht eine Figur charakterisiert.
 - Namen, Ortsnamen, Anreden und Titel bleiben grundsätzlich englisch. `Mr.`, `Mrs.`, `Miss`, `Lady` und `Sir` bleiben erhalten, damit die soziale Tonlage nicht verfälscht wird.
 - Nutze deutsche Guillemets (`»…«`) für direkte Rede und den langen Gedankenstrich (`—`) für abrupte Unterbrechungen. Kursivsetzungen werden in Markdown mit `*…*` erhalten.
-- Jedes fertige Kapitel beginnt mit `# Kapitel <römische Zahl>` und enthält ausschließlich den übersetzten Kapiteltext; keine englischen Abschnitte, Notizen oder Zusammenfassungen.
+- Jedes fertige deutsche Kapitel beginnt mit `# Kapitel <römische Zahl>`, jedes Easy-English-Kapitel mit `# Chapter <römische Zahl>`. Kapiteldateien enthalten ausschließlich den bearbeiteten Kapiteltext; keine zusätzlichen Notizen oder Zusammenfassungen.
 - Prüfe vor dem Abschließen eines Kapitels: keine ausgelassenen Absätze, konsistente Namen und Anreden, keine maschinell wirkenden Satzfragmente.

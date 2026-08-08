@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "description": "Notes are inserted at the first important use of a historical term. Chapter files remain paragraph-aligned with the source.",
+  "notes": [
+    {
+      "id": "netherfield-park",
+      "chapter": 1,
+      "paragraph": 3,
+      "phrase": "Netherfield Park",
+      "text": "Netherfield Park is a large country house with its own private land. Mr. Bingley rents it. Park does not mean a public city park here."
+    },
+    {
+      "id": "carriage-and-four",
+      "chapter": 1,
+      "paragraph": 10,
+      "phrase": "carriage pulled by four horses",
+      "text": "A carriage pulled by four horses was fast and expensive. It showed that the traveller was wealthy."
+    },
+    {
+      "id": "michaelmas",
+      "chapter": 1,
+      "paragraph": 10,
+      "phrase": "Michaelmas",
+      "text": "Michaelmas is 29 September. Rents, jobs, and agreements often began or ended on this traditional date."
+    },
+    {
+      "id": "annual-income",
+      "chapter": 1,
+      "paragraph": 14,
+      "phrase": "pounds a year",
+      "text": "Four or five thousand pounds a year was a very large income. Exact comparisons with modern money are difficult."
+    },
+    {
+      "id": "formal-visit",
+      "chapter": 1,
+      "paragraph": 18,
+      "phrase": "formal visit",
+      "text": "A first formal visit was important. After Mr. Bennet visited, the women of his family could visit Mr. Bingley and meet him."
+    },
+    {
+      "id": "ball",
+      "chapter": 2,
+      "paragraph": 10,
+      "phrase": "ball",
+      "text": "A ball was an important social event. Young women and men could meet there. Everyone noticed who danced together."
+    },
+    {
+      "id": "longbourn",
+      "chapter": 3,
+      "paragraph": 15,
+      "phrase": "Longbourn",
+      "text": "Longbourn is the Bennet family's house and country estate. It is close to the small town of Meryton."
+    },
+    {
+      "id": "meryton",
+      "chapter": 4,
+      "paragraph": 15,
+      "phrase": "Meryton",
+      "text": "Meryton is a small market town. The Bennets can walk there from Longbourn."
+    },
+    {
+      "id": "pemberley",
+      "chapter": 6,
+      "paragraph": 53,
+      "phrase": "Pemberley",
+      "text": "Pemberley is Mr. Darcy's great house and estate in Derbyshire. The estate provides much of his wealth and gives him many responsibilities."
+    },
+    {
+      "id": "entail",
+      "chapter": 7,
+      "paragraph": 1,
+      "phrase": "entail",
+      "text": "This legal rule prevents the Bennet daughters from inheriting Longbourn. After Mr. Bennet dies, it must pass to the next male heir."
+    },
+    {
+      "id": "militia",
+      "chapter": 7,
+      "paragraph": 3,
+      "phrase": "militia regiment",
+      "text": "The militia was a military force mainly used for defence at home. This regiment stays near Meryton for several months, and its officers join local social life."
+    },
+    {
+      "id": "hunsford",
+      "chapter": 13,
+      "paragraph": 13,
+      "phrase": "Hunsford",
+      "text": "Hunsford is a village in the English county of Kent."
+    },
+    {
+      "id": "parish-position",
+      "chapter": 13,
+      "paragraph": 15,
+      "phrase": "parish position",
+      "text": "A wealthy person could own the right to choose a clergyman for an open parish position. The position provided a house and income."
+    },
+    {
+      "id": "rosings",
+      "chapter": 14,
+      "paragraph": 1,
+      "phrase": "Rosings",
+      "text": "Rosings is Lady Catherine de Bourgh's great house and estate in Kent. Mr. Collins lives very close to it."
+    },
+    {
+      "id": "brighton",
+      "chapter": 39,
+      "paragraph": 6,
+      "phrase": "Brighton",
+      "text": "Brighton is a seaside town in southern England. It was a fashionable place for bathing and entertainment. The regiment is also stationed there."
+    },
+    {
+      "id": "gretna-green",
+      "chapter": 46,
+      "paragraph": 5,
+      "phrase": "Gretna Green",
+      "text": "Gretna Green is just across the Scottish border. Young couples from England could marry there more easily and without their parents' consent."
+    }
+  ]
+}

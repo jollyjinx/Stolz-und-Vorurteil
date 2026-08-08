@@ -1,0 +1,41 @@
+# Chapter XLV
+
+Elizabeth now knew that Miss Bingley disliked her from jealousy. She understood how unwelcome Miss Bingley must find her at Pemberley. She wondered how politely that lady would renew their acquaintance.
+
+At the house, servants led them through the hall into the large sitting room. Its north-facing position made it delightful in summer. Its windows opened down to the ground and offered a refreshing view. Elizabeth saw the high wooded hills behind the house. Beautiful oaks and Spanish chestnut trees stood across the lawn between them.
+
+Miss Darcy received them there. She sat with Mrs. Hurst, Miss Bingley, and her London companion. Georgiana welcomed them very politely, but with deep embarrassment. It came from shyness and fear of doing wrong. However, people who felt socially lower could easily mistake it for pride and coldness. Mrs. Gardiner and Elizabeth understood her fairly and felt sorry for her.
+
+Mrs. Hurst and Miss Bingley greeted them only with a curtsey. After everyone sat, an awkward silence followed for several moments. Mrs. Annesley broke it first. She was an elegant, pleasant-looking woman. Her effort to begin conversation showed better manners than either of the others. She and Mrs. Gardiner kept the conversation moving, sometimes helped by Elizabeth. Miss Darcy looked as though she wished she had courage to join. Sometimes she risked one short sentence when nobody was likely to hear it.
+
+Elizabeth soon saw that Miss Bingley watched her closely. She could not say anything, especially to Miss Darcy, without attracting her attention. Their seats were unfortunately far apart, or Elizabeth would still have tried to speak to Georgiana. Yet she did not mind being saved from saying much. Her own thoughts kept her busy. She constantly expected some gentlemen to enter. She both hoped and feared that the house’s owner would be among them. She could hardly decide which feeling was stronger. After fifteen minutes without hearing Miss Bingley speak, the lady coldly asked about Elizabeth’s family. Elizabeth answered with equal coldness and few words. Miss Bingley said nothing more.
+
+The next change came when servants entered with cold meat, cake, and excellent seasonal fruit. But first, Mrs. Annesley gave Miss Darcy many meaningful looks and smiles. They reminded the girl of her duty as hostess. Everyone now had something to do. They could not all talk, but they could all eat. Beautiful piles of grapes, nectarines, and peaches soon brought them around the table.
+
+While eating, Elizabeth had a good chance to judge whether she feared or wanted Mr. Darcy’s arrival. Her feelings when he entered gave the answer. A moment earlier, she thought hope was stronger. Now she began to regret that he had come.
+
+He had spent some time with Mr. Gardiner by the river. Two or three other Pemberley gentlemen were there too. Darcy left only after learning that the visiting ladies planned to see Georgiana that morning. As soon as he entered, Elizabeth wisely decided to behave calmly and without embarrassment. This decision was very necessary, but perhaps difficult to follow. She saw that everyone’s suspicions about them had awakened. Almost every eye watched Darcy’s behaviour as he entered. Miss Bingley showed the strongest curiosity, despite smiling whenever she spoke to either of them. Jealousy had not yet made her hopeless, and she still paid attention to Mr. Darcy. When her brother entered, Miss Darcy made a much greater effort to talk. Elizabeth saw that Darcy wanted his sister and Elizabeth to know each other. He encouraged every effort at conversation from either side. Miss Bingley saw this too. Her anger made her careless, and at the first chance she said with mocking politeness—
+
+“Please, Miss Eliza, has the ——shire militia left Meryton? Your family must miss them greatly.”
+
+In Mr. Darcy’s presence, she did not dare say Wickham’s name. But Elizabeth immediately understood that Miss Bingley was thinking about him. The many memories connected with Wickham troubled her for a moment. Then she worked hard to resist the unkind attack and answered fairly calmly. While speaking, she looked towards Darcy without meaning to. He was blushing and watching her closely. His sister was deeply embarrassed and could not raise her eyes. If Miss Bingley had known what pain she caused her dear friend, she would not have made the hint. She only meant to upset Elizabeth by mentioning a man she believed Elizabeth liked. She hoped Elizabeth would show feelings that damaged Darcy’s opinion of her. Perhaps she also wished to remind Darcy of the foolish behaviour connecting Elizabeth’s family to that regiment. Miss Bingley knew nothing about Miss Darcy’s planned escape with Wickham. Wherever secrecy was possible, nobody except Elizabeth knew. Darcy especially wished to hide it from every Bingley connection. Elizabeth had long ago guessed his reason. Darcy hoped Georgiana would someday marry Bingley. He had certainly formed this plan. It probably did not cause his effort to separate Bingley from Miss Bennet. But it may have increased his strong concern for his friend’s welfare.
+
+Elizabeth’s calm behaviour soon quieted Darcy’s emotion. Miss Bingley felt annoyed and disappointed, but did not dare mention Wickham more directly. Georgiana also recovered in time, though not enough to speak again. She feared meeting her brother’s eye. But Darcy hardly remembered his sister’s connection to the matter. Miss Bingley meant to turn his thoughts away from Elizabeth. Instead, she seemed to fix them more cheerfully upon her.
+
+The visit did not continue long after that question and answer. Mr. Darcy walked them to their carriage. Meanwhile, Miss Bingley released her feelings by criticising Elizabeth’s appearance, behaviour, and clothes. Georgiana refused to join her. Her brother’s recommendation was enough to secure her approval. His judgment could not be wrong. He had described Elizabeth in terms that made Georgiana see her as lovely and kind. When Darcy returned to the sitting room, Miss Bingley repeated some of her criticism to him.
+
+“How very ill Eliza Bennet looks this morning, Mr. Darcy,” she cried. “I have never seen anyone change so much since winter. She has become so brown and rough! Louisa and I agreed that we hardly recognised her.”
+
+However much Mr. Darcy disliked this speech, he answered calmly. He saw no change except that Elizabeth was slightly tanned. Travelling in summer naturally caused that, so it was hardly a miracle.
+
+“For myself,” she continued, “I admit I could never see any beauty in her. Her face is too thin, her skin has no brightness, and her features are not handsome. Her nose has no character or strong shape. Her teeth are acceptable but nothing unusual. People sometimes call her eyes beautiful, but I see nothing special in them. They have a sharp, bad-tempered look that I greatly dislike. Her whole manner has unfashionable confidence, which is unbearable.”
+
+Miss Bingley knew Darcy admired Elizabeth, so this was a poor way to recommend herself. But angry people are not always wise. When he finally appeared annoyed, she achieved what she expected. Still, he firmly remained silent. Determined to make him speak, she continued—
+
+“I remember when we first knew her in Hertfordshire. We were all amazed to hear people called her beautiful. I especially remember your words after they dined at Netherfield one evening. ‘She, beautiful! I might as easily call her mother intelligent.’ But afterwards, she began to please you more. I believe you once thought her fairly pretty.”
+
+“Yes,” Darcy replied, unable to remain silent, “but that was only when we first met. For many months, I have considered her one of the most handsome women I know.”
+
+Then he left. Miss Bingley received all the satisfaction of forcing him to say something that hurt nobody except herself.
+
+On their return, Mrs. Gardiner and Elizabeth discussed almost everything from the visit. They avoided only what interested both most. They discussed everyone’s looks and behaviour except the person who held most of their attention. They talked about his sister, friends, house, and fruit—everything except him. Yet Elizabeth deeply wanted Mrs. Gardiner’s opinion of Darcy. Mrs. Gardiner would have been delighted if her niece began that subject.

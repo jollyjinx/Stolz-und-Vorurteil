@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "description": "Binding terminology for adaptation and the reader glossary of the Easy English edition.",
+  "entries": [
+    {
+      "term": "Annual income",
+      "sort": "Annual income",
+      "description": "The novel often describes wealth as income received each year. Four or five thousand pounds a year meant great wealth. Ten thousand pounds a year meant far greater wealth. A direct conversion into modern money would be misleading.",
+      "translator_guidance": "Keep every amount and the words a year. Use pounds, not the symbol GBP, and never add a modern conversion inside the novel."
+    },
+    {
+      "term": "Ball and public dance",
+      "sort": "Ball and public dance",
+      "description": "A ball was an important social event with music and dancing. Young women and men could meet there. Everyone noticed who danced together and how often.",
+      "translator_guidance": "Use ball for ball and public dance or public ball for assembly when it means the social dancing event. Do not simplify assembly to meeting in this context."
+    },
+    {
+      "term": "Brighton",
+      "sort": "Brighton",
+      "description": "A seaside town in southern England. It was a fashionable place for bathing and entertainment. The militia regiment is stationed there for part of the novel.",
+      "translator_guidance": "Keep the place name unchanged."
+    },
+    {
+      "term": "Charlotte Lucas",
+      "sort": "Lucas, Charlotte",
+      "description": "Elizabeth's sensible friend. She is 27 and has little money. She therefore thinks about marriage and security differently from Elizabeth.",
+      "translator_guidance": "Keep her voice calm and practical. Do not condemn or romanticise her practical reasons."
+    },
+    {
+      "term": "Colonel Fitzwilliam",
+      "sort": "Fitzwilliam, Colonel",
+      "description": "Mr. Darcy's cousin. As the younger son of an earl, he will not inherit the main family fortune and must consider money when he marries.",
+      "translator_guidance": "Keep Colonel as the English rank. Do not confuse him with Mr. Darcy."
+    },
+    {
+      "term": "Clerical living and patronage",
+      "sort": "Clerical living and patronage",
+      "description": "A wealthy person could own the right to choose a clergyman for a parish position. The position provided an income and often a house. Lady Catherine supports Mr. Collins in this way; the Darcy family controlled a living intended for Mr. Wickham.",
+      "translator_guidance": "Use clerical living or parish position for living in the church sense. Make patron or patroness clear as the wealthy person with the right to appoint."
+    },
+    {
+      "term": "Elopement",
+      "sort": "Elopement",
+      "description": "An elopement was a secret flight by a couple who intended to marry without the usual family consent. If they did not marry, the woman's reputation and future could be destroyed.",
+      "translator_guidance": "Use ran away together when elopement would be difficult. Preserve whether marriage is intended, uncertain, or completed at that point in the story."
+    },
+    {
+      "term": "Entail",
+      "sort": "Entail",
+      "description": "A legal settlement prevents the Bennet daughters from inheriting Longbourn. After Mr. Bennet dies, the house and estate will pass to the next male heir, Mr. Collins. This threatens the Bennet women's financial security.",
+      "translator_guidance": "Use entail when the legal term matters, but explain the action clearly in the sentence: Longbourn must pass to the next male heir. Do not suggest that Mr. Bennet freely chose Mr. Collins."
+    },
+    {
+      "term": "Estate",
+      "sort": "Estate",
+      "description": "An estate was more than a large house. It included land, farms, rents, workers, and responsibilities. Its owner received income from it and was expected to manage it well.",
+      "translator_guidance": "Use estate for the house, land, and economic property together; use house or grounds when the source clearly means only that part."
+    },
+    {
+      "term": "Forms of address",
+      "sort": "Forms of address",
+      "description": "Mr., Mrs., Miss, Lady, Sir, and Colonel show gender, marriage, title, or social rank. First names often show greater closeness. The forms remain unchanged in this book.",
+      "translator_guidance": "Never omit or modernise Mr., Mrs., Miss, Lady, Sir, or Colonel. Preserve the source's choice between surname, first name, and title."
+    },
+    {
+      "term": "Georgiana Darcy",
+      "sort": "Darcy, Georgiana",
+      "description": "Mr. Darcy's much younger sister. She is shy, musical, and very wealthy.",
+      "translator_guidance": "Do not confuse her with Miss Bingley."
+    },
+    {
+      "term": "Gretna Green",
+      "sort": "Gretna Green",
+      "description": "A place just across the Scottish border. Young couples from England could marry there more easily and without their parents' consent.",
+      "translator_guidance": "Keep the place name unchanged. Use clear wording for the couple's secret flight and possible marriage."
+    },
+    {
+      "term": "Hunsford",
+      "sort": "Hunsford",
+      "description": "A village in Kent. Mr. Collins is the clergyman there. His parsonage is near Rosings.",
+      "translator_guidance": "Keep the place name unchanged."
+    },
+    {
+      "term": "Jane Bennet",
+      "sort": "Bennet, Jane",
+      "description": "The eldest Bennet daughter and the person Elizabeth trusts most. She first looks for the good in other people.",
+      "translator_guidance": "Keep her voice calm, kind, and restrained. Do not make her caution seem more naïve than the source does."
+    },
+    {
+      "term": "Kitty / Catherine Bennet",
+      "sort": "Bennet, Catherine",
+      "description": "The fourth Bennet daughter. She is usually called Kitty and is often influenced by her younger sister Lydia.",
+      "translator_guidance": "Keep Catherine and Kitty as the source uses them. Do not confuse her with Lady Catherine."
+    },
+    {
+      "term": "Lady Catherine de Bourgh",
+      "sort": "Catherine de Bourgh, Lady",
+      "description": "Mr. Darcy's rich aunt, who cares greatly about social rank. She owns Rosings and is Mr. Collins's patroness.",
+      "translator_guidance": "Keep her commanding and certain of herself. Preserve her unintentional comedy without turning her into a cartoon."
+    },
+    {
+      "term": "Lizzy / Elizabeth Bennet",
+      "sort": "Bennet, Elizabeth",
+      "description": "The second Bennet daughter and the novel's main character. Family and close friends often call her Lizzy or Eliza.",
+      "translator_guidance": "Keep Elizabeth, Lizzy, and Eliza as the source uses them. Her voice is witty and observant, but she can judge too quickly."
+    },
+    {
+      "term": "Longbourn",
+      "sort": "Longbourn",
+      "description": "The Bennet family's house and estate in Hertfordshire. Because of the entail, the five daughters cannot inherit it.",
+      "translator_guidance": "Keep the place name. Use house, property, or estate according to the immediate meaning."
+    },
+    {
+      "term": "Lucas Lodge",
+      "sort": "Lucas Lodge",
+      "description": "The Lucas family's house near Longbourn. Lodge is part of its proper name and does not mean a small holiday cabin.",
+      "translator_guidance": "Keep the complete proper name."
+    },
+    {
+      "term": "Lydia Bennet",
+      "sort": "Bennet, Lydia",
+      "description": "The youngest Bennet daughter. She is 15 at the beginning of the novel. She is lively, confident, and often acts without considering the results. She is especially excited by officers.",
+      "translator_guidance": "Keep her quick, confident, and impulsive. Show her youth without adding modern teenage slang."
+    },
+    {
+      "term": "Mary Bennet",
+      "sort": "Bennet, Mary",
+      "description": "The middle Bennet daughter. She reads a great deal, practises music, and wants other people to see her as learned.",
+      "translator_guidance": "Simplify her formal borrowed statements, but preserve her effort to sound scholarly."
+    },
+    {
+      "term": "Meryton",
+      "sort": "Meryton",
+      "description": "A small market town near Longbourn. It contains shops, Bennet relatives, and much of the neighbourhood's social news.",
+      "translator_guidance": "Keep the place name unchanged."
+    },
+    {
+      "term": "Michaelmas",
+      "sort": "Michaelmas",
+      "description": "29 September. This traditional date was important for rents, payments, employment, and moving into property.",
+      "translator_guidance": "Keep Michaelmas and let the first-use note explain it."
+    },
+    {
+      "term": "Militia and regiment",
+      "sort": "Militia and regiment",
+      "description": "A military unit stays near Meryton for several months. Its officers join local social life. Their uniforms and presence especially impress Lydia and Kitty.",
+      "translator_guidance": "Keep militia, regiment, and officers distinct. The militia chiefly served home defence and was not the same as the regular army abroad."
+    },
+    {
+      "term": "Miss Bingley / Caroline Bingley",
+      "sort": "Bingley, Caroline",
+      "description": "Mr. Bingley's unmarried sister. She is rich and elegant and cares greatly about social rank.",
+      "translator_guidance": "Use Miss Bingley and Caroline as the source does. Preserve pointed politeness and jealousy without revealing motives too soon."
+    },
+    {
+      "term": "Mr. Bennet",
+      "sort": "Bennet, Mr.",
+      "description": "The father of the five Bennet daughters and owner of Longbourn. He is intelligent and ironic, but often avoids his responsibilities.",
+      "translator_guidance": "Preserve his dry irony in concise language. Do not explain every ironic statement as if it were serious."
+    },
+    {
+      "term": "Mr. Bingley",
+      "sort": "Bingley, Mr.",
+      "description": "A rich and friendly young man. He rents Netherfield Park and falls in love with Jane Bennet.",
+      "translator_guidance": "Keep him open, lively, and uncomplicated without making him childish."
+    },
+    {
+      "term": "Mr. Collins",
+      "sort": "Collins, Mr.",
+      "description": "A clergyman and distant Bennet relative. Because of the entail, he will inherit Longbourn. Lady Catherine gave him his parish position.",
+      "translator_guidance": "Make his self-important speeches understandable. Shorten their sentences but preserve their formal absurdity."
+    },
+    {
+      "term": "Mr. Darcy",
+      "sort": "Darcy, Mr.",
+      "description": "A very rich landowner and Mr. Bingley's friend. His great estate is called Pemberley.",
+      "translator_guidance": "Keep him restrained and precise. Do not make him emotionless or casually modern."
+    },
+    {
+      "term": "Mr. and Mrs. Gardiner",
+      "sort": "Gardiner, Mr. and Mrs.",
+      "description": "Mrs. Bennet's brother and his wife. They live in London with their children. Elizabeth trusts her aunt and uncle because they are kind and sensible.",
+      "translator_guidance": "Keep their voices calm and sensible. Make family relationships clear when pronouns could confuse them."
+    },
+    {
+      "term": "Mr. Wickham",
+      "sort": "Wickham, Mr.",
+      "description": "A charming officer. He has known Mr. Darcy since childhood and tells Elizabeth about his dispute with Darcy.",
+      "translator_guidance": "Let him sound convincingly charming. Do not foreshadow or reveal later discoveries."
+    },
+    {
+      "term": "Mrs. Bennet",
+      "sort": "Bennet, Mrs.",
+      "description": "The mother of Jane, Elizabeth, Mary, Kitty, and Lydia. She wants her daughters to marry because their future is insecure without much money of their own.",
+      "translator_guidance": "Keep her excitable and often comic, but do not erase the real financial fear beneath her behaviour."
+    },
+    {
+      "term": "Netherfield Park",
+      "sort": "Netherfield Park",
+      "description": "A large country house and private estate near Longbourn. Mr. Bingley rents it. Park here means private land around a great house, not a public city park.",
+      "translator_guidance": "Always keep Netherfield Park, and keep shortened Netherfield where the source uses it."
+    },
+    {
+      "term": "Pemberley",
+      "sort": "Pemberley",
+      "description": "Mr. Darcy's great house and estate in Derbyshire. It shows his wealth and also how he accepts responsibility as a landowner.",
+      "translator_guidance": "Keep the place name. Use estate, property, house, or grounds according to the source's immediate meaning."
+    },
+    {
+      "term": "Rosings Park",
+      "sort": "Rosings Park",
+      "description": "Lady Catherine de Bourgh's great house and estate in Kent. Mr. Collins's parsonage is very close to it.",
+      "translator_guidance": "Keep Rosings or Rosings Park as the source does. Do not describe Park as a public park."
+    },
+    {
+      "term": "Servants",
+      "sort": "Servants",
+      "description": "Wealthy households employed people for domestic work, cooking, horses, travel, and personal service. A large staff was a sign of great wealth.",
+      "translator_guidance": "Use servants as the neutral historical term. Name a specific job clearly when it matters to the action."
+    },
+    {
+      "term": "Social standing and rank",
+      "sort": "Social standing and rank",
+      "description": "Family background, property, connections, and titles strongly affected how people were treated. Even rich people could be considered socially lower when their money came from trade.",
+      "translator_guidance": "Express rank, connections, consequence, and society in clear social terms. Do not neutralise a character's judgment about class."
+    },
+    {
+      "term": "A chaise and four",
+      "sort": "Chaise and four",
+      "description": "A travelling carriage pulled by four horses was fast and expensive. It showed that the traveller was wealthy.",
+      "translator_guidance": "Use a carriage pulled by four horses at first use. Elsewhere use carriage when the exact historical carriage type does not affect the action."
+    },
+    {
+      "term": "Introductions and formal calls",
+      "sort": "Introductions and formal calls",
+      "description": "A family could not always approach a strange man or household freely. A formal introduction and first visit opened the way for later social contact.",
+      "translator_guidance": "Use formal visit or formal call where visit or call carries this social meaning. Preserve the rule that one household must make the first approach."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Chapter XII
+
+The sisters made an agreement. Next morning, Elizabeth wrote asking her mother to send the carriage that day. Mrs. Bennet had planned for them to remain at Netherfield until Tuesday. That would complete Jane's full week there. She could not happily receive them sooner. Her answer therefore disappointed Elizabeth, who wanted to go home. Mrs. Bennet said they could not have the carriage before Tuesday. In a final note, she added that they could easily stay longer if Mr. Bingley and his sister urged it. But Elizabeth firmly refused to remain longer. She did not really expect another invitation. Instead, she feared they already seemed to be staying too long. She urged Jane to borrow Mr. Bingley's carriage immediately. At last, they agreed to announce their plan to leave that morning and request it.
+
+The announcement produced many expressions of sadness. Their hosts said enough about wishing them to stay another day to influence Jane. The sisters delayed their departure until tomorrow. Miss Bingley soon regretted suggesting the delay. Her jealousy and dislike of Elizabeth were much stronger than her affection for Jane.
+
+Mr. Bingley felt genuine sorrow that they would leave so soon. He repeatedly tried to persuade Miss Bennet that travelling was unsafe because she had not fully recovered. But Jane remained firm when she believed herself right.
+
+Mr. Darcy welcomed the news. Elizabeth had stayed at Netherfield long enough. She attracted him more than he wished. Miss Bingley was rude to her and teased him more than usual. He wisely decided to show no further sign of admiration. He must give Elizabeth no hope that she could influence his happiness. If that idea had entered her mind, his final day's behaviour would confirm or destroy it. He carefully followed his plan. Throughout Saturday, he said hardly ten words to her. Once, they were alone for half an hour. He faithfully continued reading and did not even look at her.
+
+On Sunday, after morning church, the separation pleasing almost everyone took place. Miss Bingley's politeness to Elizabeth and affection for Jane suddenly increased. She told Jane how much she would always enjoy seeing her at Longbourn or Netherfield. She embraced Jane tenderly and even shook Elizabeth's hand. Elizabeth left everyone in excellent spirits.
+
+Their mother did not warmly welcome them home. Mrs. Bennet wondered why they had returned and blamed them for causing trouble. She was sure Jane would catch cold again. Their father expressed his pleasure in very few words but was truly glad. Their absence had shown him their importance to the family. Without Jane and Elizabeth, the evening conversation had lost much of its energy and nearly all its sense.
+
+As usual, Mary was deeply studying musical theory and human nature. The sisters had new copied passages to admire and new tired moral lessons to hear. Catherine and Lydia had very different information. Since Wednesday, the regiment had done and said many things. Several officers had recently dined with their uncle. An ordinary soldier had been whipped. People had even suggested that Colonel Forster planned to marry.

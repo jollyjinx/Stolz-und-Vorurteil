@@ -43,16 +43,21 @@ jobs:
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.epub \
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.html \
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.pdf
+          zip -j dist/Pride-and-Prejudice-Easy-English.zip \
+            dist/Pride-and-Prejudice-Easy-English-cover.png \
+            dist/Pride-and-Prejudice-Easy-English.epub \
+            dist/Pride-and-Prejudice-Easy-English.html \
+            dist/Pride-and-Prejudice-Easy-English.pdf
           zip -j dist/Stolz-und-Vorurteil-Deutsch-Englisch.zip \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch-cover.png \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.epub \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.html \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.pdf
-          zip -j dist/Pride-and-Prejudice-Englisch-Deutsch.zip \
-            dist/Pride-and-Prejudice-Englisch-Deutsch-cover.png \
-            dist/Pride-and-Prejudice-Englisch-Deutsch.epub \
-            dist/Pride-and-Prejudice-Englisch-Deutsch.html \
-            dist/Pride-and-Prejudice-Englisch-Deutsch.pdf
+          zip -j dist/Pride-and-Prejudice-English-German.zip \
+            dist/Pride-and-Prejudice-English-German-cover.png \
+            dist/Pride-and-Prejudice-English-German.epub \
+            dist/Pride-and-Prejudice-English-German.html \
+            dist/Pride-and-Prejudice-English-German.pdf
       # Gitea's artifact service implements the v3 protocol; upstream v4
       # deliberately rejects servers other than GitHub.com.
       - uses: actions/upload-artifact@v3
@@ -93,16 +98,21 @@ jobs:
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.html \
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.pdf \
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.zip \
+            dist/Pride-and-Prejudice-Easy-English-cover.png \
+            dist/Pride-and-Prejudice-Easy-English.epub \
+            dist/Pride-and-Prejudice-Easy-English.html \
+            dist/Pride-and-Prejudice-Easy-English.pdf \
+            dist/Pride-and-Prejudice-Easy-English.zip \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch-cover.png \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.epub \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.html \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.pdf \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.zip \
-            dist/Pride-and-Prejudice-Englisch-Deutsch-cover.png \
-            dist/Pride-and-Prejudice-Englisch-Deutsch.epub \
-            dist/Pride-and-Prejudice-Englisch-Deutsch.html \
-            dist/Pride-and-Prejudice-Englisch-Deutsch.pdf \
-            dist/Pride-and-Prejudice-Englisch-Deutsch.zip
+            dist/Pride-and-Prejudice-English-German-cover.png \
+            dist/Pride-and-Prejudice-English-German.epub \
+            dist/Pride-and-Prejudice-English-German.html \
+            dist/Pride-and-Prejudice-English-German.pdf \
+            dist/Pride-and-Prejudice-English-German.zip
           do
             filename="$(basename "$file")"
             existing_id="$(

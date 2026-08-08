@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build modern, Easy German, English, and bilingual book editions."""
+"""Build modern German, Easy German, Easy English, English, and bilingual editions."""
 
 from __future__ import annotations
 
@@ -43,6 +43,8 @@ ILLUSTRATIONS = ROOT / "illustrations"
 ILLUSTRATION_MANIFEST = ILLUSTRATIONS / "manifest.json"
 EASY_GERMAN_GLOSSARY = ROOT / "easy-german-glossary.json"
 EASY_GERMAN_NOTES = ROOT / "easy-german-notes.json"
+EASY_ENGLISH_GLOSSARY = ROOT / "easy-english-glossary.json"
+EASY_ENGLISH_NOTES = ROOT / "easy-english-notes.json"
 MODERN_GERMAN_INTRODUCTION = ROOT / "frontmatter" / "before-you-read-de.md"
 MODERN_ENGLISH_INTRODUCTION = ROOT / "frontmatter" / "before-you-read-en.md"
 INITIAL_MANIFESTS = [
@@ -108,12 +110,47 @@ EDITIONS = {
         "notes": True,
         "glossary": True,
         "numeric_chapter_headings": True,
+        "numeric_chapter_label": "Kapitel",
         "initials_credit": "Dekorative Initialen: Hugh Thomson (1894); F, U und Z ergänzt mit OpenAI (2026)",
         "dedication": "Für meine Tochter Isabel, damit auch du diese Geschichte genießen kannst",
         "download_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/releases",
         "license_name": "MIT License",
         "license_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/blob/main/LICENSE",
         "language": "de-DE",
+    },
+    "easy-english": {
+        "chapters": ROOT / "easy-english-chapters",
+        "frontmatter": ROOT / "frontmatter" / "easy-english.md",
+        "introduction": ROOT / "frontmatter" / "easy-english-introduction.md",
+        "basename": "Pride-and-Prejudice-Easy-English",
+        "title": "Pride and Prejudice",
+        "subtitle": "In Easy English",
+        "cover_title_lines": ["PRIDE AND", "PREJUDICE"],
+        "cover_edition_lines": ["EASY ENGLISH"],
+        "author": "Jane Austen",
+        "translator": "ChatGPT, with help from Patrick Stein",
+        "translator_label": "Easy English adaptation",
+        "illustrator": "Hugh Thomson",
+        "illustrations": True,
+        "initials": True,
+        "allow_missing_initials": True,
+        "notes": True,
+        "notes_path": EASY_ENGLISH_NOTES,
+        "glossary": True,
+        "glossary_path": EASY_ENGLISH_GLOSSARY,
+        "glossary_heading": "Glossary",
+        "glossary_introduction": (
+            "This section explains important people, places, and historical "
+            "terms. You can use it while reading or return to it later."
+        ),
+        "numeric_chapter_headings": True,
+        "numeric_chapter_label": "Chapter",
+        "initials_credit": "Decorative initials: Hugh Thomson (1894)",
+        "dedication": None,
+        "download_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/releases",
+        "license_name": "MIT License",
+        "license_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/blob/main/LICENSE",
+        "language": "en-US",
     },
     "english": {
         "chapters": ROOT / "source-chapters",
@@ -171,7 +208,7 @@ EDITIONS = {
             MODERN_ENGLISH_INTRODUCTION,
             MODERN_GERMAN_INTRODUCTION,
         ],
-        "basename": "Pride-and-Prejudice-Englisch-Deutsch",
+        "basename": "Pride-and-Prejudice-English-German",
         "title": "Pride and Prejudice / Stolz und Vorurteil",
         "subtitle": "Fully bilingual: English first",
         "cover_title_lines": [
@@ -485,29 +522,36 @@ def load_illustrations() -> list[dict[str, object]]:
     return entries
 
 
-def load_easy_german_glossary() -> list[dict[str, str]]:
-    if not EASY_GERMAN_GLOSSARY.exists():
-        raise RuntimeError(f"Easy German glossary is missing: {EASY_GERMAN_GLOSSARY}")
-    payload = json.loads(EASY_GERMAN_GLOSSARY.read_text(encoding="utf-8"))
+def load_glossary(
+    glossary_path: Path,
+    edition_label: str,
+) -> list[dict[str, str]]:
+    if not glossary_path.exists():
+        raise RuntimeError(f"{edition_label} glossary is missing: {glossary_path}")
+    payload = json.loads(glossary_path.read_text(encoding="utf-8"))
     entries = payload.get("entries") if isinstance(payload, dict) else None
     if not isinstance(entries, list) or not entries:
-        raise RuntimeError("Easy German glossary must contain a non-empty entries list.")
+        raise RuntimeError(
+            f"{edition_label} glossary must contain a non-empty entries list."
+        )
     normalized: list[dict[str, str]] = []
     seen_terms: set[str] = set()
     for entry in entries:
         if not isinstance(entry, dict):
-            raise RuntimeError("Each Easy German glossary entry must be an object.")
+            raise RuntimeError(
+                f"Each {edition_label} glossary entry must be an object."
+            )
         term = str(entry.get("term") or "").strip()
         description = str(entry.get("description") or "").strip()
         sort_key = str(entry.get("sort") or term).strip()
         guidance = str(entry.get("translator_guidance") or "").strip()
         if not term or not description or not guidance:
             raise RuntimeError(
-                "Every Easy German glossary entry needs term, description, "
+                f"Every {edition_label} glossary entry needs term, description, "
                 "and translator_guidance."
             )
         if term in seen_terms:
-            raise RuntimeError(f"Duplicate Easy German glossary term: {term}")
+            raise RuntimeError(f"Duplicate {edition_label} glossary term: {term}")
         seen_terms.add(term)
         normalized.append(
             {
@@ -520,33 +564,36 @@ def load_easy_german_glossary() -> list[dict[str, str]]:
     return sorted(normalized, key=lambda entry: entry["sort"].casefold())
 
 
-def load_easy_german_notes() -> list[dict[str, object]]:
-    if not EASY_GERMAN_NOTES.exists():
-        raise RuntimeError(f"Easy German notes are missing: {EASY_GERMAN_NOTES}")
-    payload = json.loads(EASY_GERMAN_NOTES.read_text(encoding="utf-8"))
+def load_notes(
+    notes_path: Path,
+    edition_label: str,
+) -> list[dict[str, object]]:
+    if not notes_path.exists():
+        raise RuntimeError(f"{edition_label} notes are missing: {notes_path}")
+    payload = json.loads(notes_path.read_text(encoding="utf-8"))
     notes = payload.get("notes") if isinstance(payload, dict) else None
     if not isinstance(notes, list):
-        raise RuntimeError("Easy German notes must contain a notes list.")
+        raise RuntimeError(f"{edition_label} notes must contain a notes list.")
     normalized: list[dict[str, object]] = []
     seen_ids: set[str] = set()
     seen_anchors: set[tuple[int, int, str]] = set()
     for number, note in enumerate(notes, start=1):
         if not isinstance(note, dict):
-            raise RuntimeError("Each Easy German note must be an object.")
+            raise RuntimeError(f"Each {edition_label} note must be an object.")
         note_id = str(note.get("id") or "").strip()
         chapter = int(note.get("chapter", 0))
         paragraph = int(note.get("paragraph", 0))
         phrase = str(note.get("phrase") or "").strip()
         note_text = str(note.get("text") or "").strip()
         if not note_id or not re.fullmatch(r"[a-z0-9-]+", note_id):
-            raise RuntimeError(f"Invalid Easy German note id: {note_id!r}")
+            raise RuntimeError(f"Invalid {edition_label} note id: {note_id!r}")
         if note_id in seen_ids:
-            raise RuntimeError(f"Duplicate Easy German note id: {note_id}")
+            raise RuntimeError(f"Duplicate {edition_label} note id: {note_id}")
         if not 1 <= chapter <= 61 or paragraph < 1 or not phrase or not note_text:
-            raise RuntimeError(f"Invalid Easy German note: {note_id}")
+            raise RuntimeError(f"Invalid {edition_label} note: {note_id}")
         anchor = (chapter, paragraph, phrase)
         if anchor in seen_anchors:
-            raise RuntimeError(f"Duplicate Easy German note anchor: {anchor}")
+            raise RuntimeError(f"Duplicate {edition_label} note anchor: {anchor}")
         seen_ids.add(note_id)
         seen_anchors.add(anchor)
         normalized.append(
@@ -571,6 +618,20 @@ def load_easy_german_notes() -> list[dict[str, object]]:
     return normalized
 
 
+def edition_notes(edition: dict[str, object]) -> list[dict[str, object]]:
+    notes_path = edition.get("notes_path", EASY_GERMAN_NOTES)
+    if not isinstance(notes_path, Path):
+        raise RuntimeError(f"Invalid notes path: {notes_path!r}")
+    return load_notes(notes_path, str(edition["subtitle"]))
+
+
+def edition_glossary(edition: dict[str, object]) -> list[dict[str, str]]:
+    glossary_path = edition.get("glossary_path", EASY_GERMAN_GLOSSARY)
+    if not isinstance(glossary_path, Path):
+        raise RuntimeError(f"Invalid glossary path: {glossary_path!r}")
+    return load_glossary(glossary_path, str(edition["subtitle"]))
+
+
 def notes_for_chapter(
     notes: list[dict[str, object]],
     chapter_number: int,
@@ -590,7 +651,7 @@ def annotate_markdown_paragraph(
         phrase = str(note["phrase"])
         if phrase not in annotated:
             raise RuntimeError(
-                f"Easy German note {note['id']} cannot find {phrase!r} in "
+                f"Easy edition note {note['id']} cannot find {phrase!r} in "
                 f"paragraph {paragraph_number}."
             )
         annotated = annotated.replace(
@@ -610,16 +671,19 @@ def easy_german_note_definitions(
     ]
 
 
-def easy_german_glossary_markdown() -> str:
+def glossary_markdown(edition: dict[str, object]) -> str:
     parts = [
-        "# Glossar",
-        (
-            "Hier werden wichtige Personen, Orte und Begriffe noch einmal "
-            "erklärt. Du kannst die Einträge nach dem Lesen oder beim "
-            "erneuten Lesen nachschlagen."
+        f"# {edition.get('glossary_heading', 'Glossar')}",
+        str(
+            edition.get(
+                "glossary_introduction",
+                "Hier werden wichtige Personen, Orte und Begriffe noch einmal "
+                "erklärt. Du kannst die Einträge nach dem Lesen oder beim "
+                "erneuten Lesen nachschlagen.",
+            )
         ),
     ]
-    for entry in load_easy_german_glossary():
+    for entry in edition_glossary(edition):
         parts.extend([f"## {entry['term']}", entry["description"]])
     return "\n\n".join(parts)
 
@@ -788,6 +852,7 @@ def illustrated_chapter_markdown(
     initial: dict[str, object] | None = None,
     notes: list[dict[str, object]] | None = None,
     display_heading: str | None = None,
+    illustration_languages: tuple[str, ...] = ("de",),
 ) -> str:
     blocks = [
         block.strip()
@@ -809,7 +874,10 @@ def illustrated_chapter_markdown(
 
     chapter_notes = notes_for_chapter(notes or [], chapter_number)
     output = [display_heading or blocks[0]]
-    output.extend(markdown_illustration(entry) for entry in by_position.get(0, []))
+    output.extend(
+        markdown_illustration(entry, illustration_languages)
+        for entry in by_position.get(0, [])
+    )
     for position, paragraph in enumerate(body, start=1):
         paragraph = annotate_markdown_paragraph(
             paragraph,
@@ -820,7 +888,7 @@ def illustrated_chapter_markdown(
             paragraph = markdown_initial(paragraph, initial)
         output.append(paragraph)
         output.extend(
-            markdown_illustration(entry)
+            markdown_illustration(entry, illustration_languages)
             for entry in by_position.get(position, [])
         )
     output.extend(easy_german_note_definitions(chapter_notes))
@@ -957,7 +1025,8 @@ def build_markdown(edition: dict[str, object]) -> Path:
         )
     elif edition.get("illustrations"):
         illustrations = load_illustrations()
-        notes = load_easy_german_notes() if edition.get("notes") else []
+        notes = edition_notes(edition) if edition.get("notes") else []
+        illustration_languages = (str(edition["language"])[:2],)
         initials = (
             assign_initials(
                 chapters,
@@ -970,7 +1039,10 @@ def build_markdown(edition: dict[str, object]) -> Path:
         frontispieces = [
             entry for entry in illustrations if int(entry["chapter"]) == 0
         ]
-        parts.extend(markdown_illustration(entry) for entry in frontispieces)
+        parts.extend(
+            markdown_illustration(entry, illustration_languages)
+            for entry in frontispieces
+        )
         parts.extend(
             illustrated_chapter_markdown(
                 path,
@@ -978,16 +1050,17 @@ def build_markdown(edition: dict[str, object]) -> Path:
                 illustrations,
                 initials.get(number),
                 notes,
-                f"# Kapitel {number}"
+                f"# {edition.get('numeric_chapter_label', 'Kapitel')} {number}"
                 if edition.get("numeric_chapter_headings")
                 else None,
+                illustration_languages,
             )
             for number, path in enumerate(chapters, start=1)
         )
     else:
         parts.extend(path.read_text(encoding="utf-8").rstrip() for path in chapters)
     if edition.get("glossary"):
-        parts.append(easy_german_glossary_markdown())
+        parts.append(glossary_markdown(edition))
     output.write_text("\n\n".join(parts) + "\n", encoding="utf-8")
     return output
 
@@ -1071,7 +1144,7 @@ def pdf_annotated_text(
         phrase = inline_markdown(str(note["phrase"]))
         if phrase not in rendered:
             raise RuntimeError(
-                f"Easy German note {note['id']} cannot find {note['phrase']!r} "
+                f"Easy edition note {note['id']} cannot find {note['phrase']!r} "
                 f"in PDF paragraph {paragraph_number}."
             )
         rendered = rendered.replace(
@@ -1238,9 +1311,12 @@ def build_pdf(edition: dict[str, object], cover: Path | None) -> None:
     )
     story.append(Paragraph(f"{cover_labels['by']} {edition['author']}", credit))
     if edition.get("translator"):
+        translator_label = html.escape(
+            str(edition.get("translator_label", cover_labels["translation"]))
+        )
         story.append(
             Paragraph(
-                f"{cover_labels['translation']}: {edition['translator']}",
+                f"{translator_label}: {edition['translator']}",
                 credit,
             )
         )
@@ -1327,7 +1403,7 @@ def build_pdf(edition: dict[str, object], cover: Path | None) -> None:
         if edition.get("initials")
         else {}
     )
-    easy_notes = load_easy_german_notes() if edition.get("notes") else []
+    easy_notes = edition_notes(edition) if edition.get("notes") else []
     for chapter_index, chapter in enumerate(chapters):
         blocks = [block.strip() for block in chapter.read_text(encoding="utf-8").split("\n\n") if block.strip()]
         paired_blocks: list[str] = []
@@ -1360,7 +1436,7 @@ def build_pdf(edition: dict[str, object], cover: Path | None) -> None:
             by_position.setdefault(position, []).append(entry)
 
         chapter_heading = (
-            f"Kapitel {chapter_index + 1}"
+            f"{edition.get('numeric_chapter_label', 'Kapitel')} {chapter_index + 1}"
             if edition.get("numeric_chapter_headings")
             else blocks[0].removeprefix("# ")
         )
@@ -1447,18 +1523,31 @@ def build_pdf(edition: dict[str, object], cover: Path | None) -> None:
         if chapter_index != len(chapters) - 1:
             story.append(PageBreak())
     if edition.get("glossary"):
-        story.extend([PageBreak(), Paragraph("Glossar", section_heading)])
+        story.extend(
+            [
+                PageBreak(),
+                Paragraph(
+                    inline_markdown(str(edition.get("glossary_heading", "Glossar"))),
+                    section_heading,
+                ),
+            ]
+        )
         story.append(
             Paragraph(
-                (
-                    "Hier werden wichtige Personen, Orte und Begriffe noch einmal "
-                    "erklärt. Du kannst die Einträge nach dem Lesen oder beim "
-                    "erneuten Lesen nachschlagen."
+                inline_markdown(
+                    str(
+                        edition.get(
+                            "glossary_introduction",
+                            "Hier werden wichtige Personen, Orte und Begriffe noch "
+                            "einmal erklärt. Du kannst die Einträge nach dem Lesen "
+                            "oder beim erneuten Lesen nachschlagen.",
+                        )
+                    )
                 ),
                 body,
             )
         )
-        for entry in load_easy_german_glossary():
+        for entry in edition_glossary(edition):
             story.extend(
                 [
                     Paragraph(inline_markdown(entry["term"]), glossary_term),

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify both German translations and their chapter-level alignment."""
+"""Verify German translations, Easy English, and chapter-level alignment."""
 
 from __future__ import annotations
 
@@ -15,10 +15,14 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "source-chapters"
 TRANSLATION = ROOT / "modern-german-chapters"
 EASY_TRANSLATION = ROOT / "easy-german-chapters"
+EASY_ENGLISH = ROOT / "easy-english-chapters"
 ALIGNMENT_MANIFEST = ROOT / "alignment-manifest.json"
 EASY_ALIGNMENT_MANIFEST = ROOT / "easy-german-alignment-manifest.json"
+EASY_ENGLISH_ALIGNMENT_MANIFEST = ROOT / "easy-english-alignment-manifest.json"
 EASY_GLOSSARY = ROOT / "easy-german-glossary.json"
 EASY_NOTES = ROOT / "easy-german-notes.json"
+EASY_ENGLISH_GLOSSARY = ROOT / "easy-english-glossary.json"
+EASY_ENGLISH_NOTES = ROOT / "easy-english-notes.json"
 
 
 def paragraphs(path: Path) -> list[str]:
@@ -102,7 +106,12 @@ def verify_alignment_manifest(
             + (
                 "tools/verify_translation.py --update-alignment-manifest"
                 if manifest_path == ALIGNMENT_MANIFEST
-                else "tools/verify_translation.py --update-easy-alignment-manifest"
+                else (
+                    "tools/verify_translation.py --update-easy-alignment-manifest"
+                    if manifest_path == EASY_ALIGNMENT_MANIFEST
+                    else "tools/verify_translation.py "
+                    "--update-easy-english-alignment-manifest"
+                )
             )
         )
 
@@ -154,7 +163,12 @@ def verify_chapter_set(
         if not translated_paragraphs:
             failures.append(f"{label} chapter {number}: file is empty")
             continue
-        if not re.fullmatch(r"# Kapitel [IVXLCDM]+", translated_paragraphs[0]):
+        heading_pattern = (
+            r"# Chapter [IVXLCDM]+"
+            if label == "Easy English"
+            else r"# Kapitel [IVXLCDM]+"
+        )
+        if not re.fullmatch(heading_pattern, translated_paragraphs[0]):
             failures.append(
                 f"{label} chapter {number}: invalid heading in {translated_path.name}"
             )
@@ -163,19 +177,19 @@ def verify_chapter_set(
                 f"{label} chapter {number}: source has {len(source_paragraphs)} "
                 f"paragraphs; translation has {len(translated_paragraphs)}"
             )
-        if label == "Easy German" and "[^" in translated_path.read_text(encoding="utf-8"):
+        if label in {"Easy German", "Easy English"} and "[^" in translated_path.read_text(encoding="utf-8"):
             failures.append(
                 f"{label} chapter {number}: footnote markup belongs in "
-                "easy-german-notes.json, not the chapter file"
+                f"{label.lower().replace(' ', '-')}-notes.json, not the chapter file"
             )
         if (
-            label == "Easy German"
+            label in {"Easy German", "Easy English"}
             and len(translated_paragraphs) > 1
             and re.match(r"^[^A-Za-zÄÖÜäöüß]*[A-ZÄÖÜ]{2,}\b", translated_paragraphs[1])
         ):
             failures.append(
                 f"{label} chapter {number}: opening word uses source-style "
-                "all caps instead of normal German capitalization"
+                "all caps instead of normal capitalization"
             )
         for language, items in (
             ("source", source_paragraphs),
@@ -188,14 +202,17 @@ def verify_chapter_set(
                 )
 
 
-def verify_easy_german_metadata(
+def verify_easy_metadata(
     easy_files: list[Path],
+    glossary_path: Path,
+    notes_path: Path,
+    label: str,
     failures: list[str],
 ) -> None:
     try:
-        glossary_payload = json.loads(EASY_GLOSSARY.read_text(encoding="utf-8"))
+        glossary_payload = json.loads(glossary_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:
-        failures.append(f"cannot read Easy German glossary: {error}")
+        failures.append(f"cannot read {label} glossary: {error}")
         glossary_payload = {}
     glossary_entries = (
         glossary_payload.get("entries")
@@ -203,36 +220,43 @@ def verify_easy_german_metadata(
         else None
     )
     if not isinstance(glossary_entries, list) or not glossary_entries:
-        failures.append("Easy German glossary needs a non-empty entries list")
+        failures.append(f"{label} glossary needs a non-empty entries list")
     else:
         terms: set[str] = set()
+        sort_keys: set[str] = set()
         for entry in glossary_entries:
             if not isinstance(entry, dict):
-                failures.append("Easy German glossary entries must be objects")
+                failures.append(f"{label} glossary entries must be objects")
                 continue
             term = str(entry.get("term") or "").strip()
+            sort_key = str(entry.get("sort") or "").strip()
             if not term or not str(entry.get("description") or "").strip():
-                failures.append("Easy German glossary entry lacks term or description")
+                failures.append(f"{label} glossary entry lacks term or description")
+            if not sort_key:
+                failures.append(f"{label} glossary term {term!r} lacks sort key")
             if not str(entry.get("translator_guidance") or "").strip():
-                failures.append(f"Easy German glossary term {term!r} lacks guidance")
+                failures.append(f"{label} glossary term {term!r} lacks guidance")
             if term in terms:
-                failures.append(f"duplicate Easy German glossary term: {term}")
+                failures.append(f"duplicate {label} glossary term: {term}")
+            if sort_key in sort_keys:
+                failures.append(f"duplicate {label} glossary sort key: {sort_key}")
             terms.add(term)
+            sort_keys.add(sort_key)
 
     try:
-        notes_payload = json.loads(EASY_NOTES.read_text(encoding="utf-8"))
+        notes_payload = json.loads(notes_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:
-        failures.append(f"cannot read Easy German notes: {error}")
+        failures.append(f"cannot read {label} notes: {error}")
         return
     notes = notes_payload.get("notes") if isinstance(notes_payload, dict) else None
     if not isinstance(notes, list):
-        failures.append("Easy German notes need a notes list")
+        failures.append(f"{label} notes need a notes list")
         return
     files_by_chapter = {int(path.name[:2]): path for path in easy_files}
     note_ids: set[str] = set()
     for note in notes:
         if not isinstance(note, dict):
-            failures.append("Easy German notes must be objects")
+            failures.append(f"{label} notes must be objects")
             continue
         note_id = str(note.get("id") or "").strip()
         phrase = str(note.get("phrase") or "").strip()
@@ -241,31 +265,59 @@ def verify_easy_german_metadata(
             chapter = int(note.get("chapter", 0))
             paragraph_number = int(note.get("paragraph", 0))
         except (TypeError, ValueError):
-            failures.append(f"Easy German note {note_id!r} has an invalid anchor")
+            failures.append(f"{label} note {note_id!r} has an invalid anchor")
             continue
         if not re.fullmatch(r"[a-z0-9-]+", note_id):
-            failures.append(f"invalid Easy German note id: {note_id!r}")
+            failures.append(f"invalid {label} note id: {note_id!r}")
         if note_id in note_ids:
-            failures.append(f"duplicate Easy German note id: {note_id}")
+            failures.append(f"duplicate {label} note id: {note_id}")
         note_ids.add(note_id)
         if not phrase or not note_text:
-            failures.append(f"Easy German note {note_id!r} lacks phrase or text")
+            failures.append(f"{label} note {note_id!r} lacks phrase or text")
         chapter_path = files_by_chapter.get(chapter)
         if chapter_path is None:
             failures.append(
-                f"Easy German note {note_id!r} points to missing chapter {chapter}"
+                f"{label} note {note_id!r} points to missing chapter {chapter}"
             )
             continue
         chapter_paragraphs = paragraphs(chapter_path)[1:]
         if not 1 <= paragraph_number <= len(chapter_paragraphs):
             failures.append(
-                f"Easy German note {note_id!r} points outside chapter {chapter}"
+                f"{label} note {note_id!r} points outside chapter {chapter}"
             )
         elif phrase not in chapter_paragraphs[paragraph_number - 1]:
             failures.append(
-                f"Easy German note {note_id!r} cannot find {phrase!r} in "
+                f"{label} note {note_id!r} cannot find {phrase!r} in "
                 f"chapter {chapter}, paragraph {paragraph_number}"
             )
+        else:
+            earlier_location: tuple[int, int] | None = None
+            for earlier_chapter in sorted(files_by_chapter):
+                if earlier_chapter > chapter:
+                    break
+                earlier_paragraphs = paragraphs(
+                    files_by_chapter[earlier_chapter]
+                )[1:]
+                final_paragraph = (
+                    paragraph_number - 1
+                    if earlier_chapter == chapter
+                    else len(earlier_paragraphs)
+                )
+                for earlier_number, earlier_paragraph in enumerate(
+                    earlier_paragraphs[:final_paragraph],
+                    start=1,
+                ):
+                    if phrase in earlier_paragraph:
+                        earlier_location = (earlier_chapter, earlier_number)
+                        break
+                if earlier_location:
+                    break
+            if earlier_location:
+                failures.append(
+                    f"{label} note {note_id!r} is not at the first occurrence "
+                    f"of {phrase!r}; found chapter {earlier_location[0]}, "
+                    f"paragraph {earlier_location[1]}"
+                )
 
 
 def parse_args() -> argparse.Namespace:
@@ -287,6 +339,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="record the current, reviewed English-Easy German chapter pairings",
     )
+    parser.add_argument(
+        "--update-easy-english-alignment-manifest",
+        action="store_true",
+        help="record the current, reviewed English-Easy English chapter pairings",
+    )
     return parser.parse_args()
 
 
@@ -296,6 +353,7 @@ def main() -> None:
     source_files = sorted(SOURCE.glob("*.md"))
     translated_files = sorted(TRANSLATION.glob("*.md"))
     easy_files = sorted(EASY_TRANSLATION.glob("*.md"))
+    easy_english_files = sorted(EASY_ENGLISH.glob("*.md"))
 
     if len(source_files) != 61:
         failures.append(f"expected 61 source chapters, found {len(source_files)}")
@@ -313,13 +371,34 @@ def main() -> None:
         "Easy German",
         failures,
     )
-    verify_easy_german_metadata(easy_files, failures)
+    verify_chapter_set(
+        source_files,
+        easy_english_files,
+        EASY_ENGLISH,
+        "Easy English",
+        failures,
+    )
+    verify_easy_metadata(
+        easy_files,
+        EASY_GLOSSARY,
+        EASY_NOTES,
+        "Easy German",
+        failures,
+    )
+    verify_easy_metadata(
+        easy_english_files,
+        EASY_ENGLISH_GLOSSARY,
+        EASY_ENGLISH_NOTES,
+        "Easy English",
+        failures,
+    )
 
     if args.epub:
         verify_epub_source(args.epub, failures)
 
     records = alignment_records(source_files, translated_files)
     easy_records = alignment_records(source_files, easy_files)
+    easy_english_records = alignment_records(source_files, easy_english_files)
     if not args.update_alignment_manifest:
         verify_alignment_manifest(records, failures)
     if not args.update_easy_alignment_manifest:
@@ -328,6 +407,13 @@ def main() -> None:
             failures,
             EASY_ALIGNMENT_MANIFEST,
             "reviewed Easy German alignment",
+        )
+    if not args.update_easy_english_alignment_manifest:
+        verify_alignment_manifest(
+            easy_english_records,
+            failures,
+            EASY_ENGLISH_ALIGNMENT_MANIFEST,
+            "reviewed Easy English alignment",
         )
 
     if failures:
@@ -362,6 +448,20 @@ def main() -> None:
             encoding="utf-8",
         )
         print(f"Updated {EASY_ALIGNMENT_MANIFEST}.")
+    if args.update_easy_english_alignment_manifest:
+        manifest = {
+            "version": 1,
+            "description": (
+                "Hashes of chapter paragraph sequences after English-Easy "
+                "English alignment and accessibility review."
+            ),
+            "chapters": easy_english_records,
+        }
+        EASY_ENGLISH_ALIGNMENT_MANIFEST.write_text(
+            json.dumps(manifest, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        print(f"Updated {EASY_ENGLISH_ALIGNMENT_MANIFEST}.")
 
     total_paragraphs = sum(int(record["paragraphs"]) for record in records)
     print(
@@ -372,6 +472,14 @@ def main() -> None:
     print(
         f"Verified {len(easy_files)} Easy German chapters with "
         f"{easy_total} aligned paragraph pairs."
+    )
+    easy_english_total = sum(
+        int(record["paragraphs"])
+        for record in easy_english_records
+    )
+    print(
+        f"Verified {len(easy_english_files)} Easy English chapters with "
+        f"{easy_english_total} aligned paragraph pairs."
     )
 
 
