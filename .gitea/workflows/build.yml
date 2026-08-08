@@ -21,10 +21,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Install book builders
         run: |
           apt-get update
-          apt-get install --yes curl jq pandoc python3 python3-reportlab zip
+          apt-get install --yes curl fonts-dejavu-core jq pandoc python3 python3-pil python3-reportlab zip
       - name: Verify translation structure
         run: python3 tools/verify_translation.py
       - name: Build EPUB, HTML, and PDF editions
@@ -32,18 +34,22 @@ jobs:
       - name: Create all-formats archive
         run: |
           zip -j dist/Stolz-und-Vorurteil-modernes-Deutsch.zip \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch-cover.png \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.epub \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.html \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.pdf
           zip -j dist/Stolz-und-Vorurteil-Einfaches-Deutsch.zip \
+            dist/Stolz-und-Vorurteil-Einfaches-Deutsch-cover.png \
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.epub \
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.html \
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.pdf
           zip -j dist/Stolz-und-Vorurteil-Deutsch-Englisch.zip \
+            dist/Stolz-und-Vorurteil-Deutsch-Englisch-cover.png \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.epub \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.html \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.pdf
           zip -j dist/Pride-and-Prejudice-Englisch-Deutsch.zip \
+            dist/Pride-and-Prejudice-Englisch-Deutsch-cover.png \
             dist/Pride-and-Prejudice-Englisch-Deutsch.epub \
             dist/Pride-and-Prejudice-Englisch-Deutsch.html \
             dist/Pride-and-Prejudice-Englisch-Deutsch.pdf
@@ -77,18 +83,22 @@ jobs:
           )"
 
           for file in \
+            dist/Stolz-und-Vorurteil-modernes-Deutsch-cover.png \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.epub \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.html \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.pdf \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.zip \
+            dist/Stolz-und-Vorurteil-Einfaches-Deutsch-cover.png \
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.epub \
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.html \
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.pdf \
             dist/Stolz-und-Vorurteil-Einfaches-Deutsch.zip \
+            dist/Stolz-und-Vorurteil-Deutsch-Englisch-cover.png \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.epub \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.html \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.pdf \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.zip \
+            dist/Pride-and-Prejudice-Englisch-Deutsch-cover.png \
             dist/Pride-and-Prejudice-Englisch-Deutsch.epub \
             dist/Pride-and-Prejudice-Englisch-Deutsch.html \
             dist/Pride-and-Prejudice-Englisch-Deutsch.pdf \

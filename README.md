@@ -15,43 +15,24 @@ Project-Gutenberg-EPUB-Ausgabe.
 
 ## Latest release / Neueste Veröffentlichung
 
-Click any cover to open the latest GitHub release. /
-Ein Klick auf einen Umschlag öffnet die neueste GitHub-Veröffentlichung.
+Click the reusable binding design to open the latest GitHub release. /
+Ein Klick auf die wiederverwendbare Einbandgestaltung öffnet die neueste
+GitHub-Veröffentlichung.
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/jollyjinx/pride-and-prejudice-bilingual-german-english/releases/latest">
-        <img src="covers/Stolz-und-Vorurteil-modernes-Deutsch.png"
-             alt="Stolz und Vorurteil – modernes Deutsch" width="240">
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/jollyjinx/pride-and-prejudice-bilingual-german-english/releases/latest">
-        <img src="covers/Stolz-und-Vorurteil-Deutsch-Englisch.png"
-             alt="Stolz und Vorurteil – Deutsch und Englisch" width="240">
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/jollyjinx/pride-and-prejudice-bilingual-german-english/releases/latest">
-        <img src="covers/Stolz-und-Vorurteil-Einfaches-Deutsch.png"
-             alt="Stolz und Vorurteil – Einfaches Deutsch" width="240">
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/jollyjinx/pride-and-prejudice-bilingual-german-english/releases/latest">
-        <img src="covers/Pride-and-Prejudice-Englisch-Deutsch.png"
-             alt="Pride and Prejudice – English and German" width="240">
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">Modern German<br>Modernes Deutsch</td>
-    <td align="center">German first<br>Deutsch zuerst</td>
-    <td align="center">Easy German<br>Einfaches Deutsch</td>
-    <td align="center">English first<br>Englisch zuerst</td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://github.com/jollyjinx/pride-and-prejudice-bilingual-german-english/releases/latest">
+    <img src="covers/peacock-binding-template.png"
+         alt="Reusable peacock binding without lettering" width="320">
+  </a>
+</p>
+
+**English:** Every build typesets its own title, author, edition name, and
+version number onto this shared text-free master. No new cover illustration is
+needed when an edition is added or renamed.
+
+**Deutsch:** Jeder Build setzt Titel, Autorin, Ausgabenbezeichnung und
+Versionsnummer auf diese gemeinsame schriftfreie Vorlage. Für eine neue oder
+umbenannte Ausgabe muss keine neue Umschlagillustration erzeugt werden.
 
 ## Editions / Ausgaben
 
@@ -64,12 +45,16 @@ Ein Klick auf einen Umschlag öffnet die neueste GitHub-Veröffentlichung.
 | `english-german` | Fully bilingual, English first / Vollständig zweisprachig, Englisch zuerst | `Pride-and-Prejudice-Englisch-Deutsch` | yes / ja |
 
 **English:** The German translations were created by ChatGPT with the
-assistance of Patrick Stein. The dedication reads: “For my parents Brigitte
-and Wolfgang, so that you may enjoy it too.”
+assistance of Patrick Stein. The modern German edition is dedicated to
+Patrick's parents, Brigitte and Wolfgang. The Easy German edition is dedicated
+to his daughter Isabel: “For my daughter Isabel, so that you too can enjoy this
+story.”
 
 **Deutsch:** Die deutschen Übersetzungen stammen von ChatGPT, mit Hilfe von
-Patrick Stein. Die Widmung lautet: »Für meine Eltern Brigitte und Wolfgang,
-damit Ihr Euch auch dran erfreuen könnt«.
+Patrick Stein. Die moderne deutsche Ausgabe ist seinen Eltern Brigitte und
+Wolfgang gewidmet. Die Ausgabe in Einfachem Deutsch ist seiner Tochter Isabel
+gewidmet: »Für meine Tochter Isabel, damit auch du diese Geschichte genießen
+kannst«.
 
 ## Easy German / Einfaches Deutsch
 
@@ -164,9 +149,9 @@ ohne zwischen getrennten Büchern zu wechseln.
   generated initials for `F`, `U`, and `Z` / 97 Illustrationen und 59
   historische Initialen von Hugh Thomson, ergänzt um drei neu erzeugte
   Initialen für `F`, `U` und `Z`
-- `covers/`: newly generated cover artwork for the German and both bilingual
-  release editions / neu erzeugte Umschlaggestaltung für die deutsche und
-  beide zweisprachigen Veröffentlichungsausgaben
+- `covers/`: reusable text-free peacock binding master; edition covers are
+  typeset during the build / wiederverwendbare schriftfreie Pfauen-Einbandvorlage;
+  die Ausgabentitel werden beim Buchbau gesetzt
 - `frontmatter/`: title, source, and dedication pages / Titel-, Quellen- und
   Widmungsseiten
 - `tools/`: extraction, verification, and book-building tools / Werkzeuge für
@@ -178,10 +163,11 @@ ohne zwischen getrennten Büchern zu wechseln.
 
 ## Build / Bauen
 
-**Requirements / Voraussetzungen:** Python 3, `lxml`, `reportlab`, and Pandoc.
+**Requirements / Voraussetzungen:** Python 3, `lxml`, `Pillow`, `reportlab`,
+and Pandoc.
 
 ```sh
-python3 -m pip install lxml reportlab
+python3 -m pip install lxml pillow reportlab
 python3 tools/build_book.py all
 python3 tools/verify_translation.py
 python3 tools/verify_translation.py --epub /Users/jolly/Downloads/pg1342-images-3.epub
@@ -200,15 +186,20 @@ zweisprachigen Fassungen werden automatisch aus den absatzgleichen englischen
 und deutschen Kapiteln erzeugt, sodass beide Texte bei späteren Korrekturen
 synchron bleiben.
 
-**English:** The four release editions use their matching artwork from
-`covers/`: as the semantic cover in EPUB, before the title block in HTML, and
-as the first full cover page in PDF. The English source-only build remains
-without newly generated cover artwork.
+**English:** Use `--version YYYY.MM.DD.HHMMSS` to print a specific version on
+every cover. Without that option, the builder uses `BOOK_VERSION`, then the
+current commit date formatted as `YYYY.MM.DD.HHMMSS`. Every edition uses the
+master from `covers/` and writes its rendered cover to `dist/*-cover.png`. The
+image becomes the semantic EPUB cover, appears before the HTML title block,
+and forms the first PDF page.
 
-**Deutsch:** Die vier Veröffentlichungsausgaben verwenden jeweils das
-passende Bild aus `covers/`: als semantisches Cover im EPUB, vor dem Titelblock
-im HTML und als erste ganzseitige Umschlagseite im PDF. Der rein englische
-Referenz-Build bleibt ohne neu erzeugte Umschlaggestaltung.
+**Deutsch:** Mit `--version YYYY.MM.DD.HHMMSS` wird eine bestimmte
+Versionsnummer auf alle Umschläge gesetzt. Ohne diese Option verwendet der
+Buchbau zuerst `BOOK_VERSION`, danach das Datum des aktuellen Commits im Format
+`YYYY.MM.DD.HHMMSS`. Jede Ausgabe verwendet die Vorlage aus `covers/` und
+schreibt ihren gesetzten Umschlag nach `dist/*-cover.png`. Das Bild dient als
+semantischer EPUB-Umschlag, steht vor dem HTML-Titelblock und bildet die erste
+PDF-Seite.
 
 **English:** The verifier checks both German translations, headings, paragraph
 counts, suspicious mid-sentence splits, Easy German note anchors and glossary

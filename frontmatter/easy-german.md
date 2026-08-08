@@ -7,7 +7,7 @@ lang: de-DE
 rights: "Der englische Originaltext und Hugh Thomsons Illustrationen von 1894 sind gemeinfrei. Diese Übersetzung wurde mit OpenAI erstellt."
 ---
 
-# Für meine Eltern Brigitte und Wolfgang, damit Ihr Euch auch dran erfreuen könnt
+# Für meine Tochter Isabel, damit auch du diese Geschichte genießen kannst
 
 **Original:** Jane Austen, *Pride and Prejudice* (1813).
 

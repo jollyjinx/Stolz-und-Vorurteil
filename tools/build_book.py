@@ -6,12 +6,16 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import os
 import re
 import shutil
 import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path
 
+from PIL import Image as PillowImage
+from PIL import ImageDraw, ImageFont
 from reportlab.lib.colors import HexColor
 from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY
 from reportlab.lib.pagesizes import A5
@@ -34,6 +38,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 CSS = ROOT / "book.css"
 COVERS = ROOT / "covers"
+COVER_TEMPLATE = COVERS / "peacock-binding-template.png"
 ILLUSTRATIONS = ROOT / "illustrations"
 ILLUSTRATION_MANIFEST = ILLUSTRATIONS / "manifest.json"
 EASY_GERMAN_GLOSSARY = ROOT / "easy-german-glossary.json"
@@ -68,7 +73,8 @@ EDITIONS = {
         "basename": "Stolz-und-Vorurteil-modernes-Deutsch",
         "title": "Stolz und Vorurteil",
         "subtitle": "Eine moderne deutsche Übersetzung",
-        "cover": COVERS / "Stolz-und-Vorurteil-modernes-Deutsch.png",
+        "cover_title_lines": ["STOLZ UND", "VORURTEIL"],
+        "cover_edition_lines": ["MODERNES DEUTSCH"],
         "author": "Jane Austen",
         "translator": "ChatGPT, mit Hilfe von Patrick Stein",
         "illustrator": "Hugh Thomson",
@@ -88,7 +94,8 @@ EDITIONS = {
         "basename": "Stolz-und-Vorurteil-Einfaches-Deutsch",
         "title": "Stolz und Vorurteil",
         "subtitle": "In Einfachem Deutsch",
-        "cover": COVERS / "Stolz-und-Vorurteil-Einfaches-Deutsch.png",
+        "cover_title_lines": ["STOLZ UND", "VORURTEIL"],
+        "cover_edition_lines": ["EINFACHES DEUTSCH"],
         "author": "Jane Austen",
         "translator": "ChatGPT, mit Hilfe von Patrick Stein",
         "illustrator": "Hugh Thomson",
@@ -99,7 +106,7 @@ EDITIONS = {
         "glossary": True,
         "numeric_chapter_headings": True,
         "initials_credit": "Dekorative Initialen: Hugh Thomson (1894); F, U und Z ergänzt mit OpenAI (2026)",
-        "dedication": "Für meine Eltern Brigitte und Wolfgang, damit Ihr Euch auch dran erfreuen könnt",
+        "dedication": "Für meine Tochter Isabel, damit auch du diese Geschichte genießen kannst",
         "download_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/releases",
         "license_name": "MIT License",
         "license_url": "https://github.com/jollyjinx/Stolz-und-Vorurteil/blob/main/LICENSE",
@@ -111,6 +118,8 @@ EDITIONS = {
         "basename": "Pride-and-Prejudice-English",
         "title": "Pride and Prejudice",
         "subtitle": "The supplied Project Gutenberg source edition",
+        "cover_title_lines": ["PRIDE AND", "PREJUDICE"],
+        "cover_edition_lines": ["ENGLISH ORIGINAL"],
         "author": "Jane Austen",
         "translator": None,
         "dedication": None,
@@ -123,7 +132,13 @@ EDITIONS = {
         "basename": "Stolz-und-Vorurteil-Deutsch-Englisch",
         "title": "Stolz und Vorurteil / Pride and Prejudice",
         "subtitle": "Vollständig zweisprachig: Deutsch zuerst",
-        "cover": COVERS / "Stolz-und-Vorurteil-Deutsch-Englisch.png",
+        "cover_title_lines": [
+            "STOLZ UND",
+            "VORURTEIL",
+            "PRIDE AND",
+            "PREJUDICE",
+        ],
+        "cover_edition_lines": ["DEUTSCH · ENGLISCH", "DEUTSCH ZUERST"],
         "author": "Jane Austen",
         "translator": "ChatGPT, mit Hilfe von Patrick Stein",
         "illustrator": "Hugh Thomson",
@@ -147,7 +162,13 @@ EDITIONS = {
         "basename": "Pride-and-Prejudice-Englisch-Deutsch",
         "title": "Pride and Prejudice / Stolz und Vorurteil",
         "subtitle": "Fully bilingual: English first",
-        "cover": COVERS / "Pride-and-Prejudice-Englisch-Deutsch.png",
+        "cover_title_lines": [
+            "PRIDE AND",
+            "PREJUDICE",
+            "STOLZ UND",
+            "VORURTEIL",
+        ],
+        "cover_edition_lines": ["ENGLISH · GERMAN", "ENGLISH FIRST"],
         "author": "Jane Austen",
         "translator": "ChatGPT, mit Hilfe von Patrick Stein",
         "illustrator": "Hugh Thomson",
@@ -218,14 +239,194 @@ def run(command: list[str]) -> None:
     subprocess.run(command, cwd=ROOT, check=True)
 
 
-def edition_cover(edition: dict[str, object]) -> Path | None:
-    cover = edition.get("cover")
-    if cover is None:
+COVER_FONT_CANDIDATES = {
+    "roman": [
+        Path("/System/Library/Fonts/Supplemental/Times New Roman.ttf"),
+        Path("/System/Library/Fonts/Supplemental/Georgia.ttf"),
+        Path("/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"),
+        Path("/usr/share/fonts/truetype/liberation2/LiberationSerif-Regular.ttf"),
+    ],
+    "italic": [
+        Path("/System/Library/Fonts/Supplemental/Times New Roman Italic.ttf"),
+        Path("/System/Library/Fonts/Supplemental/Georgia Italic.ttf"),
+        Path("/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf"),
+        Path("/usr/share/fonts/truetype/liberation2/LiberationSerif-Italic.ttf"),
+    ],
+}
+
+
+def resolve_book_version(explicit_version: str | None = None) -> str:
+    version = explicit_version or os.environ.get("BOOK_VERSION")
+    if not version:
+        result = subprocess.run(
+            [
+                "git",
+                "show",
+                "-s",
+                "--format=%cd",
+                "--date=format:%Y.%m.%d.%H%M%S",
+                "HEAD",
+            ],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode == 0:
+            version = result.stdout.strip()
+    if not version:
+        raise RuntimeError(
+            "Cannot derive the cover version from the commit date; pass "
+            "--version YYYY.MM.DD.HHMMSS."
+        )
+    normalized = " ".join(version.split())
+    try:
+        datetime.strptime(normalized, "%Y.%m.%d.%H%M%S")
+    except ValueError as error:
+        raise RuntimeError(
+            "Cover version must use YYYY.MM.DD.HHMMSS and contain a valid "
+            f"date and time, found {normalized!r}."
+        ) from error
+    return normalized
+
+
+def cover_font(size: int, *, italic: bool = False) -> ImageFont.FreeTypeFont:
+    style = "italic" if italic else "roman"
+    for path in COVER_FONT_CANDIDATES[style]:
+        if path.exists():
+            return ImageFont.truetype(str(path), size=size)
+    raise RuntimeError(
+        "No supported serif cover font was found. Install DejaVu Serif or "
+        "Liberation Serif."
+    )
+
+
+def fitted_cover_font(
+    draw: ImageDraw.ImageDraw,
+    lines: list[str],
+    *,
+    maximum_size: int,
+    minimum_size: int,
+    maximum_width: int,
+    maximum_height: int,
+    italic: bool = False,
+) -> ImageFont.FreeTypeFont:
+    for size in range(maximum_size, minimum_size - 1, -1):
+        font = cover_font(size, italic=italic)
+        widths = []
+        for line in lines:
+            box = draw.textbbox((0, 0), line, font=font, stroke_width=1)
+            widths.append(box[2] - box[0])
+        block_height = round(size * 1.18) * len(lines)
+        if max(widths, default=0) <= maximum_width and block_height <= maximum_height:
+            return font
+    raise RuntimeError(f"Cover text does not fit the template: {lines!r}")
+
+
+def draw_cover_block(
+    draw: ImageDraw.ImageDraw,
+    image_width: int,
+    lines: list[str],
+    *,
+    centre_y: int,
+    font: ImageFont.FreeTypeFont,
+) -> None:
+    line_height = round(font.size * 1.18)
+    top = centre_y - (line_height * len(lines)) / 2
+    for index, line in enumerate(lines):
+        box = draw.textbbox((0, 0), line, font=font, stroke_width=1)
+        x = (image_width - (box[2] - box[0])) / 2 - box[0]
+        y = top + index * line_height - box[1]
+        draw.text(
+            (round(x), round(y)),
+            line,
+            font=font,
+            fill=(196, 150, 74),
+            stroke_width=1,
+            stroke_fill=(79, 57, 30),
+        )
+
+
+def render_edition_cover(
+    edition: dict[str, object],
+    book_version: str,
+) -> Path | None:
+    title_lines = edition.get("cover_title_lines")
+    if not title_lines:
         return None
-    cover_path = Path(cover)
-    if not cover_path.exists():
-        raise RuntimeError(f"Cover image is missing: {cover_path}")
-    return cover_path
+    if not COVER_TEMPLATE.exists():
+        raise RuntimeError(f"Cover template is missing: {COVER_TEMPLATE}")
+
+    title = [str(line) for line in title_lines]
+    edition_lines = [str(line) for line in edition["cover_edition_lines"]]
+    with PillowImage.open(COVER_TEMPLATE) as source:
+        image = source.convert("RGB")
+    if image.size != (1024, 1536):
+        raise RuntimeError(
+            f"Cover template must be 1024 x 1536 pixels, found {image.size}."
+        )
+
+    draw = ImageDraw.Draw(image)
+    title_font = fitted_cover_font(
+        draw,
+        title,
+        maximum_size=78,
+        minimum_size=36,
+        maximum_width=540,
+        maximum_height=244,
+    )
+    edition_font = fitted_cover_font(
+        draw,
+        edition_lines,
+        maximum_size=32,
+        minimum_size=22,
+        maximum_width=500,
+        maximum_height=82,
+        italic=True,
+    )
+    author_font = fitted_cover_font(
+        draw,
+        [str(edition["author"]).upper()],
+        maximum_size=45,
+        minimum_size=30,
+        maximum_width=500,
+        maximum_height=55,
+    )
+    version_font = fitted_cover_font(
+        draw,
+        [f"VERSION {book_version}"],
+        maximum_size=20,
+        minimum_size=14,
+        maximum_width=430,
+        maximum_height=26,
+    )
+    draw_cover_block(draw, image.width, title, centre_y=443, font=title_font)
+    draw_cover_block(
+        draw,
+        image.width,
+        edition_lines,
+        centre_y=678 if len(edition_lines) > 1 else 658,
+        font=edition_font,
+    )
+    draw_cover_block(
+        draw,
+        image.width,
+        [str(edition["author"]).upper()],
+        centre_y=790,
+        font=author_font,
+    )
+    draw_cover_block(
+        draw,
+        image.width,
+        [f"VERSION {book_version}"],
+        centre_y=835,
+        font=version_font,
+    )
+
+    DIST.mkdir(exist_ok=True)
+    output = DIST / f"{edition['basename']}-cover.png"
+    image.save(output, format="PNG", optimize=True)
+    return output
 
 
 def chapter_files(directory: Path) -> list[Path]:
@@ -763,13 +964,18 @@ def build_markdown(edition: dict[str, object]) -> Path:
     return output
 
 
-def build_pandoc(markdown: Path, edition: dict[str, object]) -> None:
+def build_pandoc(
+    markdown: Path,
+    edition: dict[str, object],
+    cover: Path | None,
+    book_version: str,
+) -> None:
     basename = str(edition["basename"])
-    cover = edition_cover(edition)
     common = [
         "pandoc", str(markdown), "--standalone", "--toc", "--toc-depth=1",
         "--css", str(CSS), "--metadata", f"title={edition['title']}",
         "--metadata", f"author={edition['author']}", "--metadata", f"lang={edition['language']}",
+        "--metadata", f"version={book_version}",
         "--resource-path", str(ROOT),
     ]
     translator = edition.get("translator")
@@ -941,9 +1147,8 @@ def pdf_initial_image(
     return OpeningInitialImage(str(image_path), prefix)
 
 
-def build_pdf(edition: dict[str, object]) -> None:
+def build_pdf(edition: dict[str, object], cover: Path | None) -> None:
     basename = str(edition["basename"])
-    cover = edition_cover(edition)
     output = DIST / f"{basename}.pdf"
     document = SimpleDocTemplate(
         str(output), pagesize=A5, rightMargin=18 * mm, leftMargin=18 * mm,
@@ -1247,11 +1452,12 @@ def build_pdf(edition: dict[str, object]) -> None:
         document.build(story, onFirstPage=page_number, onLaterPages=page_number)
 
 
-def build(edition_name: str) -> None:
+def build(edition_name: str, book_version: str) -> None:
     edition = EDITIONS[edition_name]
     markdown = build_markdown(edition)
-    build_pandoc(markdown, edition)
-    build_pdf(edition)
+    cover = render_edition_cover(edition, book_version)
+    build_pandoc(markdown, edition, cover, book_version)
+    build_pdf(edition, cover)
 
 
 def main() -> None:
@@ -1262,13 +1468,24 @@ def main() -> None:
         default="all",
         nargs="?",
     )
+    parser.add_argument(
+        "--version",
+        dest="book_version",
+        help=(
+            "Version printed on every generated cover; must use "
+            "YYYY.MM.DD.HHMMSS. Defaults to "
+            "BOOK_VERSION or the current commit date in YYYY.MM.DD.HHMMSS "
+            "format."
+        ),
+    )
     args = parser.parse_args()
     if shutil.which("pandoc") is None:
         raise SystemExit("pandoc is required; install it and rerun this command.")
     DIST.mkdir(exist_ok=True)
+    book_version = resolve_book_version(args.book_version)
     selected = "german-english" if args.edition == "bilingual" else args.edition
     for edition_name in (EDITIONS if selected == "all" else [selected]):
-        build(edition_name)
+        build(edition_name, book_version)
 
 
 if __name__ == "__main__":

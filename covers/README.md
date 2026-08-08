@@ -1,105 +1,85 @@
-# Cover artwork / Umschlaggestaltung
+# Reusable cover artwork / Wiederverwendbare Umschlaggestaltung
 
-**English:** This directory contains four newly generated cover images for
-the release editions. They were created with OpenAI on 28 July 2026 as
-original artwork. A photograph of a historical *Pride and Prejudice* binding
-served only as a mood and craft reference; the photograph itself is not
-included, edited, or reproduced.
+**English:** `peacock-binding-template.png` is the single visual master for
+all book editions. It is a 1024 × 1536 pixel RGB PNG with a dark bookcloth
+ground, paired peacocks, botanical ornaments, and an empty central oval. The
+book builder adds the title, author, edition name, and version number
+deterministically with Pillow and writes the finished edition covers to
+`dist/*-cover.png`.
 
-**Deutsch:** Dieser Ordner enthält vier neu erzeugte Umschlagbilder für die
-Veröffentlichungsausgaben. Sie wurden am 28. Juli 2026 mit OpenAI als
-eigenständige Gestaltung erstellt. Das Foto eines historischen
-*Pride-and-Prejudice*-Einbands diente lediglich als Referenz für Stimmung und
-handwerkliche Anmutung; das Foto selbst wird weder eingebunden noch
-bearbeitet oder reproduziert.
+**Deutsch:** `peacock-binding-template.png` ist die einzige Bildvorlage für
+alle Buchausgaben. Die RGB-PNG-Datei ist 1024 × 1536 Pixel groß und zeigt einen
+dunklen Bucheinband mit zwei Pfauen, Pflanzenornamenten und einer leeren ovalen
+Titelkartusche. Der Buchbau setzt Titel, Autorin, Ausgabenbezeichnung und
+Versionsnummer reproduzierbar mit Pillow und schreibt die fertigen Umschläge
+nach `dist/*-cover.png`.
 
-## Editions / Ausgaben
+## Provenance / Herkunft
 
-- `Stolz-und-Vorurteil-modernes-Deutsch.png`: German edition / deutsche
-  Ausgabe
-- `Stolz-und-Vorurteil-Einfaches-Deutsch.png`: Easy German edition / Ausgabe
-  in Einfachem Deutsch
-- `Stolz-und-Vorurteil-Deutsch-Englisch.png`: bilingual, German first /
-  zweisprachig, Deutsch zuerst
-- `Pride-and-Prejudice-Englisch-Deutsch.png`: bilingual, English first /
-  zweisprachig, Englisch zuerst
+**English:** The established modern German cover was originally generated
+with OpenAI on 28 July 2026 as original artwork. A photograph of a historical
+*Pride and Prejudice* binding served only as a mood and craft reference; the
+photograph itself is not included, edited, or reproduced. On 8 August 2026,
+OpenAI removed only the title, subtitle, and author lettering from that cover.
+The border, oval, peacocks, feathers, flowers, colors, and aged binding texture
+were preserved to create the reusable master.
 
-All images are 1024 × 1536 pixel RGB PNG files. The shared design uses a new
-symmetrical composition with two peacocks, a central oval cartouche, botanical
-ornaments, and restrained gold, emerald, teal, and burgundy linework on black
-bookcloth. It deliberately avoids the reference cover's single peacock,
-pedestal, full-field tail arrangement, and calligraphic title layout.
+**Deutsch:** Der Umschlag der modernen deutschen Ausgabe wurde am 28. Juli
+2026 mit OpenAI als eigenständige Gestaltung erzeugt. Das Foto eines
+historischen *Pride-and-Prejudice*-Einbands diente nur als Referenz für
+Stimmung und handwerkliche Anmutung; das Foto selbst wird weder eingebunden
+noch bearbeitet oder reproduziert. Am 8. August 2026 entfernte OpenAI nur
+Titel, Untertitel und Autorinnenname aus diesem Umschlag. Rahmen, Oval, Pfauen,
+Federn, Blumen, Farben und die gealterte Einbandstruktur blieben für die
+wiederverwendbare Vorlage erhalten.
 
-Alle Bilder sind RGB-PNG-Dateien mit 1024 × 1536 Pixeln. Die gemeinsame
-Gestaltung verwendet eine neue symmetrische Komposition aus zwei Pfauen,
-zentraler ovaler Titelkartusche, Pflanzenornamenten und zurückhaltenden Gold-,
-Smaragd-, Petrol- und Burgundertönen auf schwarzem Buchleinen. Sie vermeidet
-bewusst den einzelnen Pfau, den Sockel, die flächige Schwanzfederanordnung und
-den kalligrafischen Titelsatz der Referenz.
+The earlier separately lettered covers are retained in `legacy/` for design
+provenance only. The builder never reads them.
 
-The book builder embeds the matching image as the semantic EPUB cover, places
-it before the title block in the standalone HTML edition, and uses it as the
-first full cover page of the PDF. The English source-only build has no newly
-generated cover and remains unchanged.
+Die früheren einzeln beschrifteten Umschläge bleiben nur zur Dokumentation der
+Gestaltung in `legacy/` erhalten. Der Buchbau verwendet sie nicht.
 
-Der Buchbau bindet das jeweils passende Bild als semantisches EPUB-Cover ein,
-stellt es in der eigenständigen HTML-Ausgabe vor den Titelblock und verwendet
-es als erste ganzseitige Umschlagseite der PDF-Ausgabe. Der rein englische
-Referenz-Build besitzt kein neu erzeugtes Cover und bleibt unverändert.
+## Build behavior / Verhalten beim Buchbau
 
-The Easy German cover was generated with OpenAI on 8 August 2026. It keeps
-the oval frame, symmetrical botanical linework, muted gold, and historical
-bookcloth character of the established series while using a warm ivory ground,
-dark green type, fewer ornaments, and small mirrored books and quills for
-clearer recognition and improved thumbnail legibility.
+The cover wording comes from the edition metadata in `tools/build_book.py`:
 
-Der Umschlag für Einfaches Deutsch wurde am 8. August 2026 mit OpenAI erzeugt.
-Er übernimmt ovalen Rahmen, symmetrische Pflanzenlinien, gedämpftes Gold und
-die historische Bucheinband-Anmutung der bestehenden Reihe. Ein warmer
-elfenbeinfarbener Grund, dunkelgrüne Schrift, weniger Ornamente sowie kleine
-gespiegelte Bücher und Schreibfedern sorgen für eine klare Unterscheidung und
-bessere Lesbarkeit in der Vorschau.
+- title / Titel
+- edition type / Ausgabentyp
+- `JANE AUSTEN`
+- `VERSION <number>` / `VERSION <Nummer>`
 
-## Generation prompts / Erzeugungsprompts
+`--version YYYY.MM.DD.HHMMSS` has the highest priority. Otherwise the builder
+uses the `BOOK_VERSION` environment variable, followed by the current commit
+date in `YYYY.MM.DD.HHMMSS` format. An explicit version remains available for
+reproducible previews.
 
-The master prompt requested an original late-Victorian Arts-and-Crafts
-bookbinding with a black cloth ground, paired peacocks, rising feather and
-botanical borders, a central oval title cartouche, and exact German title
-text. It explicitly prohibited replication of the reference composition,
-publisher marks, watermarks, mockups, and invented lettering.
+`--version YYYY.MM.DD.HHMMSS` hat die höchste Priorität. Andernfalls verwendet
+der Buchbau die Umgebungsvariable `BOOK_VERSION` und danach das Datum des
+aktuellen Commits im Format `YYYY.MM.DD.HHMMSS`. Für reproduzierbare Vorschauen
+kann weiterhin eine bestimmte Versionsnummer angegeben werden.
 
-Der Hauptprompt verlangte einen eigenständigen Arts-and-Crafts-Bucheinband im
-Stil des späten 19. Jahrhunderts mit schwarzem Leinen, einem Pfauenpaar,
-aufsteigenden Feder- und Pflanzenbordüren, einer ovalen Titelkartusche und
-exaktem deutschem Titeltext. Die konkrete Komposition der Referenz,
-Verlagszeichen, Wasserzeichen, Buchattrappen und erfundene Schriftzeichen
-wurden ausdrücklich ausgeschlossen.
+The generated image is embedded as the semantic EPUB cover, placed before the
+title block in standalone HTML, and used as the first full PDF page. The PNG
+also remains in `dist/` as a separate build artifact.
 
-The bilingual variants reused the master design and changed only the text and
-the minimum necessary spacing:
+Das erzeugte Bild wird als semantischer EPUB-Umschlag eingebunden, im
+eigenständigen HTML vor den Titelblock gestellt und als erste ganzseitige
+PDF-Seite verwendet. Zusätzlich bleibt die PNG-Datei als eigenes
+Build-Artefakt in `dist/` erhalten.
 
-- German first: `STOLZ UND VORURTEIL`, `PRIDE AND PREJUDICE`,
-  `Vollständig zweisprachig · Deutsch zuerst`, `JANE AUSTEN`
-- English first: `PRIDE AND PREJUDICE`, `STOLZ UND VORURTEIL`,
-  `Fully bilingual · English first`, `JANE AUSTEN`
+## Image-edit prompt / Prompt für die Bildbearbeitung
 
-Die zweisprachigen Varianten übernehmen die Hauptgestaltung und ändern
-ausschließlich den Text sowie die dafür unbedingt erforderlichen Abstände.
+The reusable master was made by editing the established modern German cover:
+remove every piece of lettering from the central oval; reconstruct the cleared
+areas with matching dark aged bookcloth; preserve the complete border, oval,
+dotted rim, peacocks, feathers, flowers, vines, jewel colors, and distressed
+print texture; leave the divider ornaments in place; add no new text, symbols,
+watermarks, cropping, or redesign.
 
-The Easy German prompt used the modern German cover only as a visual-family
-reference. It requested a new, calmer late-19th-century clothbinding design
-with warm ivory cloth, high-contrast dark green type, muted gold botanical
-linework, a generous central oval, and mirrored books and quills. The exact
-required text was `STOLZ UND VORURTEIL`, `In Einfachem Deutsch`, and
-`JANE AUSTEN`; extra wording, misspellings, publisher marks, watermarks,
-photorealism, and mockup perspective were prohibited.
-
-Für den Umschlag in Einfachem Deutsch diente der moderne deutsche Umschlag nur
-als Referenz für die gemeinsame Gestaltungsfamilie. Verlangt wurde ein neuer,
-ruhigerer Bucheinband im Stil des späten 19. Jahrhunderts: warmes
-elfenbeinfarbenes Leinen, kontrastreiche dunkelgrüne Schrift, gedämpfte goldene
-Pflanzenlinien, ein großzügiges zentrales Oval sowie gespiegelte Bücher und
-Schreibfedern. Der exakte Text lautete `STOLZ UND VORURTEIL`,
-`In Einfachem Deutsch` und `JANE AUSTEN`. Zusätzliche Wörter, Schreibfehler,
-Verlagszeichen, Wasserzeichen, Fotorealismus und eine Buchattrappen-Perspektive
-waren ausgeschlossen.
+Die wiederverwendbare Vorlage entstand durch Bearbeitung des bestehenden
+modernen deutschen Umschlags: sämtliche Schrift aus der ovalen Titelkartusche
+entfernen; die freien Flächen mit passender dunkler, gealterter
+Bucheinbandstruktur ergänzen; Rahmen, Oval, Punktrand, Pfauen, Federn, Blumen,
+Ranken, Schmuckfarben und Druckstruktur vollständig erhalten; die
+Trennornamente beibehalten; keine neue Schrift, Symbole, Wasserzeichen,
+Beschnitte oder Umgestaltung hinzufügen.
