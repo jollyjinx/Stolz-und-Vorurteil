@@ -36,17 +36,22 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
-CSS = ROOT / "book.css"
-COVERS = ROOT / "covers"
+EDITIONS_ROOT = ROOT / "editions"
+ASSETS = ROOT / "assets"
+SHARED = ROOT / "shared"
+CSS = ASSETS / "styles" / "book.css"
+COVERS = ASSETS / "covers"
 COVER_TEMPLATE = COVERS / "peacock-binding-template.png"
-ILLUSTRATIONS = ROOT / "illustrations"
+ILLUSTRATIONS = ASSETS / "illustrations"
 ILLUSTRATION_MANIFEST = ILLUSTRATIONS / "manifest.json"
-EASY_GERMAN_GLOSSARY = ROOT / "easy-german-glossary.json"
-EASY_GERMAN_NOTES = ROOT / "easy-german-notes.json"
-EASY_ENGLISH_GLOSSARY = ROOT / "easy-english-glossary.json"
-EASY_ENGLISH_NOTES = ROOT / "easy-english-notes.json"
-MODERN_GERMAN_INTRODUCTION = ROOT / "frontmatter" / "before-you-read-de.md"
-MODERN_ENGLISH_INTRODUCTION = ROOT / "frontmatter" / "before-you-read-en.md"
+EASY_GERMAN_ROOT = EDITIONS_ROOT / "easy-german"
+EASY_ENGLISH_ROOT = EDITIONS_ROOT / "easy-english"
+EASY_GERMAN_GLOSSARY = EASY_GERMAN_ROOT / "glossary.json"
+EASY_GERMAN_NOTES = EASY_GERMAN_ROOT / "notes.json"
+EASY_ENGLISH_GLOSSARY = EASY_ENGLISH_ROOT / "glossary.json"
+EASY_ENGLISH_NOTES = EASY_ENGLISH_ROOT / "notes.json"
+MODERN_GERMAN_INTRODUCTION = SHARED / "introductions" / "before-you-read-de.md"
+MODERN_ENGLISH_INTRODUCTION = SHARED / "introductions" / "before-you-read-en.md"
 INITIAL_MANIFESTS = [
     ILLUSTRATIONS / "initials" / "manifest.json",
     ILLUSTRATIONS / "generated-initials" / "manifest.json",
@@ -72,8 +77,8 @@ COVER_LABELS = {
 
 EDITIONS = {
     "german": {
-        "chapters": ROOT / "modern-german-chapters",
-        "frontmatter": ROOT / "frontmatter" / "german.md",
+        "chapters": EDITIONS_ROOT / "modern-german" / "chapters",
+        "frontmatter": EDITIONS_ROOT / "modern-german" / "frontmatter.md",
         "introductions": [MODERN_GERMAN_INTRODUCTION],
         "basename": "Stolz-und-Vorurteil-modernes-Deutsch",
         "title": "Stolz und Vorurteil",
@@ -93,9 +98,9 @@ EDITIONS = {
         "language": "de-DE",
     },
     "easy-german": {
-        "chapters": ROOT / "easy-german-chapters",
-        "frontmatter": ROOT / "frontmatter" / "easy-german.md",
-        "introduction": ROOT / "frontmatter" / "easy-german-introduction.md",
+        "chapters": EASY_GERMAN_ROOT / "chapters",
+        "frontmatter": EASY_GERMAN_ROOT / "frontmatter.md",
+        "introduction": EASY_GERMAN_ROOT / "introduction.md",
         "basename": "Stolz-und-Vorurteil-Einfaches-Deutsch",
         "title": "Stolz und Vorurteil",
         "subtitle": "In Einfachem Deutsch",
@@ -119,9 +124,9 @@ EDITIONS = {
         "language": "de-DE",
     },
     "easy-english": {
-        "chapters": ROOT / "easy-english-chapters",
-        "frontmatter": ROOT / "frontmatter" / "easy-english.md",
-        "introduction": ROOT / "frontmatter" / "easy-english-introduction.md",
+        "chapters": EASY_ENGLISH_ROOT / "chapters",
+        "frontmatter": EASY_ENGLISH_ROOT / "frontmatter.md",
+        "introduction": EASY_ENGLISH_ROOT / "introduction.md",
         "basename": "Pride-and-Prejudice-Easy-English",
         "title": "Pride and Prejudice",
         "subtitle": "In Easy English",
@@ -153,8 +158,8 @@ EDITIONS = {
         "language": "en-US",
     },
     "english": {
-        "chapters": ROOT / "source-chapters",
-        "frontmatter": ROOT / "frontmatter" / "english.md",
+        "chapters": EDITIONS_ROOT / "english" / "chapters",
+        "frontmatter": EDITIONS_ROOT / "english" / "frontmatter.md",
         "introductions": [MODERN_ENGLISH_INTRODUCTION],
         "basename": "Pride-and-Prejudice-English",
         "title": "Pride and Prejudice",
@@ -167,9 +172,9 @@ EDITIONS = {
         "language": "en-US",
     },
     "german-english": {
-        "chapters": ROOT / "modern-german-chapters",
-        "paired_chapters": ROOT / "source-chapters",
-        "frontmatter": ROOT / "frontmatter" / "bilingual.md",
+        "chapters": EDITIONS_ROOT / "modern-german" / "chapters",
+        "paired_chapters": EDITIONS_ROOT / "english" / "chapters",
+        "frontmatter": EDITIONS_ROOT / "german-english" / "frontmatter.md",
         "introductions": [
             MODERN_GERMAN_INTRODUCTION,
             MODERN_ENGLISH_INTRODUCTION,
@@ -202,9 +207,9 @@ EDITIONS = {
         "language": "de-DE",
     },
     "english-german": {
-        "chapters": ROOT / "source-chapters",
-        "paired_chapters": ROOT / "modern-german-chapters",
-        "frontmatter": ROOT / "frontmatter" / "english-german.md",
+        "chapters": EDITIONS_ROOT / "english" / "chapters",
+        "paired_chapters": EDITIONS_ROOT / "modern-german" / "chapters",
+        "frontmatter": EDITIONS_ROOT / "english-german" / "frontmatter.md",
         "introductions": [
             MODERN_ENGLISH_INTRODUCTION,
             MODERN_GERMAN_INTRODUCTION,
@@ -766,7 +771,7 @@ def markdown_illustration(
     entry: dict[str, object],
     languages: tuple[str, ...] = ("de",),
 ) -> str:
-    path = f"illustrations/{entry['image']}"
+    path = f"assets/illustrations/{entry['image']}"
     output = [
         "::: {.book-figure}",
         f"![]({path}){{.book-illustration}}",
@@ -909,7 +914,7 @@ def markdown_initial(
         paragraph,
         str(entry["letter"]),
     )
-    path = f"illustrations/{entry['image']}"
+    path = f"assets/illustrations/{entry['image']}"
     image = f"![{letter}]({path}){{.chapter-initial}}"
     if prefix:
         punctuation = f"[{prefix}]{{.chapter-initial-punctuation}}"

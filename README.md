@@ -22,7 +22,7 @@ GitHub-Veröffentlichung.
 
 <p align="center">
   <a href="https://github.com/jollyjinx/pride-and-prejudice-bilingual-german-english/releases/latest">
-    <img src="covers/peacock-binding-template.png"
+    <img src="assets/covers/peacock-binding-template.png"
          alt="Reusable peacock binding without lettering" width="320">
   </a>
 </p>
@@ -213,40 +213,54 @@ ohne zwischen getrennten Büchern zu wechseln.
 
 ## Repository layout / Aufbau
 
-- `source-chapters/`: English reference chapters extracted from the EPUB /
-  englische Referenzkapitel, aus der EPUB extrahiert
-- `modern-german-chapters/`: all 61 completed German chapters / alle 61
-  fertigen deutschen Kapitel
-- `easy-german-chapters/`: all 61 complete chapters in accessible Easy German /
-  alle 61 vollständigen Kapitel in zugänglichem Einfachem Deutsch
-- `easy-english-chapters/`: all 61 complete, paragraph-aligned chapters in
-  accessible Easy English / alle 61 vollständigen, absatzgleichen Kapitel in
-  zugänglichem Einfachem Englisch
-- `easy-german-glossary.json` and `easy-german-notes.json`: shared terminology,
-  reader glossary, and anchored first-use notes / gemeinsame Terminologie,
-  Leseglossar und am ersten Vorkommen verankerte Anmerkungen
-- `AI/easy-german-translation.md`: binding editorial and accessibility rules /
-  verbindliche Redaktions- und Zugänglichkeitsregeln
-- `easy-english-glossary.json`, `easy-english-notes.json`, and
-  `AI/easy-english-adaptation.md`: matching terminology, notes, and binding
-  rules for Easy English / entsprechende Terminologie, Anmerkungen und
-  verbindliche Regeln für Einfaches Englisch
-- `illustrations/`: 97 Hugh Thomson illustrations and 59 historical
-  decorative initials from the 1894 George Allen edition, plus three newly
-  generated initials for `F`, `U`, and `Z` / 97 Illustrationen und 59
-  historische Initialen von Hugh Thomson, ergänzt um drei neu erzeugte
-  Initialen für `F`, `U` und `Z`
-- `covers/`: reusable text-free peacock binding master; edition covers are
-  typeset during the build / wiederverwendbare schriftfreie Pfauen-Einbandvorlage;
-  die Ausgabentitel werden beim Buchbau gesetzt
-- `frontmatter/`: title, source, dedication, and pre-reading background pages /
-  Titel-, Quellen-, Widmungs- und historische Einführungsseiten
-- `tools/`: extraction, verification, and book-building tools / Werkzeuge für
-  Extraktion, Prüfung und Buchbau
-- `dist/`: generated EPUB, HTML, and PDF editions / erzeugte EPUB-, HTML- und
-  PDF-Ausgaben
-- `.github/workflows/` and `.gitea/workflows/`: GitHub Actions and Gitea
-  Actions builds / CI-Builds für GitHub Actions und Gitea Actions
+The repository is organized around editions. Everything unique to one edition
+lives under one directory, so future editions can be added without scattering
+their files across the project. / Das Repository ist nach Ausgaben geordnet.
+Alles, was nur zu einer Ausgabe gehört, liegt in einem gemeinsamen Verzeichnis,
+damit zukünftige Ausgaben ohne verstreute Dateien ergänzt werden können.
+
+```text
+editions/
+  english/             # source chapters and edition front matter
+  modern-german/       # chapters, front matter, alignment manifest
+  easy-german/         # plus introduction, glossary, notes, guidance
+  easy-english/        # plus introduction, glossary, notes, guidance
+  german-english/      # derived bilingual edition metadata
+  english-german/      # derived bilingual edition metadata
+shared/
+  introductions/       # detailed texts reused by several editions
+assets/
+  covers/              # reusable text-free cover and provenance
+  illustrations/       # artwork, initials, captions, and manifests
+  styles/              # shared book styling
+tools/                 # extraction, verification, and book building
+docs/                  # contributor documentation
+dist/                  # generated books and covers
+```
+
+- `editions/<edition-id>/chapters/` contains that edition's chapter text. The
+  canonical English reference is `editions/english/chapters/`. / In
+  `editions/<edition-id>/chapters/` liegt der Kapiteltext der jeweiligen
+  Ausgabe. Die verbindliche englische Referenz ist
+  `editions/english/chapters/`.
+- `frontmatter.md`, `introduction.md`, `glossary.json`, `notes.json`,
+  `alignment-manifest.json`, and `GUIDANCE.md` sit beside the chapters when an
+  edition needs them. / Ausgabenspezifische Titelei, Einführung, Glossare,
+  Anmerkungen, Prüfmanifeste und Bearbeitungsregeln liegen direkt neben den
+  Kapiteln, sofern sie benötigt werden.
+- `assets/illustrations/` contains 97 Hugh Thomson illustrations and 59
+  historical decorative initials from the 1894 George Allen edition, plus
+  three newly generated initials for `F`, `U`, and `Z`. / Dort liegen 97
+  Illustrationen und 59 historische Initialen von Hugh Thomson sowie drei neu
+  erzeugte Initialen für `F`, `U` und `Z`.
+- `.github/workflows/` and `.gitea/workflows/` build and publish the editions
+  on GitHub and Gitea. / Die Workflows bauen und veröffentlichen die Ausgaben
+  auf GitHub und Gitea.
+
+For the complete directory contract and checklist, see
+[Adding an edition](docs/ADDING_AN_EDITION.md). / Der vollständige
+Verzeichnisvertrag und die Checkliste stehen unter
+[Neue Ausgabe hinzufügen](docs/ADDING_AN_EDITION.md).
 
 ## Build / Bauen
 
@@ -276,14 +290,15 @@ synchron bleiben.
 **English:** Use `--version YYYY.MM.DD.HHMMSS` to print a specific version on
 every cover. Without that option, the builder uses `BOOK_VERSION`, then the
 current commit date formatted as `YYYY.MM.DD.HHMMSS`. Every edition uses the
-master from `covers/` and writes its rendered cover to `dist/*-cover.png`. The
+master from `assets/covers/` and writes its rendered cover to
+`dist/*-cover.png`. The
 image becomes the semantic EPUB cover, appears before the HTML title block,
 and forms the first PDF page.
 
 **Deutsch:** Mit `--version YYYY.MM.DD.HHMMSS` wird eine bestimmte
 Versionsnummer auf alle Umschläge gesetzt. Ohne diese Option verwendet der
 Buchbau zuerst `BOOK_VERSION`, danach das Datum des aktuellen Commits im Format
-`YYYY.MM.DD.HHMMSS`. Jede Ausgabe verwendet die Vorlage aus `covers/` und
+`YYYY.MM.DD.HHMMSS`. Jede Ausgabe verwendet die Vorlage aus `assets/covers/` und
 schreibt ihren gesetzten Umschlag nach `dist/*-cover.png`. Das Bild dient als
 semantischer EPUB-Umschlag, steht vor dem HTML-Titelblock und bildet die erste
 PDF-Seite.
@@ -291,9 +306,9 @@ PDF-Seite.
 **English:** The verifier checks both German translations and Easy English,
 headings, paragraph counts, suspicious mid-sentence splits, both easy
 editions' note anchors and glossary records, and the hashes of every reviewed
-chapter pairing in `alignment-manifest.json`,
-`easy-german-alignment-manifest.json`, and
-`easy-english-alignment-manifest.json`. The
+chapter pairing in `editions/modern-german/alignment-manifest.json`,
+`editions/easy-german/alignment-manifest.json`, and
+`editions/easy-english/alignment-manifest.json`. The
 optional `--epub` check also proves that the committed English chapters exactly
 match a fresh extraction of the supplied EPUB. After an intentional text
 change, update the appropriate manifest only after reviewing every changed
@@ -303,8 +318,10 @@ pair:
 die Easy-English-Bearbeitung, Überschriften, Absatzanzahlen, verdächtige
 Satztrennungen, die Fußnotenanker und Glossareinträge beider einfachen
 Ausgaben sowie die Hashes jeder geprüften Kapitelzuordnung in
-`alignment-manifest.json`, `easy-german-alignment-manifest.json` und
-`easy-english-alignment-manifest.json`. Mit der optionalen `--epub`-Prüfung wird
+`editions/modern-german/alignment-manifest.json`,
+`editions/easy-german/alignment-manifest.json` und
+`editions/easy-english/alignment-manifest.json`. Mit der optionalen
+`--epub`-Prüfung wird
 zusätzlich nachgewiesen, dass die eingecheckten englischen Kapitel exakt einer
 neuen Extraktion der mitgelieferten EPUB-Datei entsprechen. Nach einer
 beabsichtigten Textänderung darf das jeweilige Manifest erst aktualisiert

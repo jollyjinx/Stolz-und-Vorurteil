@@ -19,7 +19,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ILLUSTRATIONS = ROOT / "illustrations"
+ILLUSTRATIONS = ROOT / "assets" / "illustrations"
 MANIFEST = ILLUSTRATIONS / "manifest.json"
 INITIALS = ILLUSTRATIONS / "initials"
 INITIAL_MANIFEST = INITIALS / "manifest.json"

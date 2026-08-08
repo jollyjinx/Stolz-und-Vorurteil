@@ -30,10 +30,27 @@ maybe we should always have acompanied translations on the same page and never b
  - perfect , add them to the books.
  - /ask is it possible to add the covers to the readme.md and make them link to the latest github release ?
  - make it so
- - Add a complete "Einfaches Deutsch" edition for readers who find complex
+  - Add a complete "Einfaches Deutsch" edition for readers who find complex
    sentence structures and vocabulary difficult. Use modern language, a
    cultural preface called "Wichtig vor dem Lesen", first-use explanatory
    footnotes such as one for Netherfield Park, and a shared translation and
    reader glossary. Have subagents translate every chapter under the shared
    glossary so terminology stays consistent and the adaptation remains true to
    the original.
+  - I'm thinking about an additional version - a "Einfaches Deutsch" version. It should translate Pride and Prejudice to "Einfaches Deutsch" so readers can enjoy it, that can't read complicated sentence structures or complicated language. I know it's hard to still stay true to the original, but I'm thinking about adding footnotes (e.g. when the first time Netherfiield Park is mentioned it should have a footnote explaining what it is) and have a modern german language (not antiquated words) and a preface to the book that explains the cultural background of the time. A "Important things to know before reading". We should also add a Glossary for the translation process and at the end of the book so people can read again, for example what "Netherfield Park" is in a little detail. for the translation use subagents that translate each chapter, using a glossary so they stay true.
+  - commit and push
+  - add a note that this version is for my daughter Isabel like it did for the german version for my parents.
+  - instead of generating a new bookbinding image for every version i want to use the image we created for the german version (the dark brown with the peacock) to be an empty image, where we can put the title , author and version type and version number in so we don't have to create an image for every version, but place the text in the empty space.
+  - version number will be in ISO 8601 style, so YYYY.MM.DD.HHMMSS from the commit date
+  - commit, push and create a new release on github
+  - the "für meine Tochter..." as well as "Für meine Eltern..." should not be a Heading. The Heading should be About this Book
+  - I like the "before you read section", it's missing a bit more background, how much is 10000 pounds (most 100 richest people in england at the time), a dance takes 30minutes and dancing twice means almost a proposal, ... We should add that "before you read section" to the other versions as well, not in simple english/ german, but in modern english/german with more details.
+  - commit, push and publish a new version on github
+  - we should generate a simplified english version as well. create a glossary first, use subagents to translate for each chapter just like we did the simplified german version.
+  - as for naming the books. for the english first versions which we correctly name in english "Pride and Prejudice" - we should name it English-German instead of Englisch-Deutsch
+  - commit, push, and create a new release on github
+  - the bilingual versions should also have the Important things before reading in bilingual mode not one after another.
+  - commit , push and release
+  - i see you have missed to update the PROMPTS.md , do that now with the prompts in this chat and add it to AGENTS.md that everytime a request/prompt is made it should be always appended to PROMPTS.md immedately even before working on the request
+  - now that we have worked some time with the project and other people might add other versions in the future, we should have a clean project layout update the documentation.
+  - commit and push

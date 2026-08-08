@@ -12,19 +12,20 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "source-chapters"
-TRANSLATION = ROOT / "modern-german-chapters"
-EASY_TRANSLATION = ROOT / "easy-german-chapters"
-EASY_ENGLISH = ROOT / "easy-english-chapters"
-ALIGNMENT_MANIFEST = ROOT / "alignment-manifest.json"
-EASY_ALIGNMENT_MANIFEST = ROOT / "easy-german-alignment-manifest.json"
-EASY_ENGLISH_ALIGNMENT_MANIFEST = ROOT / "easy-english-alignment-manifest.json"
-EASY_GLOSSARY = ROOT / "easy-german-glossary.json"
-EASY_NOTES = ROOT / "easy-german-notes.json"
-EASY_ENGLISH_GLOSSARY = ROOT / "easy-english-glossary.json"
-EASY_ENGLISH_NOTES = ROOT / "easy-english-notes.json"
-MODERN_GERMAN_INTRODUCTION = ROOT / "frontmatter" / "before-you-read-de.md"
-MODERN_ENGLISH_INTRODUCTION = ROOT / "frontmatter" / "before-you-read-en.md"
+EDITIONS_ROOT = ROOT / "editions"
+SOURCE = EDITIONS_ROOT / "english" / "chapters"
+TRANSLATION = EDITIONS_ROOT / "modern-german" / "chapters"
+EASY_TRANSLATION = EDITIONS_ROOT / "easy-german" / "chapters"
+EASY_ENGLISH = EDITIONS_ROOT / "easy-english" / "chapters"
+ALIGNMENT_MANIFEST = EDITIONS_ROOT / "modern-german" / "alignment-manifest.json"
+EASY_ALIGNMENT_MANIFEST = EDITIONS_ROOT / "easy-german" / "alignment-manifest.json"
+EASY_ENGLISH_ALIGNMENT_MANIFEST = EDITIONS_ROOT / "easy-english" / "alignment-manifest.json"
+EASY_GLOSSARY = EDITIONS_ROOT / "easy-german" / "glossary.json"
+EASY_NOTES = EDITIONS_ROOT / "easy-german" / "notes.json"
+EASY_ENGLISH_GLOSSARY = EDITIONS_ROOT / "easy-english" / "glossary.json"
+EASY_ENGLISH_NOTES = EDITIONS_ROOT / "easy-english" / "notes.json"
+MODERN_GERMAN_INTRODUCTION = ROOT / "shared" / "introductions" / "before-you-read-de.md"
+MODERN_ENGLISH_INTRODUCTION = ROOT / "shared" / "introductions" / "before-you-read-en.md"
 
 
 def paragraphs(path: Path) -> list[str]:
@@ -372,7 +373,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--epub",
         type=Path,
-        help="also compare source-chapters with a fresh extraction of this EPUB",
+        help="also compare editions/english/chapters with a fresh extraction of this EPUB",
     )
     parser.add_argument(
         "--update-alignment-manifest",
