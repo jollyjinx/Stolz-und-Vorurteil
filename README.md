@@ -43,8 +43,8 @@ umbenannte Ausgabe muss keine neue Umschlagillustration erzeugt werden.
 | `easy-german` | Complete translation in accessible Easy German, with introduction, footnotes, and glossary / Vollständige Übersetzung in zugänglichem Einfachem Deutsch mit Einführung, Fußnoten und Glossar | `Stolz-und-Vorurteil-Einfaches-Deutsch` | yes / ja |
 | `easy-english` | Complete adaptation in accessible Easy English, with introduction, footnotes, and glossary / Vollständige Bearbeitung in zugänglichem Einfachem Englisch mit Einführung, Fußnoten und Glossar | `Pride-and-Prejudice-Easy-English` | yes / ja |
 | `english` | Project Gutenberg English original with a modern English historical introduction / Englisches Project-Gutenberg-Original mit moderner englischer historischer Einführung | `Pride-and-Prejudice-English` | build artifact only / nur Build-Artefakt |
-| `german-english` | Fully bilingual, German first, with both introductions / Vollständig zweisprachig, Deutsch zuerst, mit beiden Einführungen | `Stolz-und-Vorurteil-Deutsch-Englisch` | yes / ja |
-| `english-german` | Fully bilingual, English first, with both introductions / Vollständig zweisprachig, Englisch zuerst, mit beiden Einführungen | `Pride-and-Prejudice-English-German` | yes / ja |
+| `german-english` | Fully bilingual, German first, including the paragraph-paired introduction / Vollständig zweisprachig, Deutsch zuerst, einschließlich absatzweise gepaarter Einführung | `Stolz-und-Vorurteil-Deutsch-Englisch` | yes / ja |
+| `english-german` | Fully bilingual, English first, including the paragraph-paired introduction / Vollständig zweisprachig, Englisch zuerst, einschließlich absatzweise gepaarter Einführung | `Pride-and-Prejudice-English-German` | yes / ja |
 
 **English:** The German translations were created by ChatGPT with the
 assistance of Patrick Stein. The modern German edition is dedicated to
@@ -138,8 +138,9 @@ kirchliche Patronage, die Miliz und Austens Ironie.
 **English:** Every edition begins with a spoiler-light “Important Things to
 Know Before Reading” section. The Easy German and Easy English books use
 shorter accessible versions. The other books use fuller introductions in
-modern German or modern English; both bilingual editions contain both
-languages, with their primary language first.
+modern German or modern English. In both bilingual editions, each heading and
+paragraph of the introduction is immediately followed by its counterpart in
+the other language, with the edition's primary language first.
 
 The introduction explains the late Georgian setting, war and travel, rank and
 the landed gentry, women's legal and financial position, the Longbourn entail,
@@ -154,9 +155,10 @@ conversions are presented as estimates rather than exact modern equivalents.
 **Deutsch:** Jede Ausgabe beginnt mit einem spoilerarmen Abschnitt »Wichtig
 vor dem Lesen«. Die Bücher in Einfachem Deutsch und Einfachem Englisch
 verwenden kürzere, zugängliche Fassungen. Die anderen Bücher enthalten
-ausführlichere Einführungen in modernem Deutsch oder modernem Englisch. Beide
-zweisprachigen Ausgaben enthalten beide Sprachen, wobei ihre Hauptsprache
-zuerst steht.
+ausführlichere Einführungen in modernem Deutsch oder modernem Englisch. In
+beiden zweisprachigen Ausgaben folgt auf jede Überschrift und jeden Absatz der
+Einführung unmittelbar die entsprechende Fassung in der anderen Sprache. Die
+Hauptsprache der jeweiligen Ausgabe steht zuerst.
 
 Die Einführung erklärt die spätgeorgianische Zeit, Krieg und Reisen,
 gesellschaftlichen Rang und Landadel, die rechtliche und finanzielle Lage von
@@ -176,6 +178,7 @@ Schätzungen und nicht als exakte heutige Werte erklärt.
 German-English paragraph pairs. Every paragraph is present in both languages,
 allowing English- and German-speaking readers to read in their preferred
 language while keeping the other text immediately available for comparison.
+The historical introduction follows the same paired layout.
 
 - `german-english` presents the modern German translation first, followed
   directly by the English original. It is especially convenient for readers
@@ -192,6 +195,7 @@ the modern German translation without switching between separate books.
 in 2.051 deutsch-englischen Absatzpaaren. Jeder Absatz ist in beiden Sprachen
 vorhanden. Dadurch können deutsch- und englischsprachige Leser in ihrer
 bevorzugten Sprache lesen und den jeweils anderen Text direkt vergleichen.
+Die historische Einführung verwendet dieselbe absatzweise Paarung.
 
 - `german-english` zeigt zuerst die moderne deutsche Übersetzung und direkt
   danach das englische Original. Diese Variante eignet sich besonders für

@@ -174,6 +174,7 @@ EDITIONS = {
             MODERN_GERMAN_INTRODUCTION,
             MODERN_ENGLISH_INTRODUCTION,
         ],
+        "pair_introductions": True,
         "basename": "Stolz-und-Vorurteil-Deutsch-Englisch",
         "title": "Stolz und Vorurteil / Pride and Prejudice",
         "subtitle": "Vollständig zweisprachig: Deutsch zuerst",
@@ -208,6 +209,7 @@ EDITIONS = {
             MODERN_ENGLISH_INTRODUCTION,
             MODERN_GERMAN_INTRODUCTION,
         ],
+        "pair_introductions": True,
         "basename": "Pride-and-Prejudice-English-German",
         "title": "Pride and Prejudice / Stolz und Vorurteil",
         "subtitle": "Fully bilingual: English first",
@@ -499,6 +501,78 @@ def edition_introductions(edition: dict[str, object]) -> list[Path]:
             raise RuntimeError(f"Introduction is missing: {value}")
         introductions.append(value)
     return introductions
+
+
+def markdown_block_kind(block: str) -> str:
+    if block == "\\newpage":
+        return "pagebreak"
+    if block.startswith("# "):
+        return "heading"
+    if block.startswith("## "):
+        return "subheading"
+    return "paragraph"
+
+
+def paired_introduction_blocks(
+    primary_path: Path,
+    secondary_path: Path,
+) -> list[tuple[str, str, str]]:
+    primary_blocks = markdown_content_blocks(primary_path)
+    secondary_blocks = markdown_content_blocks(secondary_path)
+    if len(primary_blocks) != len(secondary_blocks):
+        raise RuntimeError(
+            f"Cannot pair introductions: {primary_path.name} has "
+            f"{len(primary_blocks)} blocks, but {secondary_path.name} has "
+            f"{len(secondary_blocks)}."
+        )
+
+    paired_blocks: list[tuple[str, str, str]] = []
+    for position, (primary, secondary) in enumerate(
+        zip(primary_blocks, secondary_blocks, strict=True),
+        start=1,
+    ):
+        primary_kind = markdown_block_kind(primary)
+        secondary_kind = markdown_block_kind(secondary)
+        if primary_kind != secondary_kind:
+            raise RuntimeError(
+                f"Cannot pair introduction block {position}: "
+                f"{primary_path.name} contains a {primary_kind}, but "
+                f"{secondary_path.name} contains a {secondary_kind}."
+            )
+        paired_blocks.append((primary_kind, primary, secondary))
+    return paired_blocks
+
+
+def paired_introduction_markdown(
+    primary_path: Path,
+    secondary_path: Path,
+    primary_language: str,
+    secondary_language: str,
+    secondary_label: str,
+) -> str:
+    output: list[str] = []
+    for kind, primary, secondary in paired_introduction_blocks(
+        primary_path,
+        secondary_path,
+    ):
+        if kind == "pagebreak":
+            output.append("\\newpage")
+        elif kind == "heading":
+            output.append(f"# {primary[2:]} / {secondary[2:]}")
+        elif kind == "subheading":
+            output.append(f"## {primary[3:]} / {secondary[3:]}")
+        else:
+            output.append(
+                "\n\n".join(
+                    [
+                        ":::: {.learner-pair}",
+                        f"::: {{.learner-paragraph .learner-primary lang={primary_language}}}\n{primary}\n:::",
+                        f"::: {{.learner-paragraph .learner-secondary lang={secondary_language} data-label={secondary_label}}}\n{secondary}\n:::",
+                        "::::",
+                    ]
+                )
+            )
+    return "\n\n".join(output)
 
 
 def load_illustrations() -> list[dict[str, object]]:
@@ -975,10 +1049,26 @@ def build_markdown(edition: dict[str, object]) -> Path:
     assert isinstance(chapter_dir, Path)
     output = DIST / f"{edition['basename']}.md"
     parts = [Path(edition["frontmatter"]).read_text(encoding="utf-8").rstrip()]
-    parts.extend(
-        introduction.read_text(encoding="utf-8").rstrip()
-        for introduction in edition_introductions(edition)
-    )
+    introductions = edition_introductions(edition)
+    if edition.get("pair_introductions"):
+        if len(introductions) != 2:
+            raise RuntimeError(
+                "Paired introductions require exactly two introduction files."
+            )
+        parts.append(
+            paired_introduction_markdown(
+                introductions[0],
+                introductions[1],
+                str(edition["primary_language"]),
+                str(edition["secondary_language"]),
+                str(edition["secondary_label"]),
+            )
+        )
+    else:
+        parts.extend(
+            introduction.read_text(encoding="utf-8").rstrip()
+            for introduction in introductions
+        )
     chapters = chapter_files(chapter_dir)
     if edition.get("paired"):
         paired_chapter_dir = edition["paired_chapters"]
@@ -1173,6 +1263,55 @@ def append_pdf_markdown(
             story.append(Paragraph(inline_markdown(block.replace("\n", " ")), body_style))
 
 
+def append_pdf_paired_markdown(
+    story: list[object],
+    primary_path: Path,
+    secondary_path: Path,
+    heading_style: ParagraphStyle,
+    subheading_style: ParagraphStyle,
+    primary_body_style: ParagraphStyle,
+    secondary_body_style: ParagraphStyle,
+    secondary_label: str,
+) -> None:
+    label = html.escape(secondary_label)
+    for kind, primary, secondary in paired_introduction_blocks(
+        primary_path,
+        secondary_path,
+    ):
+        if kind == "pagebreak":
+            story.append(PageBreak())
+        elif kind == "heading":
+            story.append(
+                Paragraph(
+                    inline_markdown(f"{primary[2:]} / {secondary[2:]}"),
+                    heading_style,
+                )
+            )
+        elif kind == "subheading":
+            story.append(
+                Paragraph(
+                    inline_markdown(f"{primary[3:]} / {secondary[3:]}"),
+                    subheading_style,
+                )
+            )
+        else:
+            story.append(
+                KeepTogether(
+                    [
+                        Paragraph(
+                            inline_markdown(primary.replace("\n", " ")),
+                            primary_body_style,
+                        ),
+                        Paragraph(
+                            f'<font size="7"><b>{label}</b></font>&nbsp;&nbsp;'
+                            + inline_markdown(secondary.replace("\n", " ")),
+                            secondary_body_style,
+                        ),
+                    ]
+                )
+            )
+
+
 def page_number(canvas, document, offset: int = 1) -> None:
     if document.page > offset:
         canvas.setFont("Times-Roman", 9)
@@ -1353,14 +1492,31 @@ def build_pdf(edition: dict[str, object], cover: Path | None) -> None:
         )
     story.append(PageBreak())
 
-    for introduction in edition_introductions(edition):
-        append_pdf_markdown(
+    introductions = edition_introductions(edition)
+    if edition.get("pair_introductions"):
+        if len(introductions) != 2:
+            raise RuntimeError(
+                "Paired introductions require exactly two introduction files."
+            )
+        append_pdf_paired_markdown(
             story,
-            introduction,
+            introductions[0],
+            introductions[1],
             section_heading,
             subheading,
-            body,
+            learner_primary,
+            learner_secondary,
+            str(edition["secondary_label"]),
         )
+    else:
+        for introduction in introductions:
+            append_pdf_markdown(
+                story,
+                introduction,
+                section_heading,
+                subheading,
+                body,
+            )
 
     illustrations = load_illustrations() if edition.get("illustrations") else []
     primary_illustration_language = str(

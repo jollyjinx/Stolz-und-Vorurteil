@@ -23,10 +23,55 @@ EASY_GLOSSARY = ROOT / "easy-german-glossary.json"
 EASY_NOTES = ROOT / "easy-german-notes.json"
 EASY_ENGLISH_GLOSSARY = ROOT / "easy-english-glossary.json"
 EASY_ENGLISH_NOTES = ROOT / "easy-english-notes.json"
+MODERN_GERMAN_INTRODUCTION = ROOT / "frontmatter" / "before-you-read-de.md"
+MODERN_ENGLISH_INTRODUCTION = ROOT / "frontmatter" / "before-you-read-en.md"
 
 
 def paragraphs(path: Path) -> list[str]:
     return [paragraph.strip() for paragraph in path.read_text(encoding="utf-8").split("\n\n") if paragraph.strip()]
+
+
+def introduction_block_kind(block: str) -> str:
+    if block == "\\newpage":
+        return "pagebreak"
+    if block.startswith("# "):
+        return "heading"
+    if block.startswith("## "):
+        return "subheading"
+    return "paragraph"
+
+
+def verify_bilingual_introduction_alignment(failures: list[str]) -> int:
+    for path in (MODERN_GERMAN_INTRODUCTION, MODERN_ENGLISH_INTRODUCTION):
+        if not path.exists():
+            failures.append(f"bilingual introduction is missing: {path}")
+            return 0
+
+    german_blocks = paragraphs(MODERN_GERMAN_INTRODUCTION)
+    english_blocks = paragraphs(MODERN_ENGLISH_INTRODUCTION)
+    if len(german_blocks) != len(english_blocks):
+        failures.append(
+            "bilingual introductions cannot be paired: "
+            f"German has {len(german_blocks)} blocks and English has "
+            f"{len(english_blocks)}"
+        )
+        return 0
+
+    paragraph_pairs = 0
+    for position, (german, english) in enumerate(
+        zip(german_blocks, english_blocks),
+        start=1,
+    ):
+        german_kind = introduction_block_kind(german)
+        english_kind = introduction_block_kind(english)
+        if german_kind != english_kind:
+            failures.append(
+                f"bilingual introduction block {position} cannot be paired: "
+                f"German is a {german_kind} and English is an {english_kind}"
+            )
+        elif german_kind == "paragraph":
+            paragraph_pairs += 1
+    return paragraph_pairs
 
 
 def suspicious_mid_sentence_splits(items: list[str]) -> list[int]:
@@ -392,6 +437,9 @@ def main() -> None:
         "Easy English",
         failures,
     )
+    bilingual_introduction_pairs = verify_bilingual_introduction_alignment(
+        failures
+    )
 
     if args.epub:
         verify_epub_source(args.epub, failures)
@@ -480,6 +528,10 @@ def main() -> None:
     print(
         f"Verified {len(easy_english_files)} Easy English chapters with "
         f"{easy_english_total} aligned paragraph pairs."
+    )
+    print(
+        "Verified bilingual introduction with "
+        f"{bilingual_introduction_pairs} aligned paragraph pairs."
     )
 
 
