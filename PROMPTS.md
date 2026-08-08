@@ -30,3 +30,10 @@ maybe we should always have acompanied translations on the same page and never b
  - perfect , add them to the books.
  - /ask is it possible to add the covers to the readme.md and make them link to the latest github release ?
  - make it so
+ - Add a complete "Einfaches Deutsch" edition for readers who find complex
+   sentence structures and vocabulary difficult. Use modern language, a
+   cultural preface called "Wichtig vor dem Lesen", first-use explanatory
+   footnotes such as one for Netherfield Park, and a shared translation and
+   reader glossary. Have subagents translate every chapter under the shared
+   glossary so terminology stays consistent and the adaptation remains true to
+   the original.

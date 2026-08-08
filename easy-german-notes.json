@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "description": "Fußnoten werden beim Buchbau am ersten erklärungsbedürftigen Vorkommen eingesetzt. Kapiteldateien bleiben dadurch absatzgleich mit der englischen Quelle.",
+  "notes": [
+    {
+      "id": "netherfield-park",
+      "chapter": 1,
+      "paragraph": 3,
+      "phrase": "Netherfield Park",
+      "text": "Netherfield Park ist ein großes Landhaus mit eigenem Grundstück. Mr. Bingley mietet es. Das Wort Park meint hier keinen öffentlichen Stadtpark."
+    },
+    {
+      "id": "vierspaennige-kutsche",
+      "chapter": 1,
+      "paragraph": 10,
+      "phrase": "vierspännigen Kutsche",
+      "text": "Eine Kutsche mit vier Pferden war teuer. Sie zeigte, dass der Reisende reich war."
+    },
+    {
+      "id": "michaelis",
+      "chapter": 1,
+      "paragraph": 10,
+      "phrase": "Michaelis",
+      "text": "Michaelis ist der 29. September. Damals begannen oder endeten an diesem Tag oft Mietverträge und Arbeitsstellen."
+    },
+    {
+      "id": "jahreseinkommen",
+      "chapter": 1,
+      "paragraph": 14,
+      "phrase": "Pfund im Jahr",
+      "text": "Vier- oder fünftausend Pfund im Jahr waren ein sehr großes Einkommen. Genaue Vergleiche mit heutigem Geld sind schwierig."
+    },
+    {
+      "id": "gesellschaftlicher-besuch",
+      "chapter": 1,
+      "paragraph": 18,
+      "phrase": "besuchen",
+      "text": "Ein erster formeller Besuch war wichtig. Erst danach konnten die Frauen der Familie Mr. Bingley selbst besuchen und kennenlernen."
+    },
+    {
+      "id": "ball",
+      "chapter": 2,
+      "paragraph": 10,
+      "phrase": "Ball",
+      "text": "Ein Ball war ein wichtiges gesellschaftliches Treffen. Junge Frauen und Männer konnten sich dort kennenlernen. Alle achteten genau darauf, wer mit wem tanzte."
+    },
+    {
+      "id": "longbourn",
+      "chapter": 3,
+      "paragraph": 15,
+      "phrase": "Longbourn",
+      "text": "Longbourn ist das Haus und Landgut der Familie Bennet. Es liegt nahe der kleinen Stadt Meryton."
+    },
+    {
+      "id": "meryton",
+      "chapter": 4,
+      "paragraph": 15,
+      "phrase": "Meryton",
+      "text": "Meryton ist eine kleine Marktstadt. Die Bennets können sie von Longbourn aus zu Fuß erreichen."
+    },
+    {
+      "id": "pemberley",
+      "chapter": 6,
+      "paragraph": 53,
+      "phrase": "Pemberley",
+      "text": "Pemberley ist Mr. Darcys großes Haus und Landgut in Derbyshire. Das Anwesen bringt ihm einen großen Teil seines Reichtums und viele Pflichten als Landbesitzer."
+    },
+    {
+      "id": "erbbindung",
+      "chapter": 7,
+      "paragraph": 1,
+      "phrase": "Erbbindung",
+      "text": "Durch diese rechtliche Regel können die Bennet-Töchter Longbourn nicht erben. Nach Mr. Bennets Tod bekommt es der nächste männliche Erbe."
+    },
+    {
+      "id": "miliz",
+      "chapter": 7,
+      "paragraph": 3,
+      "phrase": "Regiment der Miliz",
+      "text": "Die Miliz war ein Teil des Militärs für die Verteidigung im eigenen Land. Das Regiment bleibt einige Monate in Meryton. Seine Offiziere nehmen am gesellschaftlichen Leben teil."
+    },
+    {
+      "id": "rosings",
+      "chapter": 14,
+      "paragraph": 1,
+      "phrase": "Rosings",
+      "text": "Rosings ist das große Haus und Landgut von Lady Catherine de Bourgh in Kent. Mr. Collins wohnt ganz in der Nähe."
+    },
+    {
+      "id": "hunsford",
+      "chapter": 13,
+      "paragraph": 13,
+      "phrase": "Hunsford",
+      "text": "Hunsford ist ein Dorf in der englischen Grafschaft Kent."
+    },
+    {
+      "id": "pfarrstelle",
+      "chapter": 13,
+      "paragraph": 15,
+      "phrase": "Pfarrstelle",
+      "text": "Eine reiche Person konnte das Recht besitzen, einen Pfarrer für eine freie Stelle vorzuschlagen. Die Pfarrstelle brachte dem Pfarrer ein Haus und ein Einkommen."
+    },
+    {
+      "id": "brighton",
+      "chapter": 39,
+      "paragraph": 6,
+      "phrase": "Brighton",
+      "text": "Brighton ist eine Stadt am Meer im Süden Englands. Damals war sie ein moderner Bade- und Vergnügungsort. In der Geschichte ist dort auch das Regiment stationiert."
+    },
+    {
+      "id": "gretna-green",
+      "chapter": 46,
+      "paragraph": 5,
+      "phrase": "Gretna Green",
+      "text": "Gretna Green liegt direkt hinter der schottischen Grenze. Junge Paare aus England konnten dort leichter und ohne die Zustimmung ihrer Eltern heiraten."
+    }
+  ]
+}

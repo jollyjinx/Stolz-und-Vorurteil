@@ -53,6 +53,24 @@ p {
   text-align: justify;
 }
 
+.footnote-ref {
+  font-size: 0.78em;
+  font-weight: bold;
+  line-height: 0;
+}
+
+section.footnotes {
+  border-top: 0.08em solid #b99a7b;
+  color: #5e4530;
+  font-size: 0.9em;
+  margin-top: 1.5em;
+  padding-top: 0.8em;
+}
+
+section.footnotes p {
+  text-align: left;
+}
+
 .learner-pair {
   -webkit-column-break-inside: avoid;
   break-inside: avoid;

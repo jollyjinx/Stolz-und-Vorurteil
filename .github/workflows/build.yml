@@ -52,6 +52,10 @@ jobs:
             dist/Stolz-und-Vorurteil-modernes-Deutsch.epub \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.html \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.pdf
+          zip -j dist/Stolz-und-Vorurteil-Einfaches-Deutsch.zip \
+            dist/Stolz-und-Vorurteil-Einfaches-Deutsch.epub \
+            dist/Stolz-und-Vorurteil-Einfaches-Deutsch.html \
+            dist/Stolz-und-Vorurteil-Einfaches-Deutsch.pdf
           zip -j dist/Stolz-und-Vorurteil-Deutsch-Englisch.zip \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.epub \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.html \
@@ -71,6 +75,10 @@ jobs:
             dist/Stolz-und-Vorurteil-modernes-Deutsch.html \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.pdf \
             dist/Stolz-und-Vorurteil-modernes-Deutsch.zip \
+            dist/Stolz-und-Vorurteil-Einfaches-Deutsch.epub \
+            dist/Stolz-und-Vorurteil-Einfaches-Deutsch.html \
+            dist/Stolz-und-Vorurteil-Einfaches-Deutsch.pdf \
+            dist/Stolz-und-Vorurteil-Einfaches-Deutsch.zip \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.epub \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.html \
             dist/Stolz-und-Vorurteil-Deutsch-Englisch.pdf \

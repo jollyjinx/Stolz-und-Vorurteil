@@ -1,0 +1,228 @@
+{
+  "version": 1,
+  "description": "Verbindliche Begriffe für die Übersetzung und Leseglossar der Ausgabe in Einfachem Deutsch.",
+  "entries": [
+    {
+      "term": "Anredeformen",
+      "sort": "Anredeformen",
+      "description": "Mr., Mrs., Miss, Lady und Sir zeigen Geschlecht, Familienstand oder gesellschaftlichen Rang. Sie bleiben im Buch auf Englisch.",
+      "translator_guidance": "Mr., Mrs., Miss, Lady und Sir nie eindeutschen oder weglassen. Namen und Titel genau wie in der Quelle schreiben."
+    },
+    {
+      "term": "Ball",
+      "sort": "Ball",
+      "description": "Ein Ball war ein wichtiges gesellschaftliches Treffen mit Musik und Tanz. Junge Frauen und Männer konnten sich dort kennenlernen. Wer mit wem tanzte, wurde genau beobachtet.",
+      "translator_guidance": "assembly im gesellschaftlichen Zusammenhang meist als Ball oder öffentlicher Ball übersetzen."
+    },
+    {
+      "term": "Bedienstete",
+      "sort": "Bedienstete",
+      "description": "Wohlhabende Familien beschäftigten Menschen für Haushalt, Küche, Pferde, Reisen und persönliche Dienste. Zahlreiche Bedienstete zeigten großen Reichtum.",
+      "translator_guidance": "servants neutral als Bedienstete; einzelne historische Funktionen konkret benennen, wenn der Zusammenhang sie erklärt."
+    },
+    {
+      "term": "Brighton",
+      "sort": "Brighton",
+      "description": "Eine Stadt am Meer im Süden Englands. Sie war ein moderner Bade- und Vergnügungsort. Im Roman ist dort zeitweise das Regiment stationiert.",
+      "translator_guidance": "Eigenname beibehalten."
+    },
+    {
+      "term": "Charlotte Lucas",
+      "sort": "Charlotte Lucas",
+      "description": "Elizabeths vernünftige Freundin. Sie ist 27 Jahre alt und besitzt wenig Geld. Deshalb beurteilt sie Ehe und Sicherheit anders als Elizabeth.",
+      "translator_guidance": "Nüchterne, überlegte Stimme; ihre praktischen Gründe nicht abwerten oder romantisieren."
+    },
+    {
+      "term": "Colonel Fitzwilliam",
+      "sort": "Fitzwilliam, Colonel",
+      "description": "Mr. Darcys Cousin. Als jüngerer Sohn eines Grafen erbt er nicht das große Familienvermögen und muss bei einer Ehe auch an Geld denken.",
+      "translator_guidance": "Colonel als englischen Rang beibehalten. Nicht mit Mr. Darcy verwechseln."
+    },
+    {
+      "term": "Erbbindung",
+      "sort": "Erbbindung",
+      "description": "Longbourn darf nach Mr. Bennets Tod nicht an seine Töchter gehen. Es fällt an den nächsten männlichen Erben, Mr. Collins. Diese rechtliche Bindung bedroht die wirtschaftliche Sicherheit der Bennet-Frauen.",
+      "translator_guidance": "entail/entailed einheitlich als Erbbindung/durch eine Erbbindung festgelegt erklären; im Fließtext möglichst konkret sagen, wer was erbt."
+    },
+    {
+      "term": "Georgiana Darcy",
+      "sort": "Darcy, Georgiana",
+      "description": "Mr. Darcys deutlich jüngere Schwester. Sie ist schüchtern, musikalisch und sehr vermögend.",
+      "translator_guidance": "Nicht mit Miss Bingley verwechseln."
+    },
+    {
+      "term": "Gretna Green",
+      "sort": "Gretna Green",
+      "description": "Ein Ort direkt hinter der schottischen Grenze. Junge Paare aus England konnten dort leichter und ohne Zustimmung der Eltern heiraten.",
+      "translator_guidance": "Eigenname beibehalten; elopement je nach Zusammenhang als heimliche Flucht mit Heiratsabsicht verständlich machen."
+    },
+    {
+      "term": "Hunsford",
+      "sort": "Hunsford",
+      "description": "Ein Dorf in Kent. Mr. Collins arbeitet dort als Pfarrer und lebt mit Charlotte im Pfarrhaus nahe Rosings.",
+      "translator_guidance": "Eigenname beibehalten."
+    },
+    {
+      "term": "Jahreseinkommen",
+      "sort": "Jahreseinkommen",
+      "description": "Vermögen wird im Roman oft als Einkommen pro Jahr genannt. Vier- oder fünftausend Pfund im Jahr bedeuten großen Reichtum. Zehntausend Pfund im Jahr bedeuten noch viel größeren Reichtum. Direkte heutige Geldwerte wären ungenau.",
+      "translator_guidance": "Beträge und pro Jahr erhalten; pounds als Pfund. Keine Euro-Umrechnung ergänzen."
+    },
+    {
+      "term": "Jane Bennet",
+      "sort": "Bennet, Jane",
+      "description": "Die älteste Bennet-Tochter und Elizabeths engste Vertraute. Sie sucht zuerst das Gute in anderen Menschen.",
+      "translator_guidance": "Ruhige, freundliche und zurückhaltende Stimme. Ihre Vorsicht nicht als Naivität verstärken."
+    },
+    {
+      "term": "Kitty / Catherine Bennet",
+      "sort": "Bennet, Catherine",
+      "description": "Die viertälteste Bennet-Tochter. Meist wird sie Kitty genannt. Sie lässt sich oft von ihrer jüngeren Schwester Lydia beeinflussen.",
+      "translator_guidance": "Catherine und Kitty entsprechend der Quelle erhalten; nicht mit Lady Catherine verwechseln."
+    },
+    {
+      "term": "Lady Catherine de Bourgh",
+      "sort": "Catherine de Bourgh, Lady",
+      "description": "Mr. Darcys reiche und sehr standesbewusste Tante. Sie besitzt Rosings und ist die Förderin von Mr. Collins.",
+      "translator_guidance": "Bestimmend und selbstgewiss; ihre unfreiwillige Komik klar, aber nicht karikierend wiedergeben."
+    },
+    {
+      "term": "Lizzy / Elizabeth Bennet",
+      "sort": "Bennet, Elizabeth",
+      "description": "Die zweite Bennet-Tochter und Hauptfigur des Romans. Familie und enge Freunde nennen sie oft Lizzy oder Eliza.",
+      "translator_guidance": "Elizabeth, Lizzy und Eliza entsprechend der Quelle erhalten. Schlagfertig, aufmerksam, manchmal vorschnell."
+    },
+    {
+      "term": "Lydia Bennet",
+      "sort": "Bennet, Lydia",
+      "description": "Die jüngste Bennet-Tochter. Zu Beginn des Romans ist sie 15 Jahre alt. Sie ist sehr lebhaft und handelt oft, ohne über die Folgen nachzudenken. Offiziere findet sie besonders aufregend.",
+      "translator_guidance": "Schnell, selbstbewusst und impulsiv; ihre Jugend sichtbar lassen, ohne moderne Jugendsprache einzufügen."
+    },
+    {
+      "term": "Longbourn",
+      "sort": "Longbourn",
+      "description": "Das Haus und Landgut der Familie Bennet in Hertfordshire. Wegen der Erbbindung können die fünf Töchter es nicht erben.",
+      "translator_guidance": "Eigenname beibehalten; house/estate je nach Zusammenhang Haus, Besitz oder Landgut."
+    },
+    {
+      "term": "Lucas Lodge",
+      "sort": "Lucas Lodge",
+      "description": "Das Haus der Familie Lucas nahe Longbourn. Lodge ist hier Teil des Eigennamens und keine kleine Ferienhütte.",
+      "translator_guidance": "Vollständigen Eigennamen beibehalten."
+    },
+    {
+      "term": "Meryton",
+      "sort": "Meryton",
+      "description": "Eine kleine Marktstadt nahe Longbourn. Dort gibt es Geschäfte, Verwandte der Bennets und viele gesellschaftliche Neuigkeiten.",
+      "translator_guidance": "Eigenname beibehalten."
+    },
+    {
+      "term": "Mary Bennet",
+      "sort": "Bennet, Mary",
+      "description": "Die mittlere Bennet-Tochter. Sie liest viel, übt Musik und möchte gern gebildet wirken.",
+      "translator_guidance": "Feierliche, gelernte Aussagen verständlich vereinfachen, aber ihre bemühte Gelehrsamkeit erhalten."
+    },
+    {
+      "term": "Michaelis",
+      "sort": "Michaelis",
+      "description": "Der 29. September. Dieser traditionelle Termin war in England wichtig für Mietverträge, Zahlungen und den Wechsel von Arbeitsstellen.",
+      "translator_guidance": "Michaelmas als Michaelis übersetzen; die Bedeutung liefert die erste Fußnote."
+    },
+    {
+      "term": "Miliz und Regiment",
+      "sort": "Miliz und Regiment",
+      "description": "Eine militärische Einheit ist für einige Monate in Meryton stationiert. Die Offiziere nehmen am gesellschaftlichen Leben teil. Ihre Uniformen und ihr Auftreten beeindrucken besonders Lydia und Kitty.",
+      "translator_guidance": "militia als Miliz; regiment als Regiment; officers als Offiziere."
+    },
+    {
+      "term": "Mr. Bennet",
+      "sort": "Bennet, Mr.",
+      "description": "Vater der fünf Bennet-Töchter und Besitzer von Longbourn. Er ist klug und ironisch, zieht sich aber oft aus seiner Verantwortung zurück.",
+      "translator_guidance": "Trockene Ironie knapp erhalten. Nicht jede ironische Aussage als ernst erklären."
+    },
+    {
+      "term": "Mr. Bingley",
+      "sort": "Bingley, Mr.",
+      "description": "Ein reicher, freundlicher junger Mann. Er mietet Netherfield Park und verliebt sich in Jane Bennet.",
+      "translator_guidance": "Offen, lebhaft, unkompliziert; nicht kindlich wirken lassen."
+    },
+    {
+      "term": "Miss Bingley / Caroline Bingley",
+      "sort": "Bingley, Caroline",
+      "description": "Mr. Bingleys unverheiratete Schwester. Sie ist reich, elegant und achtet stark auf gesellschaftlichen Rang.",
+      "translator_guidance": "Miss Bingley und Caroline entsprechend der Quelle; spitze Höflichkeit und Eifersucht klar, aber nicht vorzeitig erklären."
+    },
+    {
+      "term": "Mr. Collins",
+      "sort": "Collins, Mr.",
+      "description": "Ein Pfarrer und entfernter Verwandter der Bennets. Wegen der Erbbindung wird er Longbourn erben. Lady Catherine hat ihm seine Pfarrstelle gegeben.",
+      "translator_guidance": "Umständliche Selbstwichtigkeit verständlich machen. Sätze dürfen kürzer werden, müssen aber seine feierliche Lächerlichkeit behalten."
+    },
+    {
+      "term": "Mr. Darcy",
+      "sort": "Darcy, Mr.",
+      "description": "Ein sehr reicher Landbesitzer und Freund von Mr. Bingley. Sein großes Anwesen heißt Pemberley.",
+      "translator_guidance": "Zurückhaltend und präzise; nicht gefühllos oder modern lässig machen."
+    },
+    {
+      "term": "Mr. Wickham",
+      "sort": "Wickham, Mr.",
+      "description": "Ein charmanter Offizier. Er kennt Mr. Darcy seit seiner Kindheit und erzählt Elizabeth von seinem Streit mit Darcy.",
+      "translator_guidance": "Glaubwürdig charmant sprechen lassen; spätere Erkenntnisse nicht vorwegnehmen."
+    },
+    {
+      "term": "Mr. und Mrs. Gardiner",
+      "sort": "Gardiner, Mr. und Mrs.",
+      "description": "Mrs. Bennets Bruder und seine Frau. Sie leben mit ihren Kindern in London. Elizabeth vertraut ihnen, weil sie freundlich und vernünftig sind.",
+      "translator_guidance": "Ruhige, verständige Figurenstimmen; Verwandtschaftsbezüge als Onkel und Tante klar halten."
+    },
+    {
+      "term": "Mrs. Bennet",
+      "sort": "Bennet, Mrs.",
+      "description": "Mutter von Jane, Elizabeth, Mary, Kitty und Lydia. Sie will ihre Töchter verheiraten, weil deren Zukunft ohne eigenes großes Vermögen unsicher ist.",
+      "translator_guidance": "Aufgeregt und oft komisch, aber ihre wirtschaftliche Angst nicht auslöschen."
+    },
+    {
+      "term": "Netherfield Park",
+      "sort": "Netherfield Park",
+      "description": "Ein großes Landhaus mit Grundstück nahe Longbourn. Mr. Bingley mietet es. Park bedeutet hier das private Land um ein Herrenhaus, nicht einen öffentlichen Stadtpark.",
+      "translator_guidance": "Immer Netherfield Park; verkürztes Netherfield wie in der Quelle erhalten. Park nicht übersetzen."
+    },
+    {
+      "term": "Pemberley",
+      "sort": "Pemberley",
+      "description": "Mr. Darcys großes Haus und Landgut in Derbyshire. Es zeigt nicht nur seinen Reichtum, sondern auch, wie er als Besitzer Verantwortung übernimmt.",
+      "translator_guidance": "Eigenname beibehalten; estate je nach Zusammenhang Besitz, Anwesen oder Landgut."
+    },
+    {
+      "term": "Pfarrstelle und Kirchenpatronat",
+      "sort": "Pfarrstelle und Kirchenpatronat",
+      "description": "Eine wohlhabende Person konnte das Recht besitzen, einen Pfarrer für eine Stelle vorzuschlagen. Die Stelle brachte Haus und Einkommen. Lady Catherine fördert so Mr. Collins; die Familie Darcy verfügte über eine Stelle für Mr. Wickham.",
+      "translator_guidance": "living im kirchlichen Sinn als Pfarrstelle; patron/patroness je nach Kontext Förderer/Förderin oder Kirchenpatronat verständlich wiedergeben."
+    },
+    {
+      "term": "Rosings Park",
+      "sort": "Rosings Park",
+      "description": "Das große Haus und Landgut von Lady Catherine de Bourgh in Kent. Mr. Collins und Charlotte wohnen ganz in der Nähe.",
+      "translator_guidance": "Rosings oder Rosings Park entsprechend der Quelle. Park nicht als öffentlichen Park erklären."
+    },
+    {
+      "term": "Stand und Rang",
+      "sort": "Stand und Rang",
+      "description": "Herkunft, Familie, Besitz und Titel bestimmten stark, wie Menschen behandelt wurden. Auch reiche Personen konnten als gesellschaftlich niedriger gelten, wenn ihr Geld aus Handel kam.",
+      "translator_guidance": "rank, connections, consequence und society kontextbezogen konkret ausdrücken; soziale Bewertung nicht neutralisieren."
+    },
+    {
+      "term": "Vierspännige Kutsche",
+      "sort": "Vierspännige Kutsche",
+      "description": "Eine Kutsche mit vier Pferden war schnell und teuer. Sie zeigte, dass ein Reisender wohlhabend war.",
+      "translator_guidance": "chaise and four als vierspännige Kutsche. Andere Kutschentypen möglichst als Kutsche übersetzen, wenn die genaue Bauart für die Handlung unwichtig ist."
+    },
+    {
+      "term": "Vorstellung und Besuch",
+      "sort": "Vorstellung und Besuch",
+      "description": "Familien konnten einen fremden Mann oder eine fremde Familie nicht immer einfach besuchen. Eine formelle Vorstellung und ein erster Besuch machten den weiteren Kontakt möglich.",
+      "translator_guidance": "visit/call je nach Zusammenhang als besuchen/einen Besuch machen; die formelle soziale Bedeutung erhalten."
+    }
+  ]
+}
